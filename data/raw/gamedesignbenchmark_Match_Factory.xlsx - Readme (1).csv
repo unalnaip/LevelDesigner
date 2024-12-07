@@ -1,0 +1,52 @@
+,,,,,,,
+,Log,,,,Boosters,,
+,Date,Date of entry,,,Boosters,"Price for 3 boosters, coins","Price for 1 booster, coins"
+,Day,Game day of entry,,,Spring,120,40
+,Video #,Video number,,,Vacuum,290,96.7
+,Videolink,YouTube video link,,,Fan,190,63.3
+,Video Length,Duration of the video,,,Icegun,240,80
+,Timestamp,Time of the in-game action,,,Firework,120,40
+,Timelink,Link to the in-game action in the YouTube video,,,Hourglass,240,80
+,Tag,In-game section name,,,,,
+,Action,Name of the action in the in-game section,,,,,
+,Attempt,Numbering of attempts to complete game levels,,,,,
+,Level,Numbering of game levels,,,,,
+,Level Result,Result of playing the level,,,,,
+,"Coins
+Coins Balance",Coins balance,,,,,
+,"Spring
+Spring Balance",Booster Spring balance,,,,,
+,"Vacuum
+Vacuum Balance",Booster Vacuum balance,,,,,
+,"Fan
+Fan Balance",Booster Fan balance,,,,,
+,"Icegun
+Icegun Balance",Booster Icegun balance,,,,,
+,"Firework
+Firework Balance",Booster Firework balance,,,,,
+,"Hourglass
+Hourglass Balance",Booster Hourglass balance,,,,,
+,Coins in $,The cost of coins on the player’s balance in $,,,,,
+,Boosters in $,The cost of all boosters on the player’s balance in $,,,,,
+,Coins in $ + Boosters in $,The cost of coins and all boosters on the player’s balance in $,,,,,
+,We used the smallest bundle from the store of 100 coins for $1.99 to convert coins and boosters into $,,,,,,
+,,,,,,,
+,,,,,,,
+,Level Parameteres,,,,,,
+,Account,Type of the account,,,,,
+,Level,Numbering of game levels,,,,,
+,Time,Time to complete the level,,,,,
+,Difficulty,Difficulty of the level,,,,,
+,Number of goals,Number of unique goals on the level,,,,,
+,Goal,Number of items required for each goal on the level,,,,,
+,,,,,,,
+,,,,,,,
+,Mine Dash,,,,,,
+,Account,Type of the account,,,,,
+,Date,Date of entry,,,,,
+,Session,Number of the session,,,,,
+,Time,Time of the in-game action,,,,,
+,Round,Number of the event round,,,,,
+,Attempt,Number of the event round completion attempt,,,,,
+,Level result,Result of playing the level (player),,,,,
+,Number of levels completed,Number of event points (player and rivals),,,,,

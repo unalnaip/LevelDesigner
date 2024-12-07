@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: level_designer
+Version: 0.1.0
+Summary: AI-powered level design using conditional VAE
+Author: Your Name
+Requires-Python: >=3.7
+Requires-Dist: torch>=1.9.0
+Requires-Dist: torchvision>=0.10.0
+Requires-Dist: tensorboard>=2.9.0
+Requires-Dist: numpy>=1.19.0
+Requires-Dist: pytest>=7.0.0
+Requires-Dist: setuptools>=61.0.0

@@ -1,0 +1,66 @@
+2024-12-08 00:05:50,014 - __main__ - INFO - System Information:
+2024-12-08 00:05:50,014 - __main__ - INFO - OS: Darwin Darwin Kernel Version 23.6.0: Fri Nov 15 15:12:52 PST 2024; root:xnu-10063.141.1.702.7~1/RELEASE_ARM64_T6031
+2024-12-08 00:05:50,015 - __main__ - INFO - Python version: 3.13.0
+2024-12-08 00:05:50,015 - __main__ - INFO - PyTorch version: 2.6.0.dev20241207
+2024-12-08 00:05:50,021 - __main__ - INFO - CPU: arm
+2024-12-08 00:05:50,021 - __main__ - INFO - RAM: 48.00 GB
+2024-12-08 00:05:50,021 - __main__ - INFO - Available RAM: 25.04 GB
+2024-12-08 00:05:50,032 - __main__ - INFO - Apple Silicon MPS is available
+2024-12-08 00:05:50,033 - utils.training_monitor - INFO - Training monitor initialized at logs
+2024-12-08 00:05:50,033 - __main__ - INFO - Initializing dataset and dataloader...
+2024-12-08 00:05:50,033 - __main__ - INFO - Initializing dataset from data/processed_levels.json
+2024-12-08 00:05:50,067 - __main__ - INFO - Loaded 1000 levels from JSON in 0.03s
+2024-12-08 00:05:50,067 - __main__ - INFO - Processing levels into layers...
+2024-12-08 00:05:50,084 - __main__ - INFO - Dataset initialization completed in 0.05s
+2024-12-08 00:05:50,084 - __main__ - INFO - Total samples: 1000
+2024-12-08 00:05:50,085 - __main__ - INFO - Initializing model...
+2024-12-08 00:05:50,403 - __main__ - INFO - Starting training...
+2024-12-08 00:05:51,411 - __main__ - INFO - System metrics: {'cpu_percent': 9.3, 'memory_percent': 48.6, 'memory_used_gb': 22.39727783203125, 'memory_available_gb': 24.692901611328125}
+2024-12-08 00:06:37,518 - __main__ - INFO - Epoch 1/100
+2024-12-08 00:06:37,519 - __main__ - INFO - Average Loss: 114.4968
+2024-12-08 00:06:37,519 - __main__ - INFO - Epoch Time: 47.11s
+2024-12-08 00:06:37,519 - __main__ - INFO - Memory Usage: 0.52 GB
+2024-12-08 00:06:37,593 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_1.pt
+2024-12-08 00:06:38,599 - __main__ - INFO - System metrics: {'cpu_percent': 7.5, 'memory_percent': 48.4, 'memory_used_gb': 22.3226318359375, 'memory_available_gb': 24.779678344726562}
+2024-12-08 00:07:24,184 - __main__ - INFO - Epoch 2/100
+2024-12-08 00:07:24,186 - __main__ - INFO - Average Loss: 67.0571
+2024-12-08 00:07:24,186 - __main__ - INFO - Epoch Time: 46.59s
+2024-12-08 00:07:24,187 - __main__ - INFO - Memory Usage: 0.54 GB
+2024-12-08 00:07:24,291 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_2.pt
+2024-12-08 00:07:25,296 - __main__ - INFO - System metrics: {'cpu_percent': 9.1, 'memory_percent': 48.8, 'memory_used_gb': 22.524627685546875, 'memory_available_gb': 24.572128295898438}
+2024-12-08 00:08:10,962 - __main__ - INFO - Epoch 3/100
+2024-12-08 00:08:10,962 - __main__ - INFO - Average Loss: 58.6818
+2024-12-08 00:08:10,963 - __main__ - INFO - Epoch Time: 46.67s
+2024-12-08 00:08:10,963 - __main__ - INFO - Memory Usage: 0.54 GB
+2024-12-08 00:08:11,052 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_3.pt
+2024-12-08 00:08:12,057 - __main__ - INFO - System metrics: {'cpu_percent': 8.1, 'memory_percent': 49.5, 'memory_used_gb': 22.874374389648438, 'memory_available_gb': 24.220321655273438}
+2024-12-08 00:08:57,620 - __main__ - INFO - Epoch 4/100
+2024-12-08 00:08:57,621 - __main__ - INFO - Average Loss: 55.7515
+2024-12-08 00:08:57,621 - __main__ - INFO - Epoch Time: 46.57s
+2024-12-08 00:08:57,621 - __main__ - INFO - Memory Usage: 0.55 GB
+2024-12-08 00:08:57,707 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_4.pt
+2024-12-08 00:08:58,712 - __main__ - INFO - System metrics: {'cpu_percent': 4.3, 'memory_percent': 49.5, 'memory_used_gb': 22.865570068359375, 'memory_available_gb': 24.2296142578125}
+2024-12-08 00:09:44,257 - __main__ - INFO - Epoch 5/100
+2024-12-08 00:09:44,258 - __main__ - INFO - Average Loss: 54.0694
+2024-12-08 00:09:44,258 - __main__ - INFO - Epoch Time: 46.55s
+2024-12-08 00:09:44,259 - __main__ - INFO - Memory Usage: 0.56 GB
+2024-12-08 00:09:44,355 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_5.pt
+2024-12-08 00:09:45,357 - __main__ - INFO - System metrics: {'cpu_percent': 10.3, 'memory_percent': 50.0, 'memory_used_gb': 23.082855224609375, 'memory_available_gb': 24.018966674804688}
+2024-12-08 00:10:30,952 - __main__ - INFO - Epoch 6/100
+2024-12-08 00:10:30,952 - __main__ - INFO - Average Loss: 52.8783
+2024-12-08 00:10:30,952 - __main__ - INFO - Epoch Time: 46.60s
+2024-12-08 00:10:30,952 - __main__ - INFO - Memory Usage: 0.56 GB
+2024-12-08 00:10:31,031 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_6.pt
+2024-12-08 00:10:32,036 - __main__ - INFO - System metrics: {'cpu_percent': 24.2, 'memory_percent': 52.6, 'memory_used_gb': 24.328292846679688, 'memory_available_gb': 22.766586303710938}
+2024-12-08 00:11:17,668 - __main__ - INFO - Epoch 7/100
+2024-12-08 00:11:17,668 - __main__ - INFO - Average Loss: 51.9555
+2024-12-08 00:11:17,668 - __main__ - INFO - Epoch Time: 46.63s
+2024-12-08 00:11:17,669 - __main__ - INFO - Memory Usage: 0.56 GB
+2024-12-08 00:11:17,751 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_7.pt
+2024-12-08 00:11:18,756 - __main__ - INFO - System metrics: {'cpu_percent': 8.2, 'memory_percent': 51.9, 'memory_used_gb': 24.015289306640625, 'memory_available_gb': 23.087890625}
+2024-12-08 00:12:04,312 - __main__ - INFO - Epoch 8/100
+2024-12-08 00:12:04,313 - __main__ - INFO - Average Loss: 51.0119
+2024-12-08 00:12:04,314 - __main__ - INFO - Epoch Time: 46.56s
+2024-12-08 00:12:04,315 - __main__ - INFO - Memory Usage: 0.56 GB
+2024-12-08 00:12:04,400 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_8.pt
+2024-12-08 00:12:05,406 - __main__ - INFO - System metrics: {'cpu_percent': 8.9, 'memory_percent': 53.0, 'memory_used_gb': 24.528060913085938, 'memory_available_gb': 22.5712890625}

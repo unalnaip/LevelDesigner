@@ -1,0 +1,6 @@
+torch>=1.9.0
+torchvision>=0.10.0
+tensorboard>=2.9.0
+numpy>=1.19.0
+pytest>=7.0.0
+setuptools>=61.0.0

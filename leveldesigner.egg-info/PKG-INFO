@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: leveldesigner
+Version: 0.1.0
+Summary: AI-powered level generation system for Match-3 3D Collection Puzzle Game
+Author: AI Level Designer Team
+Requires-Python: >=3.8
+Requires-Dist: pandas>=1.3.0
+Requires-Dist: numpy>=1.21.0
+Requires-Dist: pathlib>=1.0.1

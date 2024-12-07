@@ -1,0 +1,12 @@
+2024-12-07 23:55:18,338 - __main__ - INFO - System Information:
+2024-12-07 23:55:18,338 - __main__ - INFO - OS: Darwin Darwin Kernel Version 23.6.0: Fri Nov 15 15:12:52 PST 2024; root:xnu-10063.141.1.702.7~1/RELEASE_ARM64_T6031
+2024-12-07 23:55:18,338 - __main__ - INFO - Python version: 3.13.0
+2024-12-07 23:55:18,338 - __main__ - INFO - PyTorch version: 2.6.0.dev20241207
+2024-12-07 23:55:18,343 - __main__ - INFO - CPU: arm
+2024-12-07 23:55:18,343 - __main__ - INFO - RAM: 48.00 GB
+2024-12-07 23:55:18,343 - __main__ - INFO - Available RAM: 25.56 GB
+2024-12-07 23:55:18,357 - __main__ - INFO - Apple Silicon MPS is available
+2024-12-07 23:55:18,358 - utils.training_monitor - INFO - Training monitor initialized at logs
+2024-12-07 23:55:18,358 - __main__ - INFO - Initializing dataset and dataloader...
+2024-12-07 23:55:18,358 - __main__ - INFO - Initializing dataset from data/processed_levels.json
+2024-12-07 23:55:18,358 - __main__ - ERROR - Training failed: [Errno 2] No such file or directory: 'data/processed_levels.json'

@@ -1,0 +1,21 @@
+{
+  "total_levels": 287,
+  "difficulty_distribution": {
+    "Normal": 234,
+    "Hard": 34,
+    "Super Hard": 19
+  },
+  "time_stats": {
+    "min": 60,
+    "max": 300,
+    "avg": 142.78745644599303
+  },
+  "goals_stats": {
+    "min_total": 9,
+    "max_total": 102,
+    "avg_total": 29.790940766550523,
+    "min_unique": 1,
+    "max_unique": 6,
+    "avg_unique": 3.3344947735191637
+  }
+}

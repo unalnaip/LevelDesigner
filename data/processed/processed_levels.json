@@ -1,0 +1,5168 @@
+[
+  {
+    "level_id": 1,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 300,
+      "total_goals": 9,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 3,
+      "goal_2": 3,
+      "goal_3": 3,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 2,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 300,
+      "total_goals": 18,
+      "unique_goals": 1
+    },
+    "goals": {
+      "goal_1": 18,
+      "goal_2": 0,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 3,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 240,
+      "total_goals": 36,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 12,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 4,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 240,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 5,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 240,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 9,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 6,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 210,
+      "total_goals": 54,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 18,
+      "goal_2": 15,
+      "goal_3": 12,
+      "goal_4": 9,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 7,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 210,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 8,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 210,
+      "total_goals": 30,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 15,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 9,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 210,
+      "total_goals": 33,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 15,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 10,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 210,
+      "total_goals": 36,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 11,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 225,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 12,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 210,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 13,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 225,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 14,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 150,
+      "total_goals": 12,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 15,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 195,
+      "total_goals": 36,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 18,
+      "goal_2": 18,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 16,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 195,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 17,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 60,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 15,
+      "goal_3": 15,
+      "goal_4": 15,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 18,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 90,
+      "total_goals": 39,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 6,
+      "goal_3": 9,
+      "goal_4": 6,
+      "goal_5": 9,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 19,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 45,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 9,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 20,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 150,
+      "total_goals": 18,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 21,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 48,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 12,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 22,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 12,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 23,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 24,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 15,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 25,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 36,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 26,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 18,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 3,
+      "goal_3": 6,
+      "goal_4": 3,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 27,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 165,
+      "total_goals": 36,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 28,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 12,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 29,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 30,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 54,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 9,
+      "goal_6": 9
+    }
+  },
+  {
+    "level_id": 31,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 32,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 195,
+      "total_goals": 45,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 15,
+      "goal_3": 15,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 33,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 120,
+      "total_goals": 36,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 12,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 34,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 12,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 35,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 36,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 37,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 150,
+      "total_goals": 15,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 3,
+      "goal_2": 3,
+      "goal_3": 3,
+      "goal_4": 3,
+      "goal_5": 3,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 38,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 165,
+      "total_goals": 36,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 12,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 39,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 36,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 6,
+      "goal_4": 6,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 40,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 41,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 48,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 12,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 42,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 150,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 43,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 44,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 15,
+      "unique_goals": 1
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 0,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 45,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 45,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 15,
+      "goal_3": 15,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 46,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 90,
+      "total_goals": 36,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 47,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 18,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 3,
+      "goal_3": 6,
+      "goal_4": 3,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 48,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 15,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 49,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 50,
+    "metadata": {
+      "difficulty": "Super Hard",
+      "difficulty_encoded": 2,
+      "time_limit": 120,
+      "total_goals": 9,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 3,
+      "goal_2": 3,
+      "goal_3": 3,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 51,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 165,
+      "total_goals": 45,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 9,
+      "goal_3": 6,
+      "goal_4": 9,
+      "goal_5": 6,
+      "goal_6": 9
+    }
+  },
+  {
+    "level_id": 52,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 53,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 165,
+      "total_goals": 12,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 54,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 36,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 55,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 12,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 56,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 135,
+      "total_goals": 54,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 18,
+      "goal_2": 18,
+      "goal_3": 18,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 57,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 24,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 6,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 58,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 59,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 150,
+      "total_goals": 36,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 18,
+      "goal_2": 12,
+      "goal_3": 6,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 60,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 165,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 61,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 36,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 62,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 165,
+      "total_goals": 36,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 6,
+      "goal_5": 6,
+      "goal_6": 6
+    }
+  },
+  {
+    "level_id": 63,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 64,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 120,
+      "total_goals": 36,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 65,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 45,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 9,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 66,
+    "metadata": {
+      "difficulty": "Super Hard",
+      "difficulty_encoded": 2,
+      "time_limit": 105,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 67,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 36,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 68,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 165,
+      "total_goals": 45,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 9,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 69,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 36,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 70,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 71,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 6,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 72,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 195,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 6,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 73,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 30,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 74,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 135,
+      "total_goals": 15,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 6,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 75,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 76,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 12,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 3,
+      "goal_2": 3,
+      "goal_3": 3,
+      "goal_4": 3,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 77,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 36,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 6,
+      "goal_4": 3,
+      "goal_5": 9,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 78,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 18,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 79,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 80,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 39,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 6,
+      "goal_4": 3,
+      "goal_5": 6,
+      "goal_6": 6
+    }
+  },
+  {
+    "level_id": 81,
+    "metadata": {
+      "difficulty": "Super Hard",
+      "difficulty_encoded": 2,
+      "time_limit": 135,
+      "total_goals": 18,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 82,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 54,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 18,
+      "goal_2": 18,
+      "goal_3": 18,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 83,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 84,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 12,
+      "goal_3": 6,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 85,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 86,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 87,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 30,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 6,
+      "goal_5": 6,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 88,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 135,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 89,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 24,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 6,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 90,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 36,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 91,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 92,
+    "metadata": {
+      "difficulty": "Super Hard",
+      "difficulty_encoded": 2,
+      "time_limit": 120,
+      "total_goals": 36,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 18,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 93,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 15,
+      "unique_goals": 1
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 0,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 94,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 95,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 36,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 96,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 150,
+      "total_goals": 18,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 97,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 98,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 18,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 99,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 100,
+    "metadata": {
+      "difficulty": "Super Hard",
+      "difficulty_encoded": 2,
+      "time_limit": 135,
+      "total_goals": 45,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 9,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 101,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 36,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 102,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 165,
+      "total_goals": 54,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 9,
+      "goal_6": 9
+    }
+  },
+  {
+    "level_id": 103,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 36,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 104,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 105,
+      "total_goals": 36,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 105,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 27,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 18,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 106,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 18,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 107,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 30,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 9,
+      "goal_3": 6,
+      "goal_4": 9,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 108,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 165,
+      "total_goals": 30,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 15,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 109,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 110,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 165,
+      "total_goals": 48,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 12,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 111,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 105,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 112,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 30,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 15,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 113,
+    "metadata": {
+      "difficulty": "Super Hard",
+      "difficulty_encoded": 2,
+      "time_limit": 120,
+      "total_goals": 36,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 114,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 45,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 9,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 115,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 30,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 3,
+      "goal_2": 12,
+      "goal_3": 3,
+      "goal_4": 12,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 116,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 36,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 12,
+      "goal_3": 18,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 117,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 15,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 3,
+      "goal_2": 3,
+      "goal_3": 3,
+      "goal_4": 3,
+      "goal_5": 3,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 118,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 36,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 119,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 120,
+      "total_goals": 36,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 6,
+      "goal_5": 6,
+      "goal_6": 6
+    }
+  },
+  {
+    "level_id": 120,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 36,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 12,
+      "goal_3": 6,
+      "goal_4": 12,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 121,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 122,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 9,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 123,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 18,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 3,
+      "goal_2": 6,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 124,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 30,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 15,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 125,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 105,
+      "total_goals": 48,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 12,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 126,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 127,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 45,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 15,
+      "goal_3": 15,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 128,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 12,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 3,
+      "goal_2": 3,
+      "goal_3": 3,
+      "goal_4": 3,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 129,
+    "metadata": {
+      "difficulty": "Super Hard",
+      "difficulty_encoded": 2,
+      "time_limit": 120,
+      "total_goals": 30,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 15,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 130,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 75,
+      "total_goals": 54,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 27,
+      "goal_2": 27,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 131,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 36,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 6,
+      "goal_5": 6,
+      "goal_6": 6
+    }
+  },
+  {
+    "level_id": 132,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 135,
+      "total_goals": 12,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 3,
+      "goal_2": 3,
+      "goal_3": 3,
+      "goal_4": 3,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 133,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 134,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 135,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 136,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 137,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 45,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 15,
+      "goal_3": 15,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 138,
+    "metadata": {
+      "difficulty": "Super Hard",
+      "difficulty_encoded": 2,
+      "time_limit": 105,
+      "total_goals": 48,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 12,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 139,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 140,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 45,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 9,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 141,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 12,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 142,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 90,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 30,
+      "goal_2": 30,
+      "goal_3": 30,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 143,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 144,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 36,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 6,
+      "goal_5": 6,
+      "goal_6": 6
+    }
+  },
+  {
+    "level_id": 145,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 146,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 147,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 135,
+      "total_goals": 72,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 12,
+      "goal_5": 12,
+      "goal_6": 12
+    }
+  },
+  {
+    "level_id": 148,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 90,
+      "total_goals": 36,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 149,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 30,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 15,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 150,
+    "metadata": {
+      "difficulty": "Super Hard",
+      "difficulty_encoded": 2,
+      "time_limit": 105,
+      "total_goals": 42,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 6,
+      "goal_3": 12,
+      "goal_4": 12,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 151,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 90,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 152,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 153,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 36,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 154,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 90,
+      "total_goals": 18,
+      "unique_goals": 1
+    },
+    "goals": {
+      "goal_1": 18,
+      "goal_2": 0,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 155,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 90,
+      "total_goals": 54,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 9,
+      "goal_6": 9
+    }
+  },
+  {
+    "level_id": 156,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 105,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 157,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 75,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 158,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 18,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 159,
+    "metadata": {
+      "difficulty": "Super Hard",
+      "difficulty_encoded": 2,
+      "time_limit": 105,
+      "total_goals": 36,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 160,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 12,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 161,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 12,
+      "unique_goals": 1
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 0,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 162,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 36,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 18,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 163,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 164,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 36,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 165,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 105,
+      "total_goals": 45,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 15,
+      "goal_3": 15,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 166,
+    "metadata": {
+      "difficulty": "Super Hard",
+      "difficulty_encoded": 2,
+      "time_limit": 120,
+      "total_goals": 12,
+      "unique_goals": 1
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 0,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 167,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 18,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 3,
+      "goal_2": 6,
+      "goal_3": 3,
+      "goal_4": 6,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 168,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 75,
+      "total_goals": 36,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 169,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 90,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 170,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 6,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 171,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 90,
+      "total_goals": 24,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 3,
+      "goal_3": 9,
+      "goal_4": 3,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 172,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 18,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 173,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 36,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 174,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 120,
+      "total_goals": 18,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 175,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 90,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 176,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 177,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 42,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 12,
+      "goal_3": 9,
+      "goal_4": 12,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 178,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 179,
+    "metadata": {
+      "difficulty": "Super Hard",
+      "difficulty_encoded": 2,
+      "time_limit": 120,
+      "total_goals": 24,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 6,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 180,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 75,
+      "total_goals": 15,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 3,
+      "goal_2": 3,
+      "goal_3": 3,
+      "goal_4": 3,
+      "goal_5": 3,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 181,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 182,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 36,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 183,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 184,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 120,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 185,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 60,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 186,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 30,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 6,
+      "goal_5": 6,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 187,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 188,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 54,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 9,
+      "goal_6": 9
+    }
+  },
+  {
+    "level_id": 189,
+    "metadata": {
+      "difficulty": "Super Hard",
+      "difficulty_encoded": 2,
+      "time_limit": 105,
+      "total_goals": 18,
+      "unique_goals": 1
+    },
+    "goals": {
+      "goal_1": 18,
+      "goal_2": 0,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 190,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 90,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 191,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 75,
+      "total_goals": 24,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 6,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 192,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 48,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 12,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 193,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 15,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 6,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 194,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 45,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 15,
+      "goal_3": 15,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 195,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 30,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 3,
+      "goal_2": 6,
+      "goal_3": 9,
+      "goal_4": 12,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 196,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 105,
+      "total_goals": 33,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 9,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 197,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 9,
+      "unique_goals": 1
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 0,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 198,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 30,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 15,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 199,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 45,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 9,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 200,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 15,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 3,
+      "goal_2": 3,
+      "goal_3": 3,
+      "goal_4": 3,
+      "goal_5": 3,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 201,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 18,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 6,
+      "goal_3": 3,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 202,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 180,
+      "total_goals": 36,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 3,
+      "goal_2": 3,
+      "goal_3": 9,
+      "goal_4": 6,
+      "goal_5": 9,
+      "goal_6": 6
+    }
+  },
+  {
+    "level_id": 203,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 165,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 6,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 204,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 60,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 205,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 30,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 6,
+      "goal_3": 9,
+      "goal_4": 6,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 206,
+    "metadata": {
+      "difficulty": "Super Hard",
+      "difficulty_encoded": 2,
+      "time_limit": 135,
+      "total_goals": 36,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 18,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 207,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 15,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 6,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 208,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 210,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 209,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 24,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 210,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 165,
+      "total_goals": 15,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 6,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 211,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 165,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 212,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 105,
+      "total_goals": 15,
+      "unique_goals": 1
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 0,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 213,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 165,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 6,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 214,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 24,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 215,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 150,
+      "total_goals": 48,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 12,
+      "goal_3": 21,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 216,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 48,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 12,
+      "goal_4": 9,
+      "goal_5": 6,
+      "goal_6": 9
+    }
+  },
+  {
+    "level_id": 217,
+    "metadata": {
+      "difficulty": "Super Hard",
+      "difficulty_encoded": 2,
+      "time_limit": 165,
+      "total_goals": 39,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 9,
+      "goal_3": 6,
+      "goal_4": 12,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 218,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 15,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 3,
+      "goal_3": 6,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 219,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 90,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 12,
+      "goal_3": 6,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 220,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 18,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 3,
+      "goal_2": 3,
+      "goal_3": 6,
+      "goal_4": 3,
+      "goal_5": 3,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 221,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 150,
+      "total_goals": 21,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 9,
+      "goal_3": 6,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 222,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 48,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 15,
+      "goal_4": 18,
+      "goal_5": 3,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 223,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 30,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 12,
+      "goal_3": 6,
+      "goal_4": 3,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 224,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 165,
+      "total_goals": 24,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 9,
+      "goal_3": 3,
+      "goal_4": 6,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 225,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 60,
+      "total_goals": 21,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 226,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 36,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 6,
+      "goal_5": 6,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 227,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 135,
+      "total_goals": 30,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 12,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 228,
+    "metadata": {
+      "difficulty": "Super Hard",
+      "difficulty_encoded": 2,
+      "time_limit": 120,
+      "total_goals": 48,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 3,
+      "goal_5": 9,
+      "goal_6": 6
+    }
+  },
+  {
+    "level_id": 229,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 9,
+      "goal_3": 6,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 230,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 210,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 231,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 24,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 6,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 232,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 165,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 233,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 90,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 12,
+      "goal_3": 6,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 234,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 30,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 3,
+      "goal_3": 6,
+      "goal_4": 9,
+      "goal_5": 6,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 235,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 165,
+      "total_goals": 48,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 6,
+      "goal_3": 12,
+      "goal_4": 15,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 236,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 15,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 6,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 237,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 102,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 21,
+      "goal_2": 18,
+      "goal_3": 24,
+      "goal_4": 3,
+      "goal_5": 15,
+      "goal_6": 21
+    }
+  },
+  {
+    "level_id": 238,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 210,
+      "total_goals": 48,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 9,
+      "goal_5": 12,
+      "goal_6": 6
+    }
+  },
+  {
+    "level_id": 239,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 30,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 240,
+    "metadata": {
+      "difficulty": "Super Hard",
+      "difficulty_encoded": 2,
+      "time_limit": 120,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 15,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 241,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 24,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 9,
+      "goal_3": 3,
+      "goal_4": 6,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 242,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 12,
+      "goal_3": 6,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 243,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 150,
+      "total_goals": 30,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 244,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 24,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 3,
+      "goal_3": 6,
+      "goal_4": 9,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 245,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 21,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 3,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 6,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 246,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 30,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 15,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 247,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 165,
+      "total_goals": 21,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 3,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 3,
+      "goal_5": 3,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 248,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 15,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 6,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 249,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 15,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 250,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 200,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 21,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 201,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 30,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 3,
+      "goal_3": 9,
+      "goal_4": 12,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 202,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 36,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 6,
+      "goal_3": 3,
+      "goal_4": 6,
+      "goal_5": 6,
+      "goal_6": 6
+    }
+  },
+  {
+    "level_id": 203,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 27,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 15,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 204,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 42,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 6,
+      "goal_6": 6
+    }
+  },
+  {
+    "level_id": 205,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 225,
+      "total_goals": 39,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 3,
+      "goal_5": 9,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 206,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 225,
+      "total_goals": 45,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 3,
+      "goal_3": 6,
+      "goal_4": 9,
+      "goal_5": 9,
+      "goal_6": 9
+    }
+  },
+  {
+    "level_id": 207,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 210,
+      "total_goals": 36,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 6,
+      "goal_4": 6,
+      "goal_5": 6,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 208,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 195,
+      "total_goals": 45,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 3,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 6,
+      "goal_6": 9
+    }
+  },
+  {
+    "level_id": 209,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 165,
+      "total_goals": 18,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 3,
+      "goal_2": 3,
+      "goal_3": 6,
+      "goal_4": 6,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 210,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 30,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 211,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 120,
+      "total_goals": 39,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 12,
+      "goal_5": 9,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 212,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 57,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 18,
+      "goal_3": 12,
+      "goal_4": 15,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 213,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 195,
+      "total_goals": 42,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 18,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 214,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 18,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 215,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 195,
+      "total_goals": 60,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 12,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 6,
+      "goal_6": 9
+    }
+  },
+  {
+    "level_id": 216,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 42,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 9,
+      "goal_3": 6,
+      "goal_4": 9,
+      "goal_5": 6,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 217,
+    "metadata": {
+      "difficulty": "Super Hard",
+      "difficulty_encoded": 2,
+      "time_limit": 180,
+      "total_goals": 36,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 9,
+      "goal_3": 6,
+      "goal_4": 6,
+      "goal_5": 6,
+      "goal_6": 3
+    }
+  },
+  {
+    "level_id": 218,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 42,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 6,
+      "goal_4": 6,
+      "goal_5": 6,
+      "goal_6": 6
+    }
+  },
+  {
+    "level_id": 219,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 36,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 3,
+      "goal_3": 3,
+      "goal_4": 12,
+      "goal_5": 6,
+      "goal_6": 6
+    }
+  },
+  {
+    "level_id": 220,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 165,
+      "total_goals": 51,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 12,
+      "goal_5": 9,
+      "goal_6": 3
+    }
+  },
+  {
+    "level_id": 221,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 36,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 12,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 222,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 45,
+      "unique_goals": 5
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 12,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 6,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 223,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 120,
+      "total_goals": 30,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 12,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 224,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 15,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 225,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 135,
+      "total_goals": 39,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 12,
+      "goal_3": 12,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 226,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 24,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 9,
+      "goal_3": 6,
+      "goal_4": 3,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 227,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 210,
+      "total_goals": 42,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 6,
+      "goal_5": 9,
+      "goal_6": 9
+    }
+  },
+  {
+    "level_id": 228,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 120,
+      "total_goals": 36,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 3,
+      "goal_3": 6,
+      "goal_4": 6,
+      "goal_5": 6,
+      "goal_6": 9
+    }
+  },
+  {
+    "level_id": 229,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 150,
+      "total_goals": 36,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 6,
+      "goal_3": 6,
+      "goal_4": 3,
+      "goal_5": 9,
+      "goal_6": 6
+    }
+  },
+  {
+    "level_id": 230,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 180,
+      "total_goals": 30,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 9,
+      "goal_3": 6,
+      "goal_4": 6,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 231,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 165,
+      "total_goals": 24,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 9,
+      "goal_2": 6,
+      "goal_3": 9,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 232,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 165,
+      "total_goals": 24,
+      "unique_goals": 6
+    },
+    "goals": {
+      "goal_1": 3,
+      "goal_2": 3,
+      "goal_3": 3,
+      "goal_4": 6,
+      "goal_5": 6,
+      "goal_6": 3
+    }
+  },
+  {
+    "level_id": 233,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 21,
+      "unique_goals": 3
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 9,
+      "goal_3": 6,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 234,
+    "metadata": {
+      "difficulty": "Normal",
+      "difficulty_encoded": 0,
+      "time_limit": 150,
+      "total_goals": 33,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 6,
+      "goal_2": 9,
+      "goal_3": 9,
+      "goal_4": 9,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 235,
+    "metadata": {
+      "difficulty": "Super Hard",
+      "difficulty_encoded": 2,
+      "time_limit": 165,
+      "total_goals": 48,
+      "unique_goals": 4
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 6,
+      "goal_3": 12,
+      "goal_4": 15,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  },
+  {
+    "level_id": 235,
+    "metadata": {
+      "difficulty": "Hard",
+      "difficulty_encoded": 1,
+      "time_limit": 135,
+      "total_goals": 24,
+      "unique_goals": 2
+    },
+    "goals": {
+      "goal_1": 15,
+      "goal_2": 9,
+      "goal_3": 0,
+      "goal_4": 0,
+      "goal_5": 0,
+      "goal_6": 0
+    }
+  }
+]

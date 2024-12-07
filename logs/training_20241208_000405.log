@@ -1,0 +1,28 @@
+2024-12-08 00:04:05,551 - __main__ - INFO - System Information:
+2024-12-08 00:04:05,552 - __main__ - INFO - OS: Darwin Darwin Kernel Version 23.6.0: Fri Nov 15 15:12:52 PST 2024; root:xnu-10063.141.1.702.7~1/RELEASE_ARM64_T6031
+2024-12-08 00:04:05,552 - __main__ - INFO - Python version: 3.13.0
+2024-12-08 00:04:05,552 - __main__ - INFO - PyTorch version: 2.6.0.dev20241207
+2024-12-08 00:04:05,558 - __main__ - INFO - CPU: arm
+2024-12-08 00:04:05,558 - __main__ - INFO - RAM: 48.00 GB
+2024-12-08 00:04:05,558 - __main__ - INFO - Available RAM: 25.03 GB
+2024-12-08 00:04:05,569 - __main__ - INFO - Apple Silicon MPS is available
+2024-12-08 00:04:05,570 - utils.training_monitor - INFO - Training monitor initialized at logs
+2024-12-08 00:04:05,570 - __main__ - INFO - Initializing dataset and dataloader...
+2024-12-08 00:04:05,570 - __main__ - INFO - Initializing dataset from data/processed_levels.json
+2024-12-08 00:04:05,604 - __main__ - INFO - Loaded 1000 levels from JSON in 0.03s
+2024-12-08 00:04:05,604 - __main__ - INFO - Processing levels into layers...
+2024-12-08 00:04:05,613 - __main__ - INFO - Dataset initialization completed in 0.04s
+2024-12-08 00:04:05,613 - __main__ - INFO - Total samples: 1000
+2024-12-08 00:04:05,614 - __main__ - INFO - Initializing model...
+2024-12-08 00:04:05,924 - __main__ - INFO - Starting training...
+2024-12-08 00:04:06,927 - __main__ - INFO - System metrics: {'cpu_percent': 8.5, 'memory_percent': 48.2, 'memory_used_gb': 22.20654296875, 'memory_available_gb': 24.8780517578125}
+2024-12-08 00:04:29,774 - __main__ - INFO - Training interrupted by user
+2024-12-08 00:04:29,822 - utils.training_monitor - INFO - Training history saved to logs/training_history_level_generator_20241208_000405.json
+2024-12-08 00:04:30,047 - utils.training_monitor - INFO - Training plots saved to logs/plots/training_plots_epoch_0_20241208_000429.png
+2024-12-08 00:04:30,047 - utils.training_monitor - INFO - Training monitor closed
+2024-12-08 00:04:30,047 - __main__ - INFO - 
+Training Summary:
+2024-12-08 00:04:30,047 - __main__ - INFO - Total training time: 0.01 hours
+2024-12-08 00:04:30,047 - __main__ - INFO - Best loss achieved: inf
+2024-12-08 00:04:30,047 - __main__ - INFO - Final model saved to: models/level_generator.pt
+2024-12-08 00:04:30,047 - __main__ - INFO - Training logs saved to: logs/training_20241208_000405.log

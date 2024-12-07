@@ -1,0 +1,16 @@
+2024-12-08 00:01:01,835 - __main__ - INFO - Starting data preprocessing
+2024-12-08 00:01:01,835 - __main__ - INFO - Initialized object mapping with 18 objects
+2024-12-08 00:01:01,835 - __main__ - INFO - Data processor initialized
+2024-12-08 00:01:01,835 - __main__ - INFO - Loading raw data from data/raw_levels.json
+2024-12-08 00:01:01,865 - __main__ - INFO - Processing level 0/1000
+2024-12-08 00:01:01,866 - __main__ - INFO - Processing level 100/1000
+2024-12-08 00:01:01,868 - __main__ - INFO - Processing level 200/1000
+2024-12-08 00:01:01,871 - __main__ - INFO - Processing level 300/1000
+2024-12-08 00:01:01,873 - __main__ - INFO - Processing level 400/1000
+2024-12-08 00:01:01,874 - __main__ - INFO - Processing level 500/1000
+2024-12-08 00:01:01,875 - __main__ - INFO - Processing level 600/1000
+2024-12-08 00:01:01,877 - __main__ - INFO - Processing level 700/1000
+2024-12-08 00:01:01,879 - __main__ - INFO - Processing level 800/1000
+2024-12-08 00:01:01,880 - __main__ - INFO - Processing level 900/1000
+2024-12-08 00:01:01,882 - __main__ - ERROR - Error processing dataset: Unknown object ID: tennis_ball
+2024-12-08 00:01:01,887 - __main__ - ERROR - Data preprocessing failed

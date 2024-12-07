@@ -1,0 +1,11 @@
+{
+  "input_dim": 12,
+  "condition_dim": 3,
+  "latent_dim": 32,
+  "train_size": 229,
+  "val_size": 58,
+  "feature_split": {
+    "basic_features": 8,
+    "spatial_features": 4
+  }
+}
