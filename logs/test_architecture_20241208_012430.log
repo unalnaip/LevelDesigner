@@ -1,0 +1,13 @@
+2024-12-08 01:24:30,878 - __main__ - INFO - Starting architecture test
+2024-12-08 01:24:30,888 - __main__ - INFO - Using device: mps
+2024-12-08 01:24:30,889 - __main__ - INFO - Dataset dimensions - Input: 90, Condition: 3
+2024-12-08 01:24:31,215 - __main__ - INFO - Starting test training loop
+2024-12-08 01:24:31,758 - __main__ - INFO - Batch 0: Loss = 5.0065 (Recon = 4.9090, KL = 64.9944, β = 0.0015)
+2024-12-08 01:24:31,853 - __main__ - INFO - Batch 2: Loss = 3.5792 (Recon = 3.2561, KL = 71.7879, β = 0.0045)
+2024-12-08 01:24:31,916 - __main__ - INFO - Batch 4: Loss = 2.8075 (Recon = 2.4404, KL = 48.9526, β = 0.0075)
+2024-12-08 01:24:31,978 - __main__ - INFO - Batch 6: Loss = 2.5473 (Recon = 2.1247, KL = 40.2480, β = 0.0105)
+2024-12-08 01:24:32,038 - __main__ - INFO - Batch 8: Loss = 3.2338 (Recon = 2.7792, KL = 33.6721, β = 0.0135)
+2024-12-08 01:24:32,068 - __main__ - INFO - Generating test sample
+2024-12-08 01:24:34,082 - __main__ - INFO - Generated properties shape: torch.Size([1, 90])
+2024-12-08 01:24:34,082 - __main__ - INFO - Generated positions shape: torch.Size([1, 60])
+2024-12-08 01:24:34,083 - __main__ - INFO - Test completed successfully

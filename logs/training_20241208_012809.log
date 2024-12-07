@@ -1,0 +1,33 @@
+2024-12-08 01:28:09,084 - __main__ - INFO - Using device: mps
+2024-12-08 01:28:09,085 - __main__ - INFO - Dataset loaded - Train: 90, Val: 10
+2024-12-08 01:28:09,400 - __main__ - INFO - Model initialized with 1012699 parameters
+2024-12-08 01:28:09,400 - __main__ - INFO - Starting training
+2024-12-08 01:28:11,737 - __main__ - INFO - Epoch 0 - Train Loss: 4.0917 (Recon: 3.5346, KL: 404.4184)
+2024-12-08 01:28:13,571 - __main__ - INFO - Epoch 0 - Validation Loss: 159.5545
+2024-12-08 01:28:13,730 - __main__ - INFO - New best model saved at epoch 0
+2024-12-08 01:28:13,853 - __main__ - INFO - Epoch 1 - Train Loss: 3.7082 (Recon: 2.7656, KL: 258.3290)
+2024-12-08 01:28:13,859 - __main__ - INFO - Epoch 1 - Validation Loss: 102.4577
+2024-12-08 01:28:14,005 - __main__ - INFO - New best model saved at epoch 1
+2024-12-08 01:28:14,120 - __main__ - INFO - Epoch 2 - Train Loss: 3.5405 (Recon: 2.5118, KL: 174.1958)
+2024-12-08 01:28:14,126 - __main__ - INFO - Epoch 2 - Validation Loss: 71.2084
+2024-12-08 01:28:14,263 - __main__ - INFO - New best model saved at epoch 2
+2024-12-08 01:28:14,369 - __main__ - INFO - Epoch 3 - Train Loss: 3.4538 (Recon: 2.3700, KL: 132.3583)
+2024-12-08 01:28:14,375 - __main__ - INFO - Epoch 3 - Validation Loss: 58.0444
+2024-12-08 01:28:14,521 - __main__ - INFO - New best model saved at epoch 3
+2024-12-08 01:28:14,629 - __main__ - INFO - Epoch 4 - Train Loss: 3.3871 (Recon: 2.2045, KL: 113.0544)
+2024-12-08 01:28:14,636 - __main__ - INFO - Epoch 4 - Validation Loss: 53.1418
+2024-12-08 01:28:14,846 - __main__ - INFO - New best model saved at epoch 4
+2024-12-08 01:28:14,954 - __main__ - INFO - Epoch 5 - Train Loss: 3.3689 (Recon: 2.1096, KL: 99.5770)
+2024-12-08 01:28:14,959 - __main__ - INFO - Epoch 5 - Validation Loss: 47.8778
+2024-12-08 01:28:15,102 - __main__ - INFO - New best model saved at epoch 5
+2024-12-08 01:28:15,208 - __main__ - INFO - Epoch 6 - Train Loss: 3.2850 (Recon: 2.0061, KL: 85.6565)
+2024-12-08 01:28:15,213 - __main__ - INFO - Epoch 6 - Validation Loss: 42.2964
+2024-12-08 01:28:15,342 - __main__ - INFO - New best model saved at epoch 6
+2024-12-08 01:28:15,445 - __main__ - INFO - Epoch 7 - Train Loss: 3.2013 (Recon: 1.9222, KL: 74.5716)
+2024-12-08 01:28:15,450 - __main__ - INFO - Epoch 7 - Validation Loss: 37.7552
+2024-12-08 01:28:15,584 - __main__ - INFO - New best model saved at epoch 7
+2024-12-08 01:28:15,696 - __main__ - INFO - Epoch 8 - Train Loss: 3.0964 (Recon: 1.8580, KL: 63.6763)
+2024-12-08 01:28:15,703 - __main__ - INFO - Epoch 8 - Validation Loss: 33.5531
+2024-12-08 01:28:15,839 - __main__ - INFO - New best model saved at epoch 8
+2024-12-08 01:28:15,946 - __main__ - INFO - Epoch 9 - Train Loss: 2.9662 (Recon: 1.7756, KL: 54.9399)
+2024-12-08 01:28:15,952 - __main__ - INFO - Epoch 9 - Validation Loss: 30.1212

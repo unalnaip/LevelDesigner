@@ -1,110 +1,88 @@
-# Level Generation System - Phase 0: Data Preparation
+# Level Designer
 
-This phase focuses on cleaning, encoding, and formatting the existing level data and object lists into a structured dataset suitable for training models.
-
-## Project Structure
-```
-leveldesigner/
-├── data/                      # Data files
-│   ├── raw/                  # Original data files
-│   └── processed/            # Processed datasets
-├── src/                      # Source code
-│   ├── config/              # Configuration files
-│   │   └── data_processing_config.py
-│   ├── data_processing/     # Data processing modules
-│   └── utils/               # Utility functions
-├── tests/                    # Test files
-├── setup.py                  # Package setup file
-└── requirements.txt          # Dependencies
-```
-
-## Setup
-
-1. Create and activate a virtual environment (recommended):
-```bash
-python3 -m venv venv
-source venv/bin/activate  # On Unix/macOS
-# or
-.\venv\Scripts\activate  # On Windows
-```
-
-2. Install the package in development mode:
-```bash
-pip install -e .
-```
-
-3. Ensure data files are in the correct location:
-```
-data/raw/
-├── Playliner_Match_Factory.xlsx - Level Parameteres (1).csv
-└── objectlistbig.txt
-```
-
-## Data Processing
-
-Run the data processing script:
-```bash
-python -m src.data_processing.processor
-```
-
-This will:
-1. Load and clean the level and object data
-2. Convert categorical variables to numeric encodings
-3. Normalize continuous variables
-4. Generate dataset statistics
-5. Save processed data in JSON format
-
-## Output
-
-The script generates two files in `data/processed/`:
-
-1. `processed_levels.json`: Contains the processed level data with:
-   - Level metadata (difficulty, time limit, etc.)
-   - Goal information
-   - Encoded categorical variables
-
-2. `dataset_statistics.json`: Contains summary statistics:
-   - Total number of levels
-   - Difficulty distribution
-   - Time limit statistics
-   - Goal count statistics
+An AI-powered level design system using conditional VAE with spatial awareness.
 
 ## Data Format
 
-### Level Data Structure
-```json
+### Sequence Format
+The system uses a sequence-based format for level representation:
+
+```python
 {
-    "level_id": "integer",
-    "metadata": {
-        "difficulty": "string",
-        "difficulty_encoded": "integer",
-        "time_limit": "integer",
-        "total_goals": "integer",
-        "unique_goals": "integer"
-    },
-    "goals": {
-        "goal_1": "integer",
-        "goal_2": "integer",
-        ...
-    }
+    'level_data': np.array,      # Shape: (max_objects * 3,) - [type, size, shape] for each object
+    'conditions': np.array,      # Shape: (3,) - [difficulty, time_limit, object_count]
+    'spatial_features': np.array # Shape: (max_objects * 2,) - [x, y] grid positions
 }
 ```
 
-### Encodings
-- Difficulty: Normal (0), Hard (1), Super Hard (2)
-- Time: Converted to seconds
-- Goals: Raw counts preserved
+### Positional Encoding
+- Each object is assigned a grid position normalized to [-1, 1]
+- Grid positions are based on row/column indices
+- Positional embeddings use sinusoidal encoding for better spatial awareness
+
+### Condition Embeddings
+The system uses a flexible condition encoding mechanism:
+- Difficulty: Normalized [0, 1]
+- Time Limit: Normalized [30s, 300s] → [0, 1]
+- Object Count: Normalized by max_objects
+
+## Architecture
+
+### Enhanced CVAE
+- Attention-based spatial encoder
+- β-VAE with KL annealing
+- Flexible condition encoder
+- Physics-aware GNN for object relationships
+
+### Training Configuration
+```python
+MODEL_CONFIG = {
+    'latent_dim': 32,
+    'hidden_dims': [256, 128],
+    'attention_heads': 4,
+    'dropout': 0.1
+}
+
+TRAINING_CONFIG = {
+    'batch_size': 8,
+    'learning_rate': 0.0001,
+    'beta': 1.5,
+    'kl_anneal_rate': 0.005
+}
+```
+
+### Monitoring
+- Loss components (reconstruction, KL)
+- Attention weights visualization
+- Latent space analysis
+- Gradient statistics
+
+## Unity Integration
+The system maintains backward compatibility with Unity:
+- Positions are mapped to Unity's coordinate system
+- Object properties are preserved (type, scale, rotation)
+- Special flags (t, a, r) are handled appropriately
+
+## Usage
+
+1. Data Processing:
+```bash
+python src/data_processing/processor.py
+```
+
+2. Training:
+```bash
+python src/train_model.py
+```
+
+3. Level Generation:
+```bash
+python src/generation/level_generator.py
+```
 
 ## Development
 
-### Running Tests
-```bash
-python -m pytest tests/
-```
-
-### Code Style
-Follow PEP 8 guidelines and use type hints where possible.
-
-## Next Steps
-
-The processed dataset will be used in Phase 1 to train the conditional Variational Autoencoder (cVAE) for level generation. 
+### Requirements
+- Python 3.8+
+- PyTorch 2.0+
+- CUDA or MPS (Apple Silicon)

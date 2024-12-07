@@ -1,351 +1,402 @@
 import torch
 import torch.nn as nn
-import torch.optim as optim
-from torch.utils.data import Dataset, DataLoader
-import json
+from torch.utils.data import DataLoader, random_split
 import numpy as np
-from models.cvae import ChainedVAE
+from pathlib import Path
 import logging
-import os
 from datetime import datetime
-import psutil
-import platform
-import time
-from utils.training_monitor import TrainingMonitor
 from tqdm import tqdm
+import json
 
-# Configure logging
-log_dir = "logs"
-os.makedirs(log_dir, exist_ok=True)
-log_file = os.path.join(log_dir, f"training_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log")
+from models.cvae import EnhancedCVAE
+from utils.level_dataset import LevelDataset
+from utils.training_monitor import TrainingMonitor
+from utils.generate_sample_data import save_sample_data
 
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler(log_file),
-        logging.StreamHandler()
-    ]
-)
-logger = logging.getLogger(__name__)
+def setup_logger():
+    """Configure logging for training"""
+    log_dir = Path("logs")
+    log_dir.mkdir(exist_ok=True)
+    
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    log_file = log_dir / f"training_{timestamp}.log"
+    
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler(log_file),
+            logging.StreamHandler()
+        ]
+    )
+    return logging.getLogger(__name__)
 
-class LevelDataset(Dataset):
-    def __init__(self, data_path):
-        logger.info(f"Initializing dataset from {data_path}")
-        start_time = time.time()
+logger = setup_logger()
+
+class Trainer:
+    def __init__(self, config):
+        self.config = config
+        self.device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+        logger.info(f"Using device: {self.device}")
         
-        with open(data_path, 'r') as f:
-            self.data = json.load(f)
+        # Create output directories
+        self.setup_directories()
         
-        logger.info(f"Loaded {len(self.data)} levels from JSON in {time.time() - start_time:.2f}s")
+        # Initialize dataset and model
+        self.setup_data()
+        self.setup_model()
         
-        # Process data into layers
-        self.processed_data = []
-        self.conditions = []
-        
-        logger.info("Processing levels into layers...")
-        progress_bar = tqdm(enumerate(self.data), total=len(self.data), desc="Processing levels")
-        for idx, level in progress_bar:
-            # Sort objects by y-position to determine layers
-            objects = sorted(level['objects'], key=lambda x: x['position']['y'])
-            
-            # Group into 3 layers
-            num_objects = len(objects)
-            layer_size = max(1, num_objects // 3)
-            
-            layers = [
-                objects[i:i + layer_size]
-                for i in range(0, num_objects, layer_size)
-            ]
-            
-            # Pad or truncate to exactly 3 layers
-            while len(layers) < 3:
-                layers.append([])
-            if len(layers) > 3:
-                layers = layers[:3]
-            
-            # Convert each layer to fixed-size feature vector
-            layer_vectors = []
-            for layer in layers:
-                layer_vec = []
-                for obj in layer:
-                    obj_type = obj.get('type', 0)
-                    size = max(obj['scale']['x'], obj['scale']['y'], obj['scale']['z'])
-                    shape = self.determine_shape(obj['scale'])
-                    layer_vec.extend([obj_type, size, shape])
-                
-                # Pad layer vector
-                while len(layer_vec) < 30:
-                    layer_vec.extend([0, 0, 0])
-                
-                layer_vectors.append(layer_vec)
-            
-            # Combine layers
-            level_vector = []
-            for vec in layer_vectors:
-                level_vector.extend(vec)
-            
-            # Create condition vector
-            condition = [
-                level['difficulty'],
-                level['time_limit'] / 300.0,
-                len(objects) / 20.0
-            ]
-            
-            self.processed_data.append(level_vector)
-            self.conditions.append(condition)
-            
-            # Update progress description
-            if idx % 100 == 0:
-                progress_bar.set_description(f"Processing levels ({idx}/{len(self.data)})")
-        
-        logger.info(f"Dataset initialization completed in {time.time() - start_time:.2f}s")
-        logger.info(f"Total samples: {len(self.processed_data)}")
-    
-    def determine_shape(self, scale):
-        """Determine object shape based on scale ratios"""
-        x, y, z = scale['x'], scale['y'], scale['z']
-        total = x + y + z
-        if total == 0:
-            return 0
-        
-        x, y, z = x/total, y/total, z/total
-        
-        if abs(x - y) < 0.1 and abs(y - z) < 0.1:
-            return 0  # Cube
-        elif y > max(x, z) * 2:
-            return 1  # Vertical
-        elif x > max(y, z) * 2:
-            return 2  # Horizontal
-        elif z > max(x, y) * 2:
-            return 3  # Deep
-        elif abs(x - z) < 0.1 and y < min(x, z):
-            return 4  # Flat
-        elif max(x, y, z) / min(x, y, z) > 3:
-            return 5  # Long
-        else:
-            return 6  # Irregular
-    
-    def __len__(self):
-        return len(self.processed_data)
-    
-    def __getitem__(self, idx):
-        return (
-            torch.FloatTensor(self.processed_data[idx]),
-            torch.FloatTensor(self.conditions[idx])
+        # Initialize training monitor
+        self.monitor = TrainingMonitor(
+            log_dir=str(self.run_dir),
+            model_name='enhanced_cvae'
         )
-
-def train_model(data_path, output_path, num_epochs=100, batch_size=128):
-    # Log system information
-    device = log_system_info()
-    
-    # Initialize training monitor
-    monitor = TrainingMonitor()
-    
-    # Initialize dataset and dataloader
-    logger.info("Initializing dataset and dataloader...")
-    dataset = LevelDataset(data_path)
-    
-    # Optimize for M3 Max
-    num_workers = min(16, os.cpu_count())  # Use more cores for data loading
-    dataloader = DataLoader(
-        dataset,
-        batch_size=batch_size,
-        shuffle=True,
-        num_workers=num_workers,
-        pin_memory=True,
-        prefetch_factor=2,  # Prefetch batches
-        persistent_workers=True  # Keep workers alive between epochs
-    )
-    
-    # Initialize model with float16 for faster computation
-    logger.info("Initializing model...")
-    input_dim = 30
-    condition_dim = 3
-    model = ChainedVAE(input_dim, condition_dim).to(device)
-    
-    # Use float16 for faster computation on MPS
-    if device.type == 'mps':
-        model = model.to(torch.float16)
-    
-    # Initialize optimizer with larger learning rate and momentum
-    optimizer = optim.AdamW(
-        model.parameters(),
-        lr=0.002,
-        betas=(0.9, 0.999),
-        eps=1e-8,
-        weight_decay=0.01
-    )
-    
-    # Learning rate scheduler for faster convergence
-    scheduler = optim.lr_scheduler.OneCycleLR(
-        optimizer,
-        max_lr=0.002,
-        epochs=num_epochs,
-        steps_per_epoch=len(dataloader),
-        pct_start=0.3,  # Warm up for 30% of training
-        div_factor=25,  # Initial lr = max_lr/25
-        final_div_factor=1000  # Final lr = max_lr/1000
-    )
-    
-    # Create checkpoint directory
-    checkpoint_dir = os.path.join("models", "checkpoints")
-    os.makedirs(checkpoint_dir, exist_ok=True)
-    
-    # Training loop
-    logger.info("Starting training...")
-    best_loss = float('inf')
-    start_time = time.time()
-    
-    try:
-        for epoch in range(num_epochs):
-            epoch_start_time = time.time()
-            total_loss = 0
-            num_batches = 0
+        
+        # Initialize early stopping
+        self.best_val_loss = float('inf')
+        self.patience_counter = 0
+        
+    def setup_directories(self):
+        """Create necessary directories for outputs"""
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        self.run_dir = Path("runs") / timestamp
+        self.checkpoint_dir = self.run_dir / "checkpoints"
+        self.sample_dir = self.run_dir / "samples"
+        
+        self.run_dir.mkdir(parents=True)
+        self.checkpoint_dir.mkdir()
+        self.sample_dir.mkdir()
+        
+        # Save configuration
+        with open(self.run_dir / "config.json", "w") as f:
+            json.dump(self.config, f, indent=2)
             
-            # Log system metrics at start of epoch
-            system_metrics = monitor.log_system_metrics()
-            logger.info(f"System metrics: {system_metrics}")
+    def setup_data(self):
+        """Initialize datasets and dataloaders"""
+        # Load dataset
+        self.dataset = LevelDataset(
+            data_path=self.config['data']['path'],
+            grid_size=self.config['data']['grid_size'],
+            max_objects=self.config['data']['max_objects']
+        )
+        
+        # Split dataset
+        val_size = int(len(self.dataset) * self.config['training']['val_split'])
+        train_size = len(self.dataset) - val_size
+        
+        self.train_dataset, self.val_dataset = random_split(
+            self.dataset, 
+            [train_size, val_size]
+        )
+        
+        # Create dataloaders
+        self.train_loader = DataLoader(
+            self.train_dataset,
+            batch_size=self.config['training']['batch_size'],
+            shuffle=True,
+            num_workers=self.config['training']['num_workers'],
+            pin_memory=True
+        )
+        
+        self.val_loader = DataLoader(
+            self.val_dataset,
+            batch_size=self.config['training']['batch_size'],
+            shuffle=False,
+            num_workers=self.config['training']['num_workers'],
+            pin_memory=True
+        )
+        
+        logger.info(f"Dataset loaded - Train: {len(self.train_dataset)}, Val: {len(self.val_dataset)}")
+        
+    def setup_model(self):
+        """Initialize model, optimizer, and scheduler"""
+        # Create model
+        self.model = EnhancedCVAE(
+            input_dim=self.dataset.get_input_dim(),
+            condition_dim=self.dataset.get_condition_dim(),
+            latent_dim=self.config['model']['latent_dim'],
+            hidden_dims=self.config['model']['hidden_dims'],
+            attention_heads=self.config['model']['attention_heads'],
+            dropout=self.config['model']['dropout'],
+            beta_start=self.config['model']['beta_start'],
+            beta_end=self.config['model']['beta_end'],
+            beta_steps=self.config['model']['beta_steps']
+        ).to(self.device)
+        
+        # Initialize optimizer
+        self.optimizer = torch.optim.AdamW(
+            self.model.parameters(),
+            lr=self.config['training']['learning_rate'],
+            weight_decay=self.config['training']['weight_decay']
+        )
+        
+        # Initialize learning rate scheduler
+        self.scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+            self.optimizer,
+            mode='min',
+            factor=0.5,
+            patience=5,
+            verbose=True
+        )
+        
+        logger.info(f"Model initialized with {sum(p.numel() for p in self.model.parameters())} parameters")
+        
+    def save_checkpoint(self, epoch, is_best=False):
+        """Save model checkpoint"""
+        checkpoint = {
+            'epoch': epoch,
+            'model_state_dict': self.model.state_dict(),
+            'optimizer_state_dict': self.optimizer.state_dict(),
+            'scheduler_state_dict': self.scheduler.state_dict(),
+            'config': self.config
+        }
+        
+        # Save regular checkpoint
+        checkpoint_path = self.checkpoint_dir / f"checkpoint_epoch_{epoch}.pt"
+        torch.save(checkpoint, checkpoint_path)
+        
+        # Save best model if needed
+        if is_best:
+            best_path = self.checkpoint_dir / "best_model.pt"
+            torch.save(checkpoint, best_path)
+            logger.info(f"New best model saved at epoch {epoch}")
+    
+    def load_checkpoint(self, checkpoint_path):
+        """Load model checkpoint"""
+        checkpoint = torch.load(checkpoint_path)
+        
+        self.model.load_state_dict(checkpoint['model_state_dict'])
+        self.optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+        self.scheduler.load_state_dict(checkpoint['scheduler_state_dict'])
+        
+        return checkpoint['epoch']
+    
+    def generate_samples(self, epoch, num_samples=5):
+        """Generate and save sample levels"""
+        self.model.eval()
+        with torch.no_grad():
+            # Generate samples with varying conditions
+            conditions = []
+            for _ in range(num_samples):
+                # Create different types of conditions
+                conditions.append([
+                    np.random.uniform(0, 1),  # Difficulty
+                    np.random.uniform(30, 300) / 300,  # Time limit
+                    np.random.uniform(5, 30) / 30  # Object count
+                ])
+            conditions = torch.FloatTensor(conditions).to(self.device)
             
-            model.train()
-            progress_bar = tqdm(enumerate(dataloader), total=len(dataloader),
-                              desc=f"Epoch {epoch+1}/{num_epochs}")
+            # Generate samples one by one to avoid batch size issues
+            all_properties = []
+            all_positions = []
             
-            for batch_idx, (batch_data, batch_conditions) in progress_bar:
-                # Move data to device and convert to float16 if using MPS
-                if device.type == 'mps':
-                    batch_data = batch_data.to(device, dtype=torch.float16)
-                    batch_conditions = batch_conditions.to(device, dtype=torch.float16)
-                else:
-                    batch_data = batch_data.to(device)
-                    batch_conditions = batch_conditions.to(device)
+            for i in range(num_samples):
+                z = torch.randn(1, self.config['model']['latent_dim']).to(self.device)
+                properties, positions = self.model.decode(z, conditions[i:i+1])
+                
+                all_properties.append(properties.cpu().numpy())
+                all_positions.append(positions.cpu().numpy())
+            
+            # Save samples
+            samples = {
+                'epoch': epoch,
+                'conditions': conditions.cpu().numpy().tolist(),
+                'properties': np.concatenate(all_properties, axis=0).tolist(),
+                'positions': np.concatenate(all_positions, axis=0).tolist()
+            }
+            
+            sample_path = self.sample_dir / f"samples_epoch_{epoch}.json"
+            with open(sample_path, 'w') as f:
+                json.dump(samples, f, indent=2)
+    
+    def train_epoch(self, epoch):
+        """Train for one epoch"""
+        self.model.train()
+        total_loss = 0
+        total_recon_loss = 0
+        total_kl_loss = 0
+        
+        pbar = tqdm(self.train_loader, desc=f"Epoch {epoch}")
+        for batch_idx, (level_data, conditions, spatial_features) in enumerate(pbar):
+            # Move data to device
+            level_data = level_data.to(self.device)
+            conditions = conditions.to(self.device)
+            spatial_features = spatial_features.to(self.device)
+            
+            # Forward pass
+            self.optimizer.zero_grad()
+            output = self.model(level_data, conditions, spatial_features=spatial_features)
+            
+            # Calculate loss
+            recon_loss = output['recon_loss']
+            kl_loss = output['kl_loss']
+            beta = output['beta']
+            
+            loss = recon_loss + beta * kl_loss
+            
+            # Backward pass
+            loss.backward()
+            torch.nn.utils.clip_grad_norm_(self.model.parameters(), self.config['training']['grad_clip'])
+            self.optimizer.step()
+            
+            # Update metrics
+            total_loss += loss.item()
+            total_recon_loss += recon_loss.item()
+            total_kl_loss += kl_loss.item()
+            
+            # Update progress bar
+            pbar.set_postfix({
+                'loss': f"{loss.item():.4f}",
+                'recon': f"{recon_loss.item():.4f}",
+                'kl': f"{kl_loss.item():.4f}",
+                'β': f"{beta:.4f}"
+            })
+            
+            # Log batch metrics
+            self.monitor.log_metrics({
+                'total_loss': loss.item(),
+                'recon_loss': recon_loss.item(),
+                'kl_loss': kl_loss.item(),
+                'beta': beta
+            })
+            
+            # Log attention weights periodically
+            if batch_idx % 100 == 0:
+                attention_weights = self.model.get_attention_weights()
+                if attention_weights['encoder'] is not None:
+                    self.monitor.log_attention_weights('encoder', attention_weights['encoder'])
+                if attention_weights['decoder'] is not None:
+                    self.monitor.log_attention_weights('decoder', attention_weights['decoder'])
+        
+        # Calculate epoch metrics
+        num_batches = len(self.train_loader)
+        avg_loss = total_loss / num_batches
+        avg_recon_loss = total_recon_loss / num_batches
+        avg_kl_loss = total_kl_loss / num_batches
+        
+        return avg_loss, avg_recon_loss, avg_kl_loss
+    
+    def validate(self, epoch):
+        """Run validation"""
+        self.model.eval()
+        total_loss = 0
+        total_recon_loss = 0
+        total_kl_loss = 0
+        
+        with torch.no_grad():
+            for level_data, conditions, spatial_features in self.val_loader:
+                # Move data to device
+                level_data = level_data.to(self.device)
+                conditions = conditions.to(self.device)
+                spatial_features = spatial_features.to(self.device)
                 
                 # Forward pass
-                output, loss = model(batch_data, batch_conditions)
+                output = self.model(level_data, conditions, spatial_features=spatial_features)
                 
-                # Backward pass
-                optimizer.zero_grad(set_to_none=True)  # Faster than zero_grad()
-                loss.backward()
+                # Calculate loss
+                recon_loss = output['recon_loss']
+                kl_loss = output['kl_loss']
+                beta = output['beta']
                 
-                # Gradient clipping for stability
-                torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+                loss = recon_loss + beta * kl_loss
                 
-                optimizer.step()
-                scheduler.step()
-                
+                # Update metrics
                 total_loss += loss.item()
-                num_batches += 1
-                
-                # Update progress bar
-                current_lr = scheduler.get_last_lr()[0]
-                progress_bar.set_postfix({
-                    'loss': f"{loss.item():.4f}",
-                    'avg_loss': f"{total_loss/num_batches:.4f}",
-                    'lr': f"{current_lr:.6f}"
-                })
-                
-                # Log batch metrics (less frequently)
-                if batch_idx % 20 == 0:
-                    monitor.log_batch(epoch, batch_idx, loss.item(), current_lr, len(dataloader))
-            
-            # Calculate epoch metrics
-            avg_loss = total_loss / num_batches
-            epoch_time = time.time() - epoch_start_time
-            memory_used = psutil.Process().memory_info().rss / (1024**3)
-            
-            # Log epoch metrics
-            monitor.log_epoch(epoch, avg_loss, current_lr, epoch_time, memory_used)
-            
-            # Log progress
-            logger.info(f"Epoch {epoch+1}/{num_epochs}")
-            logger.info(f"Average Loss: {avg_loss:.4f}")
-            logger.info(f"Epoch Time: {epoch_time:.2f}s")
-            logger.info(f"Memory Usage: {memory_used:.2f} GB")
-            logger.info(f"Learning Rate: {current_lr:.6f}")
-            
-            # Save checkpoint if best model (less frequently)
-            if avg_loss < best_loss:
-                best_loss = avg_loss
-                checkpoint_path = os.path.join(checkpoint_dir, f"best_model_epoch_{epoch+1}.pt")
-                # Convert back to float32 for saving
-                if device.type == 'mps':
-                    model = model.to(torch.float32)
-                torch.save({
-                    'epoch': epoch,
-                    'model_state_dict': model.state_dict(),
-                    'optimizer_state_dict': optimizer.state_dict(),
-                    'scheduler_state_dict': scheduler.state_dict(),
-                    'loss': best_loss
-                }, checkpoint_path)
-                if device.type == 'mps':
-                    model = model.to(torch.float16)
-                logger.info(f"Saved best model checkpoint to {checkpoint_path}")
-            
-            # Regular checkpoint every 20 epochs
-            if (epoch + 1) % 20 == 0:
-                checkpoint_path = os.path.join(checkpoint_dir, f"checkpoint_epoch_{epoch+1}.pt")
-                if device.type == 'mps':
-                    model = model.to(torch.float32)
-                torch.save({
-                    'epoch': epoch,
-                    'model_state_dict': model.state_dict(),
-                    'optimizer_state_dict': optimizer.state_dict(),
-                    'scheduler_state_dict': scheduler.state_dict(),
-                    'loss': avg_loss
-                }, checkpoint_path)
-                if device.type == 'mps':
-                    model = model.to(torch.float16)
-                logger.info(f"Saved checkpoint to {checkpoint_path}")
-            
-            # Early stopping
-            if avg_loss < 0.001:  # Very good convergence
-                logger.info("Reached excellent loss value, stopping early")
-                break
-    
-    except KeyboardInterrupt:
-        logger.info("Training interrupted by user")
-    except Exception as e:
-        logger.error(f"Training failed with error: {str(e)}")
-        raise
-    finally:
-        # Save final model and clean up
-        if device.type == 'mps':
-            model = model.to(torch.float32)
-        torch.save(model.state_dict(), output_path)
-        monitor.close()
+                total_recon_loss += recon_loss.item()
+                total_kl_loss += kl_loss.item()
         
-        # Log training summary
-        total_time = time.time() - start_time
-        logger.info("\nTraining Summary:")
-        logger.info(f"Total training time: {total_time/3600:.2f} hours")
-        logger.info(f"Best loss achieved: {best_loss:.4f}")
-        logger.info(f"Final model saved to: {output_path}")
-        logger.info(f"Training logs saved to: {log_file}")
-
-def log_system_info():
-    """Log system information for debugging"""
-    logger.info("System Information:")
-    logger.info(f"OS: {platform.system()} {platform.version()}")
-    logger.info(f"Python version: {platform.python_version()}")
-    logger.info(f"PyTorch version: {torch.__version__}")
-    logger.info(f"CPU: {platform.processor()}")
-    logger.info(f"CPU Cores: {os.cpu_count()}")
-    logger.info(f"RAM: {psutil.virtual_memory().total / (1024**3):.2f} GB")
-    logger.info(f"Available RAM: {psutil.virtual_memory().available / (1024**3):.2f} GB")
+        # Calculate validation metrics
+        num_batches = len(self.val_loader)
+        avg_loss = total_loss / num_batches
+        avg_recon_loss = total_recon_loss / num_batches
+        avg_kl_loss = total_kl_loss / num_batches
+        
+        # Log validation metrics
+        self.monitor.log_metrics({
+            'val_total_loss': avg_loss,
+            'val_recon_loss': avg_recon_loss,
+            'val_kl_loss': avg_kl_loss
+        }, phase='val')
+        
+        return avg_loss
     
-    # Check if MPS is available (Apple Silicon)
-    if torch.backends.mps.is_available():
-        logger.info("Apple Silicon MPS is available")
-        device = torch.device("mps")
-    else:
-        logger.info("MPS not available, using CPU")
-        device = torch.device("cpu")
-    
-    return device
+    def train(self):
+        """Main training loop"""
+        logger.info("Starting training")
+        
+        for epoch in range(self.config['training']['num_epochs']):
+            # Training phase
+            train_loss, train_recon, train_kl = self.train_epoch(epoch)
+            logger.info(
+                f"Epoch {epoch} - Train Loss: {train_loss:.4f} "
+                f"(Recon: {train_recon:.4f}, KL: {train_kl:.4f})"
+            )
+            
+            # Validation phase
+            val_loss = self.validate(epoch)
+            logger.info(f"Epoch {epoch} - Validation Loss: {val_loss:.4f}")
+            
+            # Learning rate scheduling
+            self.scheduler.step(val_loss)
+            
+            # Save checkpoint
+            if (epoch + 1) % self.config['training']['checkpoint_interval'] == 0:
+                self.save_checkpoint(epoch)
+            
+            # Generate samples
+            if (epoch + 1) % self.config['training']['sample_interval'] == 0:
+                self.generate_samples(epoch)
+            
+            # Early stopping check
+            if val_loss < self.best_val_loss:
+                self.best_val_loss = val_loss
+                self.patience_counter = 0
+                self.save_checkpoint(epoch, is_best=True)
+            else:
+                self.patience_counter += 1
+                if self.patience_counter >= self.config['training']['patience']:
+                    logger.info(f"Early stopping triggered at epoch {epoch}")
+                    break
+        
+        logger.info("Training completed")
+        self.monitor.close()
 
-if __name__ == '__main__':
-    try:
-        train_model('data/processed_levels.json', 'models/level_generator.pt')
-    except Exception as e:
-        logger.error(f"Training failed: {str(e)}")
-        raise 
+def main():
+    # Configuration
+    config = {
+        'data': {
+            'path': 'data/processed/training_data.npz',
+            'grid_size': (6, 7),
+            'max_objects': 30
+        },
+        'model': {
+            'latent_dim': 32,
+            'hidden_dims': [256, 128],
+            'attention_heads': 4,
+            'dropout': 0.1,
+            'beta_start': 0.0,
+            'beta_end': 1.5,
+            'beta_steps': 2000
+        },
+        'training': {
+            'num_epochs': 100,
+            'batch_size': 32,
+            'learning_rate': 0.0001,
+            'weight_decay': 1e-5,
+            'grad_clip': 1.0,
+            'val_split': 0.1,
+            'patience': 15,
+            'checkpoint_interval': 5,
+            'sample_interval': 10,
+            'num_workers': 0  # Set to 0 for MPS
+        }
+    }
+    
+    # Initialize trainer
+    trainer = Trainer(config)
+    
+    # Start training
+    trainer.train()
+
+if __name__ == "__main__":
+    main()

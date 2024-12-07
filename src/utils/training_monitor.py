@@ -1,146 +1,148 @@
 import torch
-import matplotlib.pyplot as plt
-import numpy as np
-from datetime import datetime
-import os
-import psutil
-import logging
 from torch.utils.tensorboard import SummaryWriter
+import numpy as np
+import matplotlib.pyplot as plt
+from pathlib import Path
 import json
+import time
+from datetime import datetime
+import shutil
 
-logger = logging.getLogger(__name__)
+class EarlyStopping:
+    """Early stopping handler with validation monitoring"""
+    def __init__(self, patience=10, min_delta=0.001, metric_window=5):
+        self.patience = patience
+        self.min_delta = min_delta
+        self.metric_window = metric_window
+        self.best_loss = float('inf')
+        self.counter = 0
+        self.early_stop = False
+        self.val_losses = []
+        
+    def __call__(self, val_loss):
+        # Add current validation loss
+        self.val_losses.append(val_loss)
+        
+        # Calculate smoothed loss over window
+        if len(self.val_losses) >= self.metric_window:
+            smoothed_loss = np.mean(self.val_losses[-self.metric_window:])
+            
+            # Check if improvement is significant
+            if smoothed_loss < self.best_loss - self.min_delta:
+                self.best_loss = smoothed_loss
+                self.counter = 0
+            else:
+                self.counter += 1
+                if self.counter >= self.patience:
+                    self.early_stop = True
+        
+        return self.early_stop
 
 class TrainingMonitor:
-    def __init__(self, log_dir="logs", model_name="level_generator"):
-        self.log_dir = log_dir
+    """
+    Enhanced training monitor with validation tracking and early stopping
+    """
+    def __init__(self, log_dir='logs', model_name='enhanced_cvae'):
+        self.log_dir = Path(log_dir)
         self.model_name = model_name
-        self.start_time = datetime.now()
         
-        # Create tensorboard writer
-        self.writer = SummaryWriter(
-            os.path.join(log_dir, "tensorboard", model_name, self.start_time.strftime("%Y%m%d_%H%M%S"))
-        )
+        # Create timestamped run directory
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        self.run_dir = self.log_dir / f"{model_name}_{timestamp}"
+        self.run_dir.mkdir(parents=True, exist_ok=True)
         
-        # Initialize metrics
-        self.losses = []
-        self.epoch_times = []
-        self.memory_usage = []
-        self.learning_rates = []
+        # Initialize tensorboard writer
+        self.writer = SummaryWriter(log_dir=str(self.run_dir))
         
-        # Create plots directory
-        self.plots_dir = os.path.join(log_dir, "plots")
-        os.makedirs(self.plots_dir, exist_ok=True)
-        
-        logger.info(f"Training monitor initialized at {self.log_dir}")
-    
-    def log_epoch(self, epoch, loss, lr, epoch_time, memory_used):
-        """Log metrics for current epoch"""
-        # Store metrics
-        self.losses.append(loss)
-        self.epoch_times.append(epoch_time)
-        self.memory_usage.append(memory_used)
-        self.learning_rates.append(lr)
-        
-        # Log to tensorboard
-        self.writer.add_scalar("Loss/train", loss, epoch)
-        self.writer.add_scalar("Time/epoch", epoch_time, epoch)
-        self.writer.add_scalar("System/memory_gb", memory_used, epoch)
-        self.writer.add_scalar("Training/learning_rate", lr, epoch)
-        
-        # Generate plots every 10 epochs
-        if (epoch + 1) % 10 == 0:
-            self.generate_plots(epoch + 1)
-    
-    def log_batch(self, epoch, batch_idx, loss, lr, num_batches):
-        """Log metrics for current batch"""
-        step = epoch * num_batches + batch_idx
-        self.writer.add_scalar("Loss/batch", loss, step)
-        self.writer.add_scalar("Training/learning_rate_batch", lr, step)
-    
-    def generate_plots(self, epoch):
-        """Generate and save training visualization plots"""
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        
-        # Create figure with subplots
-        fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(15, 10))
-        
-        # Plot loss
-        ax1.plot(self.losses)
-        ax1.set_title("Training Loss")
-        ax1.set_xlabel("Epoch")
-        ax1.set_ylabel("Loss")
-        ax1.grid(True)
-        
-        # Plot epoch times
-        ax2.plot(self.epoch_times)
-        ax2.set_title("Epoch Times")
-        ax2.set_xlabel("Epoch")
-        ax2.set_ylabel("Time (s)")
-        ax2.grid(True)
-        
-        # Plot memory usage
-        ax3.plot(self.memory_usage)
-        ax3.set_title("Memory Usage")
-        ax3.set_xlabel("Epoch")
-        ax3.set_ylabel("Memory (GB)")
-        ax3.grid(True)
-        
-        # Plot learning rate
-        ax4.plot(self.learning_rates)
-        ax4.set_title("Learning Rate")
-        ax4.set_xlabel("Epoch")
-        ax4.set_ylabel("Learning Rate")
-        ax4.grid(True)
-        
-        # Save plot
-        plot_path = os.path.join(self.plots_dir, f"training_plots_epoch_{epoch}_{timestamp}.png")
-        plt.tight_layout()
-        plt.savefig(plot_path)
-        plt.close()
-        
-        logger.info(f"Training plots saved to {plot_path}")
-    
-    def log_system_metrics(self):
-        """Log current system metrics"""
-        cpu_percent = psutil.cpu_percent(interval=1)
-        memory = psutil.virtual_memory()
-        
-        metrics = {
-            "cpu_percent": cpu_percent,
-            "memory_percent": memory.percent,
-            "memory_used_gb": memory.used / (1024**3),
-            "memory_available_gb": memory.available / (1024**3)
+        # Initialize metric history
+        self.history = {
+            'train_loss': [],
+            'val_loss': [],
+            'reconstruction_loss': [],
+            'kl_loss': [],
+            'beta': [],
+            'spatial_metrics': [],
+            'latent_stats': [],
+            'gradient_norms': []
         }
         
-        # Log to tensorboard
-        for name, value in metrics.items():
-            self.writer.add_scalar(f"System/{name}", value, len(self.losses))
+        # Training start time
+        self.start_time = time.time()
         
-        return metrics
+        # Create metric plots directory
+        self.plot_dir = self.run_dir / 'plots'
+        self.plot_dir.mkdir(exist_ok=True)
+        
+        print(f"Monitoring training at: {self.run_dir}")
+        
+        # Initialize best model tracking
+        self.best_val_loss = float('inf')
+        self.best_model_path = None
+        
+        # Initialize step counter
+        self.current_step = 0
     
-    def save_training_history(self):
-        """Save training history to JSON"""
-        history = {
-            "losses": self.losses,
-            "epoch_times": self.epoch_times,
-            "memory_usage": self.memory_usage,
-            "learning_rates": self.learning_rates,
-            "training_duration": str(datetime.now() - self.start_time)
-        }
+    def log_metrics(self, metrics, phase='train'):
+        """Log training or validation metrics"""
+        # Increment step counter
+        self.current_step += 1
         
-        history_path = os.path.join(
-            self.log_dir,
-            f"training_history_{self.model_name}_{self.start_time.strftime('%Y%m%d_%H%M%S')}.json"
-        )
+        # Log to tensorboard
+        for key, value in metrics.items():
+            self.writer.add_scalar(f'{phase}/{key}', value, self.current_step)
         
+        # Update history
+        for key, value in metrics.items():
+            if key in self.history:
+                self.history[key].append(value)
+        
+        # Log elapsed time
+        elapsed = time.time() - self.start_time
+        self.writer.add_scalar('time/elapsed_hours', elapsed / 3600, self.current_step)
+        
+        # Save history
+        self._save_history()
+        
+        # Update best model if validation loss improved
+        if phase == 'val' and metrics.get('total_loss', float('inf')) < self.best_val_loss:
+            self.best_val_loss = metrics['total_loss']
+            self.best_model_path = self.run_dir / f'best_model_step_{self.current_step}.pt'
+            return True
+        return False
+    
+    def log_attention_weights(self, name, weights):
+        """Log attention weights"""
+        if weights is not None:
+            self.writer.add_histogram(
+                f'attention/{name}',
+                weights.flatten(),
+                self.current_step
+            )
+    
+    def save_metrics(self, filepath):
+        """Save metrics to a JSON file"""
+        with open(filepath, 'w') as f:
+            json.dump(self.history, f, indent=2)
+    
+    def _save_history(self):
+        """Save training history to a JSON file"""
+        history_path = self.run_dir / 'history.json'
         with open(history_path, 'w') as f:
-            json.dump(history, f, indent=2)
-        
-        logger.info(f"Training history saved to {history_path}")
+            json.dump(self.history, f, indent=2)
     
     def close(self):
-        """Clean up and save final metrics"""
-        self.save_training_history()
-        self.generate_plots(len(self.losses))
+        """Clean up and save final results"""
+        # Save final history
+        self._save_history()
+        
+        # Close tensorboard writer
         self.writer.close()
-        logger.info("Training monitor closed") 
+        
+        # Log training duration
+        duration = time.time() - self.start_time
+        print(f"\nTraining completed in {duration/3600:.2f} hours")
+        print(f"Results saved to: {self.run_dir}")
+        if self.best_model_path:
+            print(f"Best model saved to: {self.best_model_path}")
+            print(f"Best validation loss: {self.best_val_loss:.4f}")
+ 

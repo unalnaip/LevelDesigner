@@ -1,0 +1,4 @@
+2024-12-08 01:21:52,213 - __main__ - INFO - Starting architecture test
+2024-12-08 01:21:52,223 - __main__ - INFO - Using device: mps
+2024-12-08 01:21:52,224 - __main__ - INFO - Dataset dimensions - Input: 90, Condition: 3, Spatial: 2
+2024-12-08 01:21:52,224 - __main__ - ERROR - Error during test: EnhancedCVAE.__init__() got an unexpected keyword argument 'spatial_dim'

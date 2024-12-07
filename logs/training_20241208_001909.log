@@ -1,0 +1,18 @@
+2024-12-08 00:19:09,578 - __main__ - INFO - System Information:
+2024-12-08 00:19:09,578 - __main__ - INFO - OS: Darwin Darwin Kernel Version 23.6.0: Fri Nov 15 15:12:52 PST 2024; root:xnu-10063.141.1.702.7~1/RELEASE_ARM64_T6031
+2024-12-08 00:19:09,578 - __main__ - INFO - Python version: 3.13.0
+2024-12-08 00:19:09,578 - __main__ - INFO - PyTorch version: 2.6.0.dev20241207
+2024-12-08 00:19:09,584 - __main__ - INFO - CPU: arm
+2024-12-08 00:19:09,584 - __main__ - INFO - CPU Cores: 16
+2024-12-08 00:19:09,584 - __main__ - INFO - RAM: 48.00 GB
+2024-12-08 00:19:09,584 - __main__ - INFO - Available RAM: 25.39 GB
+2024-12-08 00:19:09,594 - __main__ - INFO - Apple Silicon MPS is available
+2024-12-08 00:19:09,595 - utils.training_monitor - INFO - Training monitor initialized at logs
+2024-12-08 00:19:09,595 - __main__ - INFO - Initializing dataset and dataloader...
+2024-12-08 00:19:09,595 - __main__ - INFO - Initializing dataset from data/processed_levels.json
+2024-12-08 00:19:09,629 - __main__ - INFO - Loaded 1000 levels from JSON in 0.03s
+2024-12-08 00:19:09,630 - __main__ - INFO - Processing levels into layers...
+2024-12-08 00:19:09,646 - __main__ - INFO - Dataset initialization completed in 0.05s
+2024-12-08 00:19:09,646 - __main__ - INFO - Total samples: 1000
+2024-12-08 00:19:09,647 - __main__ - INFO - Initializing model...
+2024-12-08 00:19:09,997 - __main__ - ERROR - Training failed: module 'torch.optim' has no attribute 'OneCycleLR'

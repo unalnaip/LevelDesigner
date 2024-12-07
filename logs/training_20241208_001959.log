@@ -1,0 +1,681 @@
+2024-12-08 00:19:59,893 - __main__ - INFO - System Information:
+2024-12-08 00:19:59,893 - __main__ - INFO - OS: Darwin Darwin Kernel Version 23.6.0: Fri Nov 15 15:12:52 PST 2024; root:xnu-10063.141.1.702.7~1/RELEASE_ARM64_T6031
+2024-12-08 00:19:59,893 - __main__ - INFO - Python version: 3.13.0
+2024-12-08 00:19:59,893 - __main__ - INFO - PyTorch version: 2.6.0.dev20241207
+2024-12-08 00:19:59,899 - __main__ - INFO - CPU: arm
+2024-12-08 00:19:59,899 - __main__ - INFO - CPU Cores: 16
+2024-12-08 00:19:59,900 - __main__ - INFO - RAM: 48.00 GB
+2024-12-08 00:19:59,900 - __main__ - INFO - Available RAM: 25.52 GB
+2024-12-08 00:19:59,911 - __main__ - INFO - Apple Silicon MPS is available
+2024-12-08 00:19:59,912 - utils.training_monitor - INFO - Training monitor initialized at logs
+2024-12-08 00:19:59,912 - __main__ - INFO - Initializing dataset and dataloader...
+2024-12-08 00:19:59,912 - __main__ - INFO - Initializing dataset from data/processed_levels.json
+2024-12-08 00:19:59,946 - __main__ - INFO - Loaded 1000 levels from JSON in 0.03s
+2024-12-08 00:19:59,946 - __main__ - INFO - Processing levels into layers...
+2024-12-08 00:19:59,962 - __main__ - INFO - Dataset initialization completed in 0.05s
+2024-12-08 00:19:59,962 - __main__ - INFO - Total samples: 1000
+2024-12-08 00:19:59,963 - __main__ - INFO - Initializing model...
+2024-12-08 00:20:00,293 - __main__ - INFO - Starting training...
+2024-12-08 00:20:01,299 - __main__ - INFO - System metrics: {'cpu_percent': 7.7, 'memory_percent': 47.5, 'memory_used_gb': 21.8846435546875, 'memory_available_gb': 25.215713500976562}
+2024-12-08 00:20:08,676 - __main__ - INFO - Epoch 1/100
+2024-12-08 00:20:08,677 - __main__ - INFO - Average Loss: 182.5769
+2024-12-08 00:20:08,677 - __main__ - INFO - Epoch Time: 8.38s
+2024-12-08 00:20:08,677 - __main__ - INFO - Memory Usage: 0.55 GB
+2024-12-08 00:20:08,677 - __main__ - INFO - Learning Rate: 0.000102
+2024-12-08 00:20:08,728 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_1.pt
+2024-12-08 00:20:09,733 - __main__ - INFO - System metrics: {'cpu_percent': 10.4, 'memory_percent': 50.5, 'memory_used_gb': 23.321456909179688, 'memory_available_gb': 23.778884887695312}
+2024-12-08 00:20:10,496 - __main__ - INFO - Epoch 2/100
+2024-12-08 00:20:10,496 - __main__ - INFO - Average Loss: 141.7005
+2024-12-08 00:20:10,496 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:20:10,497 - __main__ - INFO - Memory Usage: 0.55 GB
+2024-12-08 00:20:10,497 - __main__ - INFO - Learning Rate: 0.000110
+2024-12-08 00:20:10,544 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_2.pt
+2024-12-08 00:20:11,550 - __main__ - INFO - System metrics: {'cpu_percent': 7.3, 'memory_percent': 50.6, 'memory_used_gb': 23.366592407226562, 'memory_available_gb': 23.728744506835938}
+2024-12-08 00:20:12,327 - __main__ - INFO - Epoch 3/100
+2024-12-08 00:20:12,327 - __main__ - INFO - Average Loss: 116.0650
+2024-12-08 00:20:12,327 - __main__ - INFO - Epoch Time: 1.78s
+2024-12-08 00:20:12,327 - __main__ - INFO - Memory Usage: 0.55 GB
+2024-12-08 00:20:12,327 - __main__ - INFO - Learning Rate: 0.000122
+2024-12-08 00:20:12,375 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_3.pt
+2024-12-08 00:20:13,378 - __main__ - INFO - System metrics: {'cpu_percent': 8.3, 'memory_percent': 50.4, 'memory_used_gb': 23.293212890625, 'memory_available_gb': 23.806015014648438}
+2024-12-08 00:20:14,126 - __main__ - INFO - Epoch 4/100
+2024-12-08 00:20:14,126 - __main__ - INFO - Average Loss: 98.2105
+2024-12-08 00:20:14,126 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:20:14,126 - __main__ - INFO - Memory Usage: 0.55 GB
+2024-12-08 00:20:14,126 - __main__ - INFO - Learning Rate: 0.000139
+2024-12-08 00:20:14,175 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_4.pt
+2024-12-08 00:20:15,180 - __main__ - INFO - System metrics: {'cpu_percent': 8.3, 'memory_percent': 50.5, 'memory_used_gb': 23.33648681640625, 'memory_available_gb': 23.765762329101562}
+2024-12-08 00:20:15,926 - __main__ - INFO - Epoch 5/100
+2024-12-08 00:20:15,926 - __main__ - INFO - Average Loss: 85.5238
+2024-12-08 00:20:15,926 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:20:15,926 - __main__ - INFO - Memory Usage: 0.55 GB
+2024-12-08 00:20:15,926 - __main__ - INFO - Learning Rate: 0.000161
+2024-12-08 00:20:15,972 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_5.pt
+2024-12-08 00:20:16,978 - __main__ - INFO - System metrics: {'cpu_percent': 8.1, 'memory_percent': 50.4, 'memory_used_gb': 23.288955688476562, 'memory_available_gb': 23.809280395507812}
+2024-12-08 00:20:17,723 - __main__ - INFO - Epoch 6/100
+2024-12-08 00:20:17,723 - __main__ - INFO - Average Loss: 76.0172
+2024-12-08 00:20:17,723 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:20:17,723 - __main__ - INFO - Memory Usage: 0.55 GB
+2024-12-08 00:20:17,723 - __main__ - INFO - Learning Rate: 0.000186
+2024-12-08 00:20:17,769 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_6.pt
+2024-12-08 00:20:18,773 - __main__ - INFO - System metrics: {'cpu_percent': 5.8, 'memory_percent': 50.4, 'memory_used_gb': 23.298294067382812, 'memory_available_gb': 23.797637939453125}
+2024-12-08 00:20:19,522 - __main__ - INFO - Epoch 7/100
+2024-12-08 00:20:19,522 - __main__ - INFO - Average Loss: 69.3204
+2024-12-08 00:20:19,522 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:20:19,522 - __main__ - INFO - Memory Usage: 0.55 GB
+2024-12-08 00:20:19,522 - __main__ - INFO - Learning Rate: 0.000216
+2024-12-08 00:20:19,574 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_7.pt
+2024-12-08 00:20:20,580 - __main__ - INFO - System metrics: {'cpu_percent': 5.8, 'memory_percent': 50.3, 'memory_used_gb': 23.262893676757812, 'memory_available_gb': 23.840591430664062}
+2024-12-08 00:20:21,314 - __main__ - INFO - Epoch 8/100
+2024-12-08 00:20:21,314 - __main__ - INFO - Average Loss: 64.0976
+2024-12-08 00:20:21,314 - __main__ - INFO - Epoch Time: 1.74s
+2024-12-08 00:20:21,314 - __main__ - INFO - Memory Usage: 0.55 GB
+2024-12-08 00:20:21,314 - __main__ - INFO - Learning Rate: 0.000249
+2024-12-08 00:20:21,361 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_8.pt
+2024-12-08 00:20:22,366 - __main__ - INFO - System metrics: {'cpu_percent': 7.3, 'memory_percent': 50.3, 'memory_used_gb': 23.238922119140625, 'memory_available_gb': 23.856658935546875}
+2024-12-08 00:20:23,134 - __main__ - INFO - Epoch 9/100
+2024-12-08 00:20:23,135 - __main__ - INFO - Average Loss: 60.3438
+2024-12-08 00:20:23,135 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:20:23,135 - __main__ - INFO - Memory Usage: 0.55 GB
+2024-12-08 00:20:23,135 - __main__ - INFO - Learning Rate: 0.000286
+2024-12-08 00:20:23,184 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_9.pt
+2024-12-08 00:20:24,190 - __main__ - INFO - System metrics: {'cpu_percent': 5.6, 'memory_percent': 50.3, 'memory_used_gb': 23.244491577148438, 'memory_available_gb': 23.858108520507812}
+2024-12-08 00:20:25,177 - utils.training_monitor - INFO - Training plots saved to logs/plots/training_plots_epoch_10_20241208_002024.png
+2024-12-08 00:20:25,177 - __main__ - INFO - Epoch 10/100
+2024-12-08 00:20:25,177 - __main__ - INFO - Average Loss: 57.7470
+2024-12-08 00:20:25,177 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:20:25,177 - __main__ - INFO - Memory Usage: 0.55 GB
+2024-12-08 00:20:25,177 - __main__ - INFO - Learning Rate: 0.000326
+2024-12-08 00:20:25,240 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_10.pt
+2024-12-08 00:20:26,241 - __main__ - INFO - System metrics: {'cpu_percent': 7.2, 'memory_percent': 50.4, 'memory_used_gb': 23.270034790039062, 'memory_available_gb': 23.83013916015625}
+2024-12-08 00:20:27,015 - __main__ - INFO - Epoch 11/100
+2024-12-08 00:20:27,015 - __main__ - INFO - Average Loss: 55.6388
+2024-12-08 00:20:27,015 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:20:27,015 - __main__ - INFO - Memory Usage: 0.61 GB
+2024-12-08 00:20:27,015 - __main__ - INFO - Learning Rate: 0.000368
+2024-12-08 00:20:27,063 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_11.pt
+2024-12-08 00:20:28,065 - __main__ - INFO - System metrics: {'cpu_percent': 9.7, 'memory_percent': 50.4, 'memory_used_gb': 23.280181884765625, 'memory_available_gb': 23.821197509765625}
+2024-12-08 00:20:28,847 - __main__ - INFO - Epoch 12/100
+2024-12-08 00:20:28,847 - __main__ - INFO - Average Loss: 54.4643
+2024-12-08 00:20:28,847 - __main__ - INFO - Epoch Time: 1.78s
+2024-12-08 00:20:28,847 - __main__ - INFO - Memory Usage: 0.61 GB
+2024-12-08 00:20:28,847 - __main__ - INFO - Learning Rate: 0.000412
+2024-12-08 00:20:28,897 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_12.pt
+2024-12-08 00:20:29,898 - __main__ - INFO - System metrics: {'cpu_percent': 7.8, 'memory_percent': 50.4, 'memory_used_gb': 23.304351806640625, 'memory_available_gb': 23.791229248046875}
+2024-12-08 00:20:30,672 - __main__ - INFO - Epoch 13/100
+2024-12-08 00:20:30,672 - __main__ - INFO - Average Loss: 53.1231
+2024-12-08 00:20:30,672 - __main__ - INFO - Epoch Time: 1.78s
+2024-12-08 00:20:30,672 - __main__ - INFO - Memory Usage: 0.61 GB
+2024-12-08 00:20:30,673 - __main__ - INFO - Learning Rate: 0.000458
+2024-12-08 00:20:30,728 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_13.pt
+2024-12-08 00:20:31,729 - __main__ - INFO - System metrics: {'cpu_percent': 6.9, 'memory_percent': 50.4, 'memory_used_gb': 23.310546875, 'memory_available_gb': 23.786285400390625}
+2024-12-08 00:20:32,460 - __main__ - INFO - Epoch 14/100
+2024-12-08 00:20:32,460 - __main__ - INFO - Average Loss: 52.1927
+2024-12-08 00:20:32,460 - __main__ - INFO - Epoch Time: 1.73s
+2024-12-08 00:20:32,460 - __main__ - INFO - Memory Usage: 0.61 GB
+2024-12-08 00:20:32,460 - __main__ - INFO - Learning Rate: 0.000504
+2024-12-08 00:20:32,512 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_14.pt
+2024-12-08 00:20:33,514 - __main__ - INFO - System metrics: {'cpu_percent': 7.0, 'memory_percent': 50.4, 'memory_used_gb': 23.289291381835938, 'memory_available_gb': 23.8101806640625}
+2024-12-08 00:20:34,262 - __main__ - INFO - Epoch 15/100
+2024-12-08 00:20:34,262 - __main__ - INFO - Average Loss: 51.1399
+2024-12-08 00:20:34,262 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:20:34,262 - __main__ - INFO - Memory Usage: 0.61 GB
+2024-12-08 00:20:34,263 - __main__ - INFO - Learning Rate: 0.000551
+2024-12-08 00:20:34,313 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_15.pt
+2024-12-08 00:20:35,314 - __main__ - INFO - System metrics: {'cpu_percent': 10.0, 'memory_percent': 50.4, 'memory_used_gb': 23.283660888671875, 'memory_available_gb': 23.813278198242188}
+2024-12-08 00:20:36,079 - __main__ - INFO - Epoch 16/100
+2024-12-08 00:20:36,079 - __main__ - INFO - Average Loss: 50.2989
+2024-12-08 00:20:36,079 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:20:36,079 - __main__ - INFO - Memory Usage: 0.61 GB
+2024-12-08 00:20:36,079 - __main__ - INFO - Learning Rate: 0.000599
+2024-12-08 00:20:36,130 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_16.pt
+2024-12-08 00:20:37,132 - __main__ - INFO - System metrics: {'cpu_percent': 13.9, 'memory_percent': 50.3, 'memory_used_gb': 23.263458251953125, 'memory_available_gb': 23.84136962890625}
+2024-12-08 00:20:37,897 - __main__ - INFO - Epoch 17/100
+2024-12-08 00:20:37,897 - __main__ - INFO - Average Loss: 49.5188
+2024-12-08 00:20:37,898 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:20:37,898 - __main__ - INFO - Memory Usage: 0.61 GB
+2024-12-08 00:20:37,898 - __main__ - INFO - Learning Rate: 0.000645
+2024-12-08 00:20:37,950 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_17.pt
+2024-12-08 00:20:38,951 - __main__ - INFO - System metrics: {'cpu_percent': 7.3, 'memory_percent': 50.4, 'memory_used_gb': 23.277450561523438, 'memory_available_gb': 23.821258544921875}
+2024-12-08 00:20:39,701 - __main__ - INFO - Epoch 18/100
+2024-12-08 00:20:39,701 - __main__ - INFO - Average Loss: 48.7479
+2024-12-08 00:20:39,701 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:20:39,701 - __main__ - INFO - Memory Usage: 0.61 GB
+2024-12-08 00:20:39,701 - __main__ - INFO - Learning Rate: 0.000691
+2024-12-08 00:20:39,756 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_18.pt
+2024-12-08 00:20:40,758 - __main__ - INFO - System metrics: {'cpu_percent': 9.9, 'memory_percent': 50.4, 'memory_used_gb': 23.274246215820312, 'memory_available_gb': 23.827590942382812}
+2024-12-08 00:20:41,514 - __main__ - INFO - Epoch 19/100
+2024-12-08 00:20:41,514 - __main__ - INFO - Average Loss: 48.4904
+2024-12-08 00:20:41,514 - __main__ - INFO - Epoch Time: 1.76s
+2024-12-08 00:20:41,514 - __main__ - INFO - Memory Usage: 0.61 GB
+2024-12-08 00:20:41,514 - __main__ - INFO - Learning Rate: 0.000735
+2024-12-08 00:20:41,564 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_19.pt
+2024-12-08 00:20:42,565 - __main__ - INFO - System metrics: {'cpu_percent': 8.2, 'memory_percent': 50.4, 'memory_used_gb': 23.2811279296875, 'memory_available_gb': 23.81768798828125}
+2024-12-08 00:20:43,496 - utils.training_monitor - INFO - Training plots saved to logs/plots/training_plots_epoch_20_20241208_002043.png
+2024-12-08 00:20:43,496 - __main__ - INFO - Epoch 20/100
+2024-12-08 00:20:43,496 - __main__ - INFO - Average Loss: 48.0075
+2024-12-08 00:20:43,496 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:20:43,496 - __main__ - INFO - Memory Usage: 0.61 GB
+2024-12-08 00:20:43,496 - __main__ - INFO - Learning Rate: 0.000777
+2024-12-08 00:20:43,561 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_20.pt
+2024-12-08 00:20:43,602 - __main__ - INFO - Saved checkpoint to models/checkpoints/checkpoint_epoch_20.pt
+2024-12-08 00:20:44,604 - __main__ - INFO - System metrics: {'cpu_percent': 10.4, 'memory_percent': 50.4, 'memory_used_gb': 23.277877807617188, 'memory_available_gb': 23.816375732421875}
+2024-12-08 00:20:45,368 - __main__ - INFO - Epoch 21/100
+2024-12-08 00:20:45,368 - __main__ - INFO - Average Loss: 47.7145
+2024-12-08 00:20:45,368 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:20:45,368 - __main__ - INFO - Memory Usage: 0.62 GB
+2024-12-08 00:20:45,368 - __main__ - INFO - Learning Rate: 0.000816
+2024-12-08 00:20:45,417 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_21.pt
+2024-12-08 00:20:46,419 - __main__ - INFO - System metrics: {'cpu_percent': 8.5, 'memory_percent': 50.4, 'memory_used_gb': 23.30145263671875, 'memory_available_gb': 23.793014526367188}
+2024-12-08 00:20:47,164 - __main__ - INFO - Epoch 22/100
+2024-12-08 00:20:47,164 - __main__ - INFO - Average Loss: 47.6262
+2024-12-08 00:20:47,164 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:20:47,164 - __main__ - INFO - Memory Usage: 0.62 GB
+2024-12-08 00:20:47,164 - __main__ - INFO - Learning Rate: 0.000853
+2024-12-08 00:20:47,214 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_22.pt
+2024-12-08 00:20:48,216 - __main__ - INFO - System metrics: {'cpu_percent': 8.7, 'memory_percent': 50.4, 'memory_used_gb': 23.288299560546875, 'memory_available_gb': 23.809371948242188}
+2024-12-08 00:20:48,989 - __main__ - INFO - Epoch 23/100
+2024-12-08 00:20:48,989 - __main__ - INFO - Average Loss: 47.3650
+2024-12-08 00:20:48,989 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:20:48,989 - __main__ - INFO - Memory Usage: 0.62 GB
+2024-12-08 00:20:48,989 - __main__ - INFO - Learning Rate: 0.000886
+2024-12-08 00:20:49,047 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_23.pt
+2024-12-08 00:20:50,049 - __main__ - INFO - System metrics: {'cpu_percent': 7.1, 'memory_percent': 50.4, 'memory_used_gb': 23.2835693359375, 'memory_available_gb': 23.80621337890625}
+2024-12-08 00:20:50,850 - __main__ - INFO - Epoch 24/100
+2024-12-08 00:20:50,850 - __main__ - INFO - Average Loss: 47.2558
+2024-12-08 00:20:50,850 - __main__ - INFO - Epoch Time: 1.80s
+2024-12-08 00:20:50,850 - __main__ - INFO - Memory Usage: 0.62 GB
+2024-12-08 00:20:50,850 - __main__ - INFO - Learning Rate: 0.000915
+2024-12-08 00:20:50,910 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_24.pt
+2024-12-08 00:20:51,911 - __main__ - INFO - System metrics: {'cpu_percent': 7.1, 'memory_percent': 50.4, 'memory_used_gb': 23.281402587890625, 'memory_available_gb': 23.811370849609375}
+2024-12-08 00:20:52,671 - __main__ - INFO - Epoch 25/100
+2024-12-08 00:20:52,671 - __main__ - INFO - Average Loss: 47.2402
+2024-12-08 00:20:52,671 - __main__ - INFO - Epoch Time: 1.76s
+2024-12-08 00:20:52,671 - __main__ - INFO - Memory Usage: 0.62 GB
+2024-12-08 00:20:52,671 - __main__ - INFO - Learning Rate: 0.000941
+2024-12-08 00:20:52,720 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_25.pt
+2024-12-08 00:20:53,721 - __main__ - INFO - System metrics: {'cpu_percent': 10.6, 'memory_percent': 50.4, 'memory_used_gb': 23.281845092773438, 'memory_available_gb': 23.81707763671875}
+2024-12-08 00:20:54,526 - __main__ - INFO - Epoch 26/100
+2024-12-08 00:20:54,526 - __main__ - INFO - Average Loss: 47.2280
+2024-12-08 00:20:54,526 - __main__ - INFO - Epoch Time: 1.81s
+2024-12-08 00:20:54,526 - __main__ - INFO - Memory Usage: 0.62 GB
+2024-12-08 00:20:54,526 - __main__ - INFO - Learning Rate: 0.000962
+2024-12-08 00:20:54,580 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_26.pt
+2024-12-08 00:20:55,582 - __main__ - INFO - System metrics: {'cpu_percent': 10.4, 'memory_percent': 50.4, 'memory_used_gb': 23.297073364257812, 'memory_available_gb': 23.798263549804688}
+2024-12-08 00:20:56,344 - __main__ - INFO - Epoch 27/100
+2024-12-08 00:20:56,344 - __main__ - INFO - Average Loss: 47.0687
+2024-12-08 00:20:56,344 - __main__ - INFO - Epoch Time: 1.76s
+2024-12-08 00:20:56,344 - __main__ - INFO - Memory Usage: 0.62 GB
+2024-12-08 00:20:56,344 - __main__ - INFO - Learning Rate: 0.000979
+2024-12-08 00:20:56,415 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_27.pt
+2024-12-08 00:20:57,417 - __main__ - INFO - System metrics: {'cpu_percent': 7.2, 'memory_percent': 50.4, 'memory_used_gb': 23.283370971679688, 'memory_available_gb': 23.816299438476562}
+2024-12-08 00:20:58,208 - __main__ - INFO - Epoch 28/100
+2024-12-08 00:20:58,208 - __main__ - INFO - Average Loss: 47.0057
+2024-12-08 00:20:58,208 - __main__ - INFO - Epoch Time: 1.79s
+2024-12-08 00:20:58,208 - __main__ - INFO - Memory Usage: 0.63 GB
+2024-12-08 00:20:58,208 - __main__ - INFO - Learning Rate: 0.000991
+2024-12-08 00:20:58,261 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_28.pt
+2024-12-08 00:20:59,262 - __main__ - INFO - System metrics: {'cpu_percent': 10.1, 'memory_percent': 50.4, 'memory_used_gb': 23.28466796875, 'memory_available_gb': 23.814163208007812}
+2024-12-08 00:21:00,029 - __main__ - INFO - Epoch 29/100
+2024-12-08 00:21:00,029 - __main__ - INFO - Average Loss: 47.1353
+2024-12-08 00:21:00,029 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:21:00,029 - __main__ - INFO - Memory Usage: 0.63 GB
+2024-12-08 00:21:00,029 - __main__ - INFO - Learning Rate: 0.000998
+2024-12-08 00:21:01,030 - __main__ - INFO - System metrics: {'cpu_percent': 9.0, 'memory_percent': 50.4, 'memory_used_gb': 23.287200927734375, 'memory_available_gb': 23.812957763671875}
+2024-12-08 00:21:01,957 - utils.training_monitor - INFO - Training plots saved to logs/plots/training_plots_epoch_30_20241208_002101.png
+2024-12-08 00:21:01,957 - __main__ - INFO - Epoch 30/100
+2024-12-08 00:21:01,957 - __main__ - INFO - Average Loss: 47.0299
+2024-12-08 00:21:01,957 - __main__ - INFO - Epoch Time: 1.76s
+2024-12-08 00:21:01,957 - __main__ - INFO - Memory Usage: 0.63 GB
+2024-12-08 00:21:01,957 - __main__ - INFO - Learning Rate: 0.001000
+2024-12-08 00:21:02,958 - __main__ - INFO - System metrics: {'cpu_percent': 8.5, 'memory_percent': 50.2, 'memory_used_gb': 23.202789306640625, 'memory_available_gb': 23.890945434570312}
+2024-12-08 00:21:03,709 - __main__ - INFO - Epoch 31/100
+2024-12-08 00:21:03,709 - __main__ - INFO - Average Loss: 46.9576
+2024-12-08 00:21:03,709 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:21:03,709 - __main__ - INFO - Memory Usage: 0.64 GB
+2024-12-08 00:21:03,709 - __main__ - INFO - Learning Rate: 0.000999
+2024-12-08 00:21:03,759 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_31.pt
+2024-12-08 00:21:04,761 - __main__ - INFO - System metrics: {'cpu_percent': 10.5, 'memory_percent': 50.3, 'memory_used_gb': 23.253631591796875, 'memory_available_gb': 23.83575439453125}
+2024-12-08 00:21:05,535 - __main__ - INFO - Epoch 32/100
+2024-12-08 00:21:05,535 - __main__ - INFO - Average Loss: 47.0664
+2024-12-08 00:21:05,535 - __main__ - INFO - Epoch Time: 1.78s
+2024-12-08 00:21:05,535 - __main__ - INFO - Memory Usage: 0.64 GB
+2024-12-08 00:21:05,535 - __main__ - INFO - Learning Rate: 0.000998
+2024-12-08 00:21:06,537 - __main__ - INFO - System metrics: {'cpu_percent': 6.7, 'memory_percent': 50.3, 'memory_used_gb': 23.2559814453125, 'memory_available_gb': 23.836868286132812}
+2024-12-08 00:21:07,302 - __main__ - INFO - Epoch 33/100
+2024-12-08 00:21:07,302 - __main__ - INFO - Average Loss: 46.9336
+2024-12-08 00:21:07,302 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:21:07,302 - __main__ - INFO - Memory Usage: 0.64 GB
+2024-12-08 00:21:07,302 - __main__ - INFO - Learning Rate: 0.000995
+2024-12-08 00:21:07,350 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_33.pt
+2024-12-08 00:21:08,351 - __main__ - INFO - System metrics: {'cpu_percent': 9.6, 'memory_percent': 50.5, 'memory_used_gb': 23.325775146484375, 'memory_available_gb': 23.764968872070312}
+2024-12-08 00:21:09,119 - __main__ - INFO - Epoch 34/100
+2024-12-08 00:21:09,119 - __main__ - INFO - Average Loss: 46.9179
+2024-12-08 00:21:09,119 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:21:09,119 - __main__ - INFO - Memory Usage: 0.64 GB
+2024-12-08 00:21:09,119 - __main__ - INFO - Learning Rate: 0.000992
+2024-12-08 00:21:09,172 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_34.pt
+2024-12-08 00:21:10,174 - __main__ - INFO - System metrics: {'cpu_percent': 8.1, 'memory_percent': 50.5, 'memory_used_gb': 23.322311401367188, 'memory_available_gb': 23.77587890625}
+2024-12-08 00:21:10,947 - __main__ - INFO - Epoch 35/100
+2024-12-08 00:21:10,948 - __main__ - INFO - Average Loss: 46.8834
+2024-12-08 00:21:10,948 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:21:10,948 - __main__ - INFO - Memory Usage: 0.64 GB
+2024-12-08 00:21:10,948 - __main__ - INFO - Learning Rate: 0.000987
+2024-12-08 00:21:11,007 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_35.pt
+2024-12-08 00:21:12,008 - __main__ - INFO - System metrics: {'cpu_percent': 7.4, 'memory_percent': 50.4, 'memory_used_gb': 23.2908935546875, 'memory_available_gb': 23.807571411132812}
+2024-12-08 00:21:12,804 - __main__ - INFO - Epoch 36/100
+2024-12-08 00:21:12,804 - __main__ - INFO - Average Loss: 46.9628
+2024-12-08 00:21:12,804 - __main__ - INFO - Epoch Time: 1.80s
+2024-12-08 00:21:12,804 - __main__ - INFO - Memory Usage: 0.64 GB
+2024-12-08 00:21:12,804 - __main__ - INFO - Learning Rate: 0.000982
+2024-12-08 00:21:13,805 - __main__ - INFO - System metrics: {'cpu_percent': 7.0, 'memory_percent': 50.4, 'memory_used_gb': 23.298873901367188, 'memory_available_gb': 23.798980712890625}
+2024-12-08 00:21:14,578 - __main__ - INFO - Epoch 37/100
+2024-12-08 00:21:14,578 - __main__ - INFO - Average Loss: 46.8960
+2024-12-08 00:21:14,578 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:21:14,578 - __main__ - INFO - Memory Usage: 0.64 GB
+2024-12-08 00:21:14,578 - __main__ - INFO - Learning Rate: 0.000975
+2024-12-08 00:21:15,580 - __main__ - INFO - System metrics: {'cpu_percent': 7.0, 'memory_percent': 50.4, 'memory_used_gb': 23.2845458984375, 'memory_available_gb': 23.81134033203125}
+2024-12-08 00:21:16,366 - __main__ - INFO - Epoch 38/100
+2024-12-08 00:21:16,367 - __main__ - INFO - Average Loss: 46.8659
+2024-12-08 00:21:16,367 - __main__ - INFO - Epoch Time: 1.79s
+2024-12-08 00:21:16,367 - __main__ - INFO - Memory Usage: 0.64 GB
+2024-12-08 00:21:16,367 - __main__ - INFO - Learning Rate: 0.000968
+2024-12-08 00:21:16,418 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_38.pt
+2024-12-08 00:21:17,420 - __main__ - INFO - System metrics: {'cpu_percent': 7.2, 'memory_percent': 50.4, 'memory_used_gb': 23.289825439453125, 'memory_available_gb': 23.80889892578125}
+2024-12-08 00:21:18,192 - __main__ - INFO - Epoch 39/100
+2024-12-08 00:21:18,192 - __main__ - INFO - Average Loss: 46.9234
+2024-12-08 00:21:18,192 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:21:18,192 - __main__ - INFO - Memory Usage: 0.64 GB
+2024-12-08 00:21:18,192 - __main__ - INFO - Learning Rate: 0.000959
+2024-12-08 00:21:19,193 - __main__ - INFO - System metrics: {'cpu_percent': 7.0, 'memory_percent': 50.4, 'memory_used_gb': 23.288055419921875, 'memory_available_gb': 23.805145263671875}
+2024-12-08 00:21:20,120 - utils.training_monitor - INFO - Training plots saved to logs/plots/training_plots_epoch_40_20241208_002119.png
+2024-12-08 00:21:20,120 - __main__ - INFO - Epoch 40/100
+2024-12-08 00:21:20,120 - __main__ - INFO - Average Loss: 46.8256
+2024-12-08 00:21:20,120 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:21:20,120 - __main__ - INFO - Memory Usage: 0.64 GB
+2024-12-08 00:21:20,120 - __main__ - INFO - Learning Rate: 0.000950
+2024-12-08 00:21:20,185 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_40.pt
+2024-12-08 00:21:20,233 - __main__ - INFO - Saved checkpoint to models/checkpoints/checkpoint_epoch_40.pt
+2024-12-08 00:21:21,234 - __main__ - INFO - System metrics: {'cpu_percent': 9.7, 'memory_percent': 50.4, 'memory_used_gb': 23.311065673828125, 'memory_available_gb': 23.786453247070312}
+2024-12-08 00:21:22,019 - __main__ - INFO - Epoch 41/100
+2024-12-08 00:21:22,020 - __main__ - INFO - Average Loss: 46.8920
+2024-12-08 00:21:22,020 - __main__ - INFO - Epoch Time: 1.79s
+2024-12-08 00:21:22,020 - __main__ - INFO - Memory Usage: 0.66 GB
+2024-12-08 00:21:22,020 - __main__ - INFO - Learning Rate: 0.000940
+2024-12-08 00:21:23,021 - __main__ - INFO - System metrics: {'cpu_percent': 8.6, 'memory_percent': 50.5, 'memory_used_gb': 23.313247680664062, 'memory_available_gb': 23.782196044921875}
+2024-12-08 00:21:23,790 - __main__ - INFO - Epoch 42/100
+2024-12-08 00:21:23,791 - __main__ - INFO - Average Loss: 46.8650
+2024-12-08 00:21:23,791 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:21:23,791 - __main__ - INFO - Memory Usage: 0.66 GB
+2024-12-08 00:21:23,791 - __main__ - INFO - Learning Rate: 0.000929
+2024-12-08 00:21:24,792 - __main__ - INFO - System metrics: {'cpu_percent': 9.6, 'memory_percent': 50.4, 'memory_used_gb': 23.315155029296875, 'memory_available_gb': 23.78582763671875}
+2024-12-08 00:21:25,553 - __main__ - INFO - Epoch 43/100
+2024-12-08 00:21:25,553 - __main__ - INFO - Average Loss: 46.8271
+2024-12-08 00:21:25,553 - __main__ - INFO - Epoch Time: 1.76s
+2024-12-08 00:21:25,553 - __main__ - INFO - Memory Usage: 0.66 GB
+2024-12-08 00:21:25,553 - __main__ - INFO - Learning Rate: 0.000917
+2024-12-08 00:21:26,555 - __main__ - INFO - System metrics: {'cpu_percent': 7.4, 'memory_percent': 50.5, 'memory_used_gb': 23.316192626953125, 'memory_available_gb': 23.780868530273438}
+2024-12-08 00:21:27,287 - __main__ - INFO - Epoch 44/100
+2024-12-08 00:21:27,287 - __main__ - INFO - Average Loss: 46.8155
+2024-12-08 00:21:27,287 - __main__ - INFO - Epoch Time: 1.73s
+2024-12-08 00:21:27,287 - __main__ - INFO - Memory Usage: 0.66 GB
+2024-12-08 00:21:27,287 - __main__ - INFO - Learning Rate: 0.000904
+2024-12-08 00:21:27,341 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_44.pt
+2024-12-08 00:21:28,342 - __main__ - INFO - System metrics: {'cpu_percent': 8.7, 'memory_percent': 50.4, 'memory_used_gb': 23.315261840820312, 'memory_available_gb': 23.784088134765625}
+2024-12-08 00:21:29,098 - __main__ - INFO - Epoch 45/100
+2024-12-08 00:21:29,098 - __main__ - INFO - Average Loss: 46.8170
+2024-12-08 00:21:29,098 - __main__ - INFO - Epoch Time: 1.76s
+2024-12-08 00:21:29,098 - __main__ - INFO - Memory Usage: 0.66 GB
+2024-12-08 00:21:29,098 - __main__ - INFO - Learning Rate: 0.000890
+2024-12-08 00:21:30,098 - __main__ - INFO - System metrics: {'cpu_percent': 8.6, 'memory_percent': 50.5, 'memory_used_gb': 23.358154296875, 'memory_available_gb': 23.73748779296875}
+2024-12-08 00:21:30,846 - __main__ - INFO - Epoch 46/100
+2024-12-08 00:21:30,846 - __main__ - INFO - Average Loss: 46.8013
+2024-12-08 00:21:30,846 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:21:30,846 - __main__ - INFO - Memory Usage: 0.66 GB
+2024-12-08 00:21:30,846 - __main__ - INFO - Learning Rate: 0.000876
+2024-12-08 00:21:30,901 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_46.pt
+2024-12-08 00:21:31,903 - __main__ - INFO - System metrics: {'cpu_percent': 9.7, 'memory_percent': 50.5, 'memory_used_gb': 23.356216430664062, 'memory_available_gb': 23.74188232421875}
+2024-12-08 00:21:32,654 - __main__ - INFO - Epoch 47/100
+2024-12-08 00:21:32,654 - __main__ - INFO - Average Loss: 46.8009
+2024-12-08 00:21:32,654 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:21:32,654 - __main__ - INFO - Memory Usage: 0.66 GB
+2024-12-08 00:21:32,654 - __main__ - INFO - Learning Rate: 0.000861
+2024-12-08 00:21:32,706 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_47.pt
+2024-12-08 00:21:33,708 - __main__ - INFO - System metrics: {'cpu_percent': 9.1, 'memory_percent': 50.5, 'memory_used_gb': 23.330917358398438, 'memory_available_gb': 23.76837158203125}
+2024-12-08 00:21:34,485 - __main__ - INFO - Epoch 48/100
+2024-12-08 00:21:34,485 - __main__ - INFO - Average Loss: 46.6832
+2024-12-08 00:21:34,485 - __main__ - INFO - Epoch Time: 1.78s
+2024-12-08 00:21:34,485 - __main__ - INFO - Memory Usage: 0.66 GB
+2024-12-08 00:21:34,485 - __main__ - INFO - Learning Rate: 0.000845
+2024-12-08 00:21:34,542 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_48.pt
+2024-12-08 00:21:35,543 - __main__ - INFO - System metrics: {'cpu_percent': 10.9, 'memory_percent': 50.5, 'memory_used_gb': 23.335922241210938, 'memory_available_gb': 23.756866455078125}
+2024-12-08 00:21:36,310 - __main__ - INFO - Epoch 49/100
+2024-12-08 00:21:36,310 - __main__ - INFO - Average Loss: 46.7954
+2024-12-08 00:21:36,310 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:21:36,310 - __main__ - INFO - Memory Usage: 0.66 GB
+2024-12-08 00:21:36,310 - __main__ - INFO - Learning Rate: 0.000828
+2024-12-08 00:21:37,312 - __main__ - INFO - System metrics: {'cpu_percent': 9.6, 'memory_percent': 50.5, 'memory_used_gb': 23.337265014648438, 'memory_available_gb': 23.758132934570312}
+2024-12-08 00:21:38,320 - utils.training_monitor - INFO - Training plots saved to logs/plots/training_plots_epoch_50_20241208_002138.png
+2024-12-08 00:21:38,320 - __main__ - INFO - Epoch 50/100
+2024-12-08 00:21:38,320 - __main__ - INFO - Average Loss: 46.7242
+2024-12-08 00:21:38,320 - __main__ - INFO - Epoch Time: 1.79s
+2024-12-08 00:21:38,320 - __main__ - INFO - Memory Usage: 0.66 GB
+2024-12-08 00:21:38,320 - __main__ - INFO - Learning Rate: 0.000811
+2024-12-08 00:21:39,322 - __main__ - INFO - System metrics: {'cpu_percent': 9.6, 'memory_percent': 50.5, 'memory_used_gb': 23.36669921875, 'memory_available_gb': 23.736648559570312}
+2024-12-08 00:21:40,103 - __main__ - INFO - Epoch 51/100
+2024-12-08 00:21:40,103 - __main__ - INFO - Average Loss: 46.7192
+2024-12-08 00:21:40,103 - __main__ - INFO - Epoch Time: 1.78s
+2024-12-08 00:21:40,103 - __main__ - INFO - Memory Usage: 0.67 GB
+2024-12-08 00:21:40,103 - __main__ - INFO - Learning Rate: 0.000793
+2024-12-08 00:21:41,105 - __main__ - INFO - System metrics: {'cpu_percent': 7.7, 'memory_percent': 50.6, 'memory_used_gb': 23.37060546875, 'memory_available_gb': 23.724990844726562}
+2024-12-08 00:21:41,869 - __main__ - INFO - Epoch 52/100
+2024-12-08 00:21:41,869 - __main__ - INFO - Average Loss: 46.8080
+2024-12-08 00:21:41,870 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:21:41,870 - __main__ - INFO - Memory Usage: 0.67 GB
+2024-12-08 00:21:41,870 - __main__ - INFO - Learning Rate: 0.000775
+2024-12-08 00:21:42,871 - __main__ - INFO - System metrics: {'cpu_percent': 8.4, 'memory_percent': 50.6, 'memory_used_gb': 23.36822509765625, 'memory_available_gb': 23.731658935546875}
+2024-12-08 00:21:43,648 - __main__ - INFO - Epoch 53/100
+2024-12-08 00:21:43,648 - __main__ - INFO - Average Loss: 46.7782
+2024-12-08 00:21:43,648 - __main__ - INFO - Epoch Time: 1.78s
+2024-12-08 00:21:43,648 - __main__ - INFO - Memory Usage: 0.67 GB
+2024-12-08 00:21:43,648 - __main__ - INFO - Learning Rate: 0.000755
+2024-12-08 00:21:44,650 - __main__ - INFO - System metrics: {'cpu_percent': 9.0, 'memory_percent': 50.5, 'memory_used_gb': 23.359603881835938, 'memory_available_gb': 23.739517211914062}
+2024-12-08 00:21:45,437 - __main__ - INFO - Epoch 54/100
+2024-12-08 00:21:45,437 - __main__ - INFO - Average Loss: 46.7746
+2024-12-08 00:21:45,437 - __main__ - INFO - Epoch Time: 1.79s
+2024-12-08 00:21:45,437 - __main__ - INFO - Memory Usage: 0.67 GB
+2024-12-08 00:21:45,437 - __main__ - INFO - Learning Rate: 0.000736
+2024-12-08 00:21:46,439 - __main__ - INFO - System metrics: {'cpu_percent': 8.2, 'memory_percent': 50.5, 'memory_used_gb': 23.351776123046875, 'memory_available_gb': 23.751907348632812}
+2024-12-08 00:21:47,203 - __main__ - INFO - Epoch 55/100
+2024-12-08 00:21:47,203 - __main__ - INFO - Average Loss: 46.9001
+2024-12-08 00:21:47,203 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:21:47,203 - __main__ - INFO - Memory Usage: 0.67 GB
+2024-12-08 00:21:47,203 - __main__ - INFO - Learning Rate: 0.000716
+2024-12-08 00:21:48,204 - __main__ - INFO - System metrics: {'cpu_percent': 8.9, 'memory_percent': 50.5, 'memory_used_gb': 23.355941772460938, 'memory_available_gb': 23.746322631835938}
+2024-12-08 00:21:49,000 - __main__ - INFO - Epoch 56/100
+2024-12-08 00:21:49,000 - __main__ - INFO - Average Loss: 46.8624
+2024-12-08 00:21:49,000 - __main__ - INFO - Epoch Time: 1.80s
+2024-12-08 00:21:49,000 - __main__ - INFO - Memory Usage: 0.67 GB
+2024-12-08 00:21:49,000 - __main__ - INFO - Learning Rate: 0.000696
+2024-12-08 00:21:50,001 - __main__ - INFO - System metrics: {'cpu_percent': 9.5, 'memory_percent': 50.5, 'memory_used_gb': 23.352554321289062, 'memory_available_gb': 23.741668701171875}
+2024-12-08 00:21:50,749 - __main__ - INFO - Epoch 57/100
+2024-12-08 00:21:50,749 - __main__ - INFO - Average Loss: 46.8960
+2024-12-08 00:21:50,749 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:21:50,749 - __main__ - INFO - Memory Usage: 0.67 GB
+2024-12-08 00:21:50,749 - __main__ - INFO - Learning Rate: 0.000675
+2024-12-08 00:21:51,750 - __main__ - INFO - System metrics: {'cpu_percent': 9.1, 'memory_percent': 50.5, 'memory_used_gb': 23.356124877929688, 'memory_available_gb': 23.7506103515625}
+2024-12-08 00:21:52,496 - __main__ - INFO - Epoch 58/100
+2024-12-08 00:21:52,497 - __main__ - INFO - Average Loss: 46.7026
+2024-12-08 00:21:52,497 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:21:52,497 - __main__ - INFO - Memory Usage: 0.68 GB
+2024-12-08 00:21:52,497 - __main__ - INFO - Learning Rate: 0.000654
+2024-12-08 00:21:53,498 - __main__ - INFO - System metrics: {'cpu_percent': 8.5, 'memory_percent': 50.5, 'memory_used_gb': 23.35302734375, 'memory_available_gb': 23.742080688476562}
+2024-12-08 00:21:54,241 - __main__ - INFO - Epoch 59/100
+2024-12-08 00:21:54,241 - __main__ - INFO - Average Loss: 46.8614
+2024-12-08 00:21:54,241 - __main__ - INFO - Epoch Time: 1.74s
+2024-12-08 00:21:54,241 - __main__ - INFO - Memory Usage: 0.68 GB
+2024-12-08 00:21:54,241 - __main__ - INFO - Learning Rate: 0.000632
+2024-12-08 00:21:55,243 - __main__ - INFO - System metrics: {'cpu_percent': 7.7, 'memory_percent': 50.6, 'memory_used_gb': 23.356033325195312, 'memory_available_gb': 23.735443115234375}
+2024-12-08 00:21:56,164 - utils.training_monitor - INFO - Training plots saved to logs/plots/training_plots_epoch_60_20241208_002155.png
+2024-12-08 00:21:56,164 - __main__ - INFO - Epoch 60/100
+2024-12-08 00:21:56,164 - __main__ - INFO - Average Loss: 46.7282
+2024-12-08 00:21:56,164 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:21:56,164 - __main__ - INFO - Memory Usage: 0.68 GB
+2024-12-08 00:21:56,164 - __main__ - INFO - Learning Rate: 0.000610
+2024-12-08 00:21:56,230 - __main__ - INFO - Saved checkpoint to models/checkpoints/checkpoint_epoch_60.pt
+2024-12-08 00:21:57,232 - __main__ - INFO - System metrics: {'cpu_percent': 8.5, 'memory_percent': 50.6, 'memory_used_gb': 23.368209838867188, 'memory_available_gb': 23.7235107421875}
+2024-12-08 00:21:57,997 - __main__ - INFO - Epoch 61/100
+2024-12-08 00:21:57,997 - __main__ - INFO - Average Loss: 46.8039
+2024-12-08 00:21:57,997 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:21:57,997 - __main__ - INFO - Memory Usage: 0.69 GB
+2024-12-08 00:21:57,997 - __main__ - INFO - Learning Rate: 0.000588
+2024-12-08 00:21:58,999 - __main__ - INFO - System metrics: {'cpu_percent': 8.9, 'memory_percent': 50.6, 'memory_used_gb': 23.36688232421875, 'memory_available_gb': 23.732040405273438}
+2024-12-08 00:21:59,774 - __main__ - INFO - Epoch 62/100
+2024-12-08 00:21:59,774 - __main__ - INFO - Average Loss: 46.7828
+2024-12-08 00:21:59,774 - __main__ - INFO - Epoch Time: 1.78s
+2024-12-08 00:21:59,774 - __main__ - INFO - Memory Usage: 0.69 GB
+2024-12-08 00:21:59,774 - __main__ - INFO - Learning Rate: 0.000566
+2024-12-08 00:22:00,776 - __main__ - INFO - System metrics: {'cpu_percent': 7.0, 'memory_percent': 50.6, 'memory_used_gb': 23.387725830078125, 'memory_available_gb': 23.708160400390625}
+2024-12-08 00:22:01,549 - __main__ - INFO - Epoch 63/100
+2024-12-08 00:22:01,549 - __main__ - INFO - Average Loss: 46.7581
+2024-12-08 00:22:01,549 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:22:01,549 - __main__ - INFO - Memory Usage: 0.69 GB
+2024-12-08 00:22:01,549 - __main__ - INFO - Learning Rate: 0.000544
+2024-12-08 00:22:02,551 - __main__ - INFO - System metrics: {'cpu_percent': 8.3, 'memory_percent': 50.6, 'memory_used_gb': 23.37396240234375, 'memory_available_gb': 23.723052978515625}
+2024-12-08 00:22:03,316 - __main__ - INFO - Epoch 64/100
+2024-12-08 00:22:03,316 - __main__ - INFO - Average Loss: 46.8641
+2024-12-08 00:22:03,316 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:22:03,316 - __main__ - INFO - Memory Usage: 0.69 GB
+2024-12-08 00:22:03,316 - __main__ - INFO - Learning Rate: 0.000522
+2024-12-08 00:22:04,317 - __main__ - INFO - System metrics: {'cpu_percent': 9.8, 'memory_percent': 50.6, 'memory_used_gb': 23.371902465820312, 'memory_available_gb': 23.725128173828125}
+2024-12-08 00:22:05,118 - __main__ - INFO - Epoch 65/100
+2024-12-08 00:22:05,118 - __main__ - INFO - Average Loss: 46.7671
+2024-12-08 00:22:05,118 - __main__ - INFO - Epoch Time: 1.80s
+2024-12-08 00:22:05,118 - __main__ - INFO - Memory Usage: 0.69 GB
+2024-12-08 00:22:05,118 - __main__ - INFO - Learning Rate: 0.000499
+2024-12-08 00:22:06,120 - __main__ - INFO - System metrics: {'cpu_percent': 12.5, 'memory_percent': 50.6, 'memory_used_gb': 23.37420654296875, 'memory_available_gb': 23.72119140625}
+2024-12-08 00:22:06,918 - __main__ - INFO - Epoch 66/100
+2024-12-08 00:22:06,918 - __main__ - INFO - Average Loss: 46.7928
+2024-12-08 00:22:06,918 - __main__ - INFO - Epoch Time: 1.80s
+2024-12-08 00:22:06,919 - __main__ - INFO - Memory Usage: 0.69 GB
+2024-12-08 00:22:06,919 - __main__ - INFO - Learning Rate: 0.000477
+2024-12-08 00:22:07,920 - __main__ - INFO - System metrics: {'cpu_percent': 9.5, 'memory_percent': 50.6, 'memory_used_gb': 23.367507934570312, 'memory_available_gb': 23.7265625}
+2024-12-08 00:22:08,720 - __main__ - INFO - Epoch 67/100
+2024-12-08 00:22:08,720 - __main__ - INFO - Average Loss: 46.7601
+2024-12-08 00:22:08,720 - __main__ - INFO - Epoch Time: 1.80s
+2024-12-08 00:22:08,720 - __main__ - INFO - Memory Usage: 0.69 GB
+2024-12-08 00:22:08,720 - __main__ - INFO - Learning Rate: 0.000454
+2024-12-08 00:22:09,720 - __main__ - INFO - System metrics: {'cpu_percent': 10.5, 'memory_percent': 50.6, 'memory_used_gb': 23.379608154296875, 'memory_available_gb': 23.719192504882812}
+2024-12-08 00:22:10,500 - __main__ - INFO - Epoch 68/100
+2024-12-08 00:22:10,500 - __main__ - INFO - Average Loss: 46.8291
+2024-12-08 00:22:10,500 - __main__ - INFO - Epoch Time: 1.78s
+2024-12-08 00:22:10,500 - __main__ - INFO - Memory Usage: 0.69 GB
+2024-12-08 00:22:10,500 - __main__ - INFO - Learning Rate: 0.000432
+2024-12-08 00:22:11,502 - __main__ - INFO - System metrics: {'cpu_percent': 10.5, 'memory_percent': 50.5, 'memory_used_gb': 23.343780517578125, 'memory_available_gb': 23.757034301757812}
+2024-12-08 00:22:12,279 - __main__ - INFO - Epoch 69/100
+2024-12-08 00:22:12,279 - __main__ - INFO - Average Loss: 46.7252
+2024-12-08 00:22:12,279 - __main__ - INFO - Epoch Time: 1.78s
+2024-12-08 00:22:12,279 - __main__ - INFO - Memory Usage: 0.69 GB
+2024-12-08 00:22:12,279 - __main__ - INFO - Learning Rate: 0.000410
+2024-12-08 00:22:13,280 - __main__ - INFO - System metrics: {'cpu_percent': 9.9, 'memory_percent': 50.5, 'memory_used_gb': 23.357833862304688, 'memory_available_gb': 23.738616943359375}
+2024-12-08 00:22:14,222 - utils.training_monitor - INFO - Training plots saved to logs/plots/training_plots_epoch_70_20241208_002214.png
+2024-12-08 00:22:14,222 - __main__ - INFO - Epoch 70/100
+2024-12-08 00:22:14,222 - __main__ - INFO - Average Loss: 46.7610
+2024-12-08 00:22:14,222 - __main__ - INFO - Epoch Time: 1.76s
+2024-12-08 00:22:14,222 - __main__ - INFO - Memory Usage: 0.69 GB
+2024-12-08 00:22:14,222 - __main__ - INFO - Learning Rate: 0.000388
+2024-12-08 00:22:15,223 - __main__ - INFO - System metrics: {'cpu_percent': 9.7, 'memory_percent': 50.5, 'memory_used_gb': 23.350784301757812, 'memory_available_gb': 23.749313354492188}
+2024-12-08 00:22:16,002 - __main__ - INFO - Epoch 71/100
+2024-12-08 00:22:16,003 - __main__ - INFO - Average Loss: 46.6969
+2024-12-08 00:22:16,003 - __main__ - INFO - Epoch Time: 1.78s
+2024-12-08 00:22:16,003 - __main__ - INFO - Memory Usage: 0.70 GB
+2024-12-08 00:22:16,003 - __main__ - INFO - Learning Rate: 0.000366
+2024-12-08 00:22:17,004 - __main__ - INFO - System metrics: {'cpu_percent': 10.9, 'memory_percent': 50.6, 'memory_used_gb': 23.3837890625, 'memory_available_gb': 23.715545654296875}
+2024-12-08 00:22:17,788 - __main__ - INFO - Epoch 72/100
+2024-12-08 00:22:17,788 - __main__ - INFO - Average Loss: 46.8077
+2024-12-08 00:22:17,788 - __main__ - INFO - Epoch Time: 1.79s
+2024-12-08 00:22:17,788 - __main__ - INFO - Memory Usage: 0.70 GB
+2024-12-08 00:22:17,788 - __main__ - INFO - Learning Rate: 0.000345
+2024-12-08 00:22:18,790 - __main__ - INFO - System metrics: {'cpu_percent': 10.8, 'memory_percent': 50.7, 'memory_used_gb': 23.41387939453125, 'memory_available_gb': 23.686370849609375}
+2024-12-08 00:22:19,589 - __main__ - INFO - Epoch 73/100
+2024-12-08 00:22:19,589 - __main__ - INFO - Average Loss: 46.7082
+2024-12-08 00:22:19,589 - __main__ - INFO - Epoch Time: 1.80s
+2024-12-08 00:22:19,589 - __main__ - INFO - Memory Usage: 0.70 GB
+2024-12-08 00:22:19,589 - __main__ - INFO - Learning Rate: 0.000324
+2024-12-08 00:22:20,589 - __main__ - INFO - System metrics: {'cpu_percent': 10.3, 'memory_percent': 50.7, 'memory_used_gb': 23.415130615234375, 'memory_available_gb': 23.686737060546875}
+2024-12-08 00:22:21,366 - __main__ - INFO - Epoch 74/100
+2024-12-08 00:22:21,366 - __main__ - INFO - Average Loss: 46.8110
+2024-12-08 00:22:21,366 - __main__ - INFO - Epoch Time: 1.78s
+2024-12-08 00:22:21,366 - __main__ - INFO - Memory Usage: 0.70 GB
+2024-12-08 00:22:21,366 - __main__ - INFO - Learning Rate: 0.000303
+2024-12-08 00:22:22,367 - __main__ - INFO - System metrics: {'cpu_percent': 11.1, 'memory_percent': 50.6, 'memory_used_gb': 23.40899658203125, 'memory_available_gb': 23.697265625}
+2024-12-08 00:22:23,136 - __main__ - INFO - Epoch 75/100
+2024-12-08 00:22:23,136 - __main__ - INFO - Average Loss: 46.7339
+2024-12-08 00:22:23,136 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:22:23,136 - __main__ - INFO - Memory Usage: 0.70 GB
+2024-12-08 00:22:23,136 - __main__ - INFO - Learning Rate: 0.000283
+2024-12-08 00:22:24,137 - __main__ - INFO - System metrics: {'cpu_percent': 7.5, 'memory_percent': 50.6, 'memory_used_gb': 23.384567260742188, 'memory_available_gb': 23.712432861328125}
+2024-12-08 00:22:24,910 - __main__ - INFO - Epoch 76/100
+2024-12-08 00:22:24,910 - __main__ - INFO - Average Loss: 46.7721
+2024-12-08 00:22:24,910 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:22:24,910 - __main__ - INFO - Memory Usage: 0.70 GB
+2024-12-08 00:22:24,910 - __main__ - INFO - Learning Rate: 0.000263
+2024-12-08 00:22:25,911 - __main__ - INFO - System metrics: {'cpu_percent': 7.6, 'memory_percent': 50.6, 'memory_used_gb': 23.368179321289062, 'memory_available_gb': 23.729843139648438}
+2024-12-08 00:22:26,691 - __main__ - INFO - Epoch 77/100
+2024-12-08 00:22:26,691 - __main__ - INFO - Average Loss: 46.7075
+2024-12-08 00:22:26,691 - __main__ - INFO - Epoch Time: 1.78s
+2024-12-08 00:22:26,692 - __main__ - INFO - Memory Usage: 0.70 GB
+2024-12-08 00:22:26,692 - __main__ - INFO - Learning Rate: 0.000243
+2024-12-08 00:22:27,693 - __main__ - INFO - System metrics: {'cpu_percent': 7.2, 'memory_percent': 50.6, 'memory_used_gb': 23.404525756835938, 'memory_available_gb': 23.69476318359375}
+2024-12-08 00:22:28,461 - __main__ - INFO - Epoch 78/100
+2024-12-08 00:22:28,461 - __main__ - INFO - Average Loss: 46.7430
+2024-12-08 00:22:28,461 - __main__ - INFO - Epoch Time: 1.77s
+2024-12-08 00:22:28,462 - __main__ - INFO - Memory Usage: 0.70 GB
+2024-12-08 00:22:28,462 - __main__ - INFO - Learning Rate: 0.000224
+2024-12-08 00:22:29,464 - __main__ - INFO - System metrics: {'cpu_percent': 7.7, 'memory_percent': 50.6, 'memory_used_gb': 23.40240478515625, 'memory_available_gb': 23.695571899414062}
+2024-12-08 00:22:30,247 - __main__ - INFO - Epoch 79/100
+2024-12-08 00:22:30,247 - __main__ - INFO - Average Loss: 46.7994
+2024-12-08 00:22:30,247 - __main__ - INFO - Epoch Time: 1.78s
+2024-12-08 00:22:30,247 - __main__ - INFO - Memory Usage: 0.70 GB
+2024-12-08 00:22:30,247 - __main__ - INFO - Learning Rate: 0.000206
+2024-12-08 00:22:31,248 - __main__ - INFO - System metrics: {'cpu_percent': 7.3, 'memory_percent': 50.6, 'memory_used_gb': 23.402999877929688, 'memory_available_gb': 23.688095092773438}
+2024-12-08 00:22:32,180 - utils.training_monitor - INFO - Training plots saved to logs/plots/training_plots_epoch_80_20241208_002231.png
+2024-12-08 00:22:32,180 - __main__ - INFO - Epoch 80/100
+2024-12-08 00:22:32,180 - __main__ - INFO - Average Loss: 46.8559
+2024-12-08 00:22:32,180 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:22:32,180 - __main__ - INFO - Memory Usage: 0.70 GB
+2024-12-08 00:22:32,181 - __main__ - INFO - Learning Rate: 0.000188
+2024-12-08 00:22:32,236 - __main__ - INFO - Saved checkpoint to models/checkpoints/checkpoint_epoch_80.pt
+2024-12-08 00:22:33,236 - __main__ - INFO - System metrics: {'cpu_percent': 9.5, 'memory_percent': 50.6, 'memory_used_gb': 23.393936157226562, 'memory_available_gb': 23.695770263671875}
+2024-12-08 00:22:33,984 - __main__ - INFO - Epoch 81/100
+2024-12-08 00:22:33,984 - __main__ - INFO - Average Loss: 46.8552
+2024-12-08 00:22:33,984 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:22:33,984 - __main__ - INFO - Memory Usage: 0.71 GB
+2024-12-08 00:22:33,984 - __main__ - INFO - Learning Rate: 0.000171
+2024-12-08 00:22:34,985 - __main__ - INFO - System metrics: {'cpu_percent': 8.0, 'memory_percent': 50.6, 'memory_used_gb': 23.37493896484375, 'memory_available_gb': 23.722732543945312}
+2024-12-08 00:22:35,731 - __main__ - INFO - Epoch 82/100
+2024-12-08 00:22:35,731 - __main__ - INFO - Average Loss: 46.8200
+2024-12-08 00:22:35,731 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:22:35,731 - __main__ - INFO - Memory Usage: 0.71 GB
+2024-12-08 00:22:35,731 - __main__ - INFO - Learning Rate: 0.000154
+2024-12-08 00:22:36,732 - __main__ - INFO - System metrics: {'cpu_percent': 13.5, 'memory_percent': 50.6, 'memory_used_gb': 23.38677978515625, 'memory_available_gb': 23.712509155273438}
+2024-12-08 00:22:37,467 - __main__ - INFO - Epoch 83/100
+2024-12-08 00:22:37,467 - __main__ - INFO - Average Loss: 46.7127
+2024-12-08 00:22:37,467 - __main__ - INFO - Epoch Time: 1.74s
+2024-12-08 00:22:37,467 - __main__ - INFO - Memory Usage: 0.71 GB
+2024-12-08 00:22:37,467 - __main__ - INFO - Learning Rate: 0.000138
+2024-12-08 00:22:38,468 - __main__ - INFO - System metrics: {'cpu_percent': 11.6, 'memory_percent': 50.7, 'memory_used_gb': 23.438018798828125, 'memory_available_gb': 23.659866333007812}
+2024-12-08 00:22:39,189 - __main__ - INFO - Epoch 84/100
+2024-12-08 00:22:39,189 - __main__ - INFO - Average Loss: 46.7281
+2024-12-08 00:22:39,189 - __main__ - INFO - Epoch Time: 1.72s
+2024-12-08 00:22:39,189 - __main__ - INFO - Memory Usage: 0.71 GB
+2024-12-08 00:22:39,189 - __main__ - INFO - Learning Rate: 0.000123
+2024-12-08 00:22:40,191 - __main__ - INFO - System metrics: {'cpu_percent': 8.5, 'memory_percent': 50.7, 'memory_used_gb': 23.444229125976562, 'memory_available_gb': 23.653762817382812}
+2024-12-08 00:22:40,941 - __main__ - INFO - Epoch 85/100
+2024-12-08 00:22:40,941 - __main__ - INFO - Average Loss: 46.6804
+2024-12-08 00:22:40,941 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:22:40,941 - __main__ - INFO - Memory Usage: 0.71 GB
+2024-12-08 00:22:40,941 - __main__ - INFO - Learning Rate: 0.000109
+2024-12-08 00:22:40,993 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_85.pt
+2024-12-08 00:22:41,995 - __main__ - INFO - System metrics: {'cpu_percent': 9.6, 'memory_percent': 50.7, 'memory_used_gb': 23.428436279296875, 'memory_available_gb': 23.669601440429688}
+2024-12-08 00:22:42,716 - __main__ - INFO - Epoch 86/100
+2024-12-08 00:22:42,716 - __main__ - INFO - Average Loss: 46.7546
+2024-12-08 00:22:42,716 - __main__ - INFO - Epoch Time: 1.72s
+2024-12-08 00:22:42,716 - __main__ - INFO - Memory Usage: 0.71 GB
+2024-12-08 00:22:42,716 - __main__ - INFO - Learning Rate: 0.000096
+2024-12-08 00:22:43,717 - __main__ - INFO - System metrics: {'cpu_percent': 9.2, 'memory_percent': 50.6, 'memory_used_gb': 23.390213012695312, 'memory_available_gb': 23.71063232421875}
+2024-12-08 00:22:44,465 - __main__ - INFO - Epoch 87/100
+2024-12-08 00:22:44,465 - __main__ - INFO - Average Loss: 46.7672
+2024-12-08 00:22:44,465 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:22:44,465 - __main__ - INFO - Memory Usage: 0.71 GB
+2024-12-08 00:22:44,465 - __main__ - INFO - Learning Rate: 0.000083
+2024-12-08 00:22:45,466 - __main__ - INFO - System metrics: {'cpu_percent': 8.4, 'memory_percent': 50.6, 'memory_used_gb': 23.3707275390625, 'memory_available_gb': 23.727462768554688}
+2024-12-08 00:22:46,225 - __main__ - INFO - Epoch 88/100
+2024-12-08 00:22:46,225 - __main__ - INFO - Average Loss: 46.8561
+2024-12-08 00:22:46,225 - __main__ - INFO - Epoch Time: 1.76s
+2024-12-08 00:22:46,225 - __main__ - INFO - Memory Usage: 0.72 GB
+2024-12-08 00:22:46,225 - __main__ - INFO - Learning Rate: 0.000071
+2024-12-08 00:22:47,227 - __main__ - INFO - System metrics: {'cpu_percent': 7.3, 'memory_percent': 50.6, 'memory_used_gb': 23.390396118164062, 'memory_available_gb': 23.703781127929688}
+2024-12-08 00:22:47,966 - __main__ - INFO - Epoch 89/100
+2024-12-08 00:22:47,966 - __main__ - INFO - Average Loss: 46.7219
+2024-12-08 00:22:47,966 - __main__ - INFO - Epoch Time: 1.74s
+2024-12-08 00:22:47,966 - __main__ - INFO - Memory Usage: 0.72 GB
+2024-12-08 00:22:47,966 - __main__ - INFO - Learning Rate: 0.000060
+2024-12-08 00:22:48,967 - __main__ - INFO - System metrics: {'cpu_percent': 8.8, 'memory_percent': 50.7, 'memory_used_gb': 23.434768676757812, 'memory_available_gb': 23.6651611328125}
+2024-12-08 00:22:49,890 - utils.training_monitor - INFO - Training plots saved to logs/plots/training_plots_epoch_90_20241208_002249.png
+2024-12-08 00:22:49,890 - __main__ - INFO - Epoch 90/100
+2024-12-08 00:22:49,890 - __main__ - INFO - Average Loss: 46.7886
+2024-12-08 00:22:49,890 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:22:49,890 - __main__ - INFO - Memory Usage: 0.72 GB
+2024-12-08 00:22:49,890 - __main__ - INFO - Learning Rate: 0.000050
+2024-12-08 00:22:50,891 - __main__ - INFO - System metrics: {'cpu_percent': 10.5, 'memory_percent': 50.7, 'memory_used_gb': 23.440933227539062, 'memory_available_gb': 23.652328491210938}
+2024-12-08 00:22:51,645 - __main__ - INFO - Epoch 91/100
+2024-12-08 00:22:51,645 - __main__ - INFO - Average Loss: 46.8603
+2024-12-08 00:22:51,646 - __main__ - INFO - Epoch Time: 1.76s
+2024-12-08 00:22:51,646 - __main__ - INFO - Memory Usage: 0.72 GB
+2024-12-08 00:22:51,646 - __main__ - INFO - Learning Rate: 0.000041
+2024-12-08 00:22:52,647 - __main__ - INFO - System metrics: {'cpu_percent': 10.8, 'memory_percent': 50.7, 'memory_used_gb': 23.448455810546875, 'memory_available_gb': 23.64599609375}
+2024-12-08 00:22:53,401 - __main__ - INFO - Epoch 92/100
+2024-12-08 00:22:53,401 - __main__ - INFO - Average Loss: 46.8202
+2024-12-08 00:22:53,401 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:22:53,401 - __main__ - INFO - Memory Usage: 0.72 GB
+2024-12-08 00:22:53,401 - __main__ - INFO - Learning Rate: 0.000032
+2024-12-08 00:22:54,402 - __main__ - INFO - System metrics: {'cpu_percent': 10.8, 'memory_percent': 50.9, 'memory_used_gb': 23.5263671875, 'memory_available_gb': 23.571029663085938}
+2024-12-08 00:22:55,125 - __main__ - INFO - Epoch 93/100
+2024-12-08 00:22:55,125 - __main__ - INFO - Average Loss: 46.7239
+2024-12-08 00:22:55,125 - __main__ - INFO - Epoch Time: 1.72s
+2024-12-08 00:22:55,125 - __main__ - INFO - Memory Usage: 0.72 GB
+2024-12-08 00:22:55,125 - __main__ - INFO - Learning Rate: 0.000025
+2024-12-08 00:22:56,127 - __main__ - INFO - System metrics: {'cpu_percent': 9.2, 'memory_percent': 51.9, 'memory_used_gb': 24.012619018554688, 'memory_available_gb': 23.082382202148438}
+2024-12-08 00:22:56,882 - __main__ - INFO - Epoch 94/100
+2024-12-08 00:22:56,882 - __main__ - INFO - Average Loss: 46.7669
+2024-12-08 00:22:56,882 - __main__ - INFO - Epoch Time: 1.76s
+2024-12-08 00:22:56,882 - __main__ - INFO - Memory Usage: 0.72 GB
+2024-12-08 00:22:56,882 - __main__ - INFO - Learning Rate: 0.000019
+2024-12-08 00:22:57,884 - __main__ - INFO - System metrics: {'cpu_percent': 10.4, 'memory_percent': 51.3, 'memory_used_gb': 23.744216918945312, 'memory_available_gb': 23.356613159179688}
+2024-12-08 00:22:58,626 - __main__ - INFO - Epoch 95/100
+2024-12-08 00:22:58,626 - __main__ - INFO - Average Loss: 46.7458
+2024-12-08 00:22:58,626 - __main__ - INFO - Epoch Time: 1.74s
+2024-12-08 00:22:58,626 - __main__ - INFO - Memory Usage: 0.72 GB
+2024-12-08 00:22:58,626 - __main__ - INFO - Learning Rate: 0.000013
+2024-12-08 00:22:59,628 - __main__ - INFO - System metrics: {'cpu_percent': 9.6, 'memory_percent': 51.3, 'memory_used_gb': 23.708984375, 'memory_available_gb': 23.396560668945312}
+2024-12-08 00:23:00,386 - __main__ - INFO - Epoch 96/100
+2024-12-08 00:23:00,386 - __main__ - INFO - Average Loss: 46.8910
+2024-12-08 00:23:00,386 - __main__ - INFO - Epoch Time: 1.76s
+2024-12-08 00:23:00,386 - __main__ - INFO - Memory Usage: 0.72 GB
+2024-12-08 00:23:00,386 - __main__ - INFO - Learning Rate: 0.000009
+2024-12-08 00:23:01,388 - __main__ - INFO - System metrics: {'cpu_percent': 8.0, 'memory_percent': 51.3, 'memory_used_gb': 23.705841064453125, 'memory_available_gb': 23.385650634765625}
+2024-12-08 00:23:02,138 - __main__ - INFO - Epoch 97/100
+2024-12-08 00:23:02,138 - __main__ - INFO - Average Loss: 46.7940
+2024-12-08 00:23:02,138 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:23:02,138 - __main__ - INFO - Memory Usage: 0.72 GB
+2024-12-08 00:23:02,138 - __main__ - INFO - Learning Rate: 0.000005
+2024-12-08 00:23:03,139 - __main__ - INFO - System metrics: {'cpu_percent': 9.3, 'memory_percent': 51.3, 'memory_used_gb': 23.70526123046875, 'memory_available_gb': 23.39410400390625}
+2024-12-08 00:23:03,894 - __main__ - INFO - Epoch 98/100
+2024-12-08 00:23:03,894 - __main__ - INFO - Average Loss: 46.8089
+2024-12-08 00:23:03,894 - __main__ - INFO - Epoch Time: 1.76s
+2024-12-08 00:23:03,894 - __main__ - INFO - Memory Usage: 0.72 GB
+2024-12-08 00:23:03,894 - __main__ - INFO - Learning Rate: 0.000003
+2024-12-08 00:23:04,895 - __main__ - INFO - System metrics: {'cpu_percent': 10.6, 'memory_percent': 51.5, 'memory_used_gb': 23.822463989257812, 'memory_available_gb': 23.277053833007812}
+2024-12-08 00:23:05,645 - __main__ - INFO - Epoch 99/100
+2024-12-08 00:23:05,645 - __main__ - INFO - Average Loss: 46.7634
+2024-12-08 00:23:05,645 - __main__ - INFO - Epoch Time: 1.75s
+2024-12-08 00:23:05,645 - __main__ - INFO - Memory Usage: 0.72 GB
+2024-12-08 00:23:05,645 - __main__ - INFO - Learning Rate: 0.000001
+2024-12-08 00:23:06,646 - __main__ - INFO - System metrics: {'cpu_percent': 7.8, 'memory_percent': 51.7, 'memory_used_gb': 23.912872314453125, 'memory_available_gb': 23.17205810546875}
+2024-12-08 00:23:07,647 - utils.training_monitor - INFO - Training plots saved to logs/plots/training_plots_epoch_100_20241208_002307.png
+2024-12-08 00:23:07,647 - __main__ - INFO - Epoch 100/100
+2024-12-08 00:23:07,647 - __main__ - INFO - Average Loss: 46.7416
+2024-12-08 00:23:07,647 - __main__ - INFO - Epoch Time: 1.83s
+2024-12-08 00:23:07,647 - __main__ - INFO - Memory Usage: 0.72 GB
+2024-12-08 00:23:07,647 - __main__ - INFO - Learning Rate: 0.000001
+2024-12-08 00:23:07,709 - __main__ - INFO - Saved checkpoint to models/checkpoints/checkpoint_epoch_100.pt
+2024-12-08 00:23:07,729 - utils.training_monitor - INFO - Training history saved to logs/training_history_level_generator_20241208_001959.json
+2024-12-08 00:23:07,906 - utils.training_monitor - INFO - Training plots saved to logs/plots/training_plots_epoch_100_20241208_002307.png
+2024-12-08 00:23:07,906 - utils.training_monitor - INFO - Training monitor closed
+2024-12-08 00:23:07,906 - __main__ - INFO - 
+Training Summary:
+2024-12-08 00:23:07,907 - __main__ - INFO - Total training time: 0.05 hours
+2024-12-08 00:23:07,907 - __main__ - INFO - Best loss achieved: 46.6804
+2024-12-08 00:23:07,907 - __main__ - INFO - Final model saved to: models/level_generator.pt
+2024-12-08 00:23:07,907 - __main__ - INFO - Training logs saved to: logs/training_20241208_001959.log

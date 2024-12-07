@@ -1,0 +1,3 @@
+2024-12-08 01:20:58,539 - __main__ - INFO - Starting architecture test
+2024-12-08 01:20:58,549 - __main__ - INFO - Using device: mps
+2024-12-08 01:20:58,549 - __main__ - ERROR - Error during test: 'level_data'

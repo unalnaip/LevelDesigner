@@ -1,0 +1,31 @@
+2024-12-08 01:35:35,487 - __main__ - INFO - Loading model from checkpoint...
+2024-12-08 01:35:35,586 - __main__ - INFO - Generating samples...
+2024-12-08 01:35:35,743 - __main__ - INFO - Analyzing samples...
+2024-12-08 01:35:35,746 - __main__ - INFO - 
+Sample Analysis Summary:
+2024-12-08 01:35:35,746 - __main__ - INFO - 
+Easy Levels:
+2024-12-08 01:35:35,746 - __main__ - INFO -   avg_object_size: 0.591
+2024-12-08 01:35:35,746 - __main__ - INFO -   avg_unique_types: 30.000
+2024-12-08 01:35:35,746 - __main__ - INFO -   avg_spatial_spread: 0.443
+2024-12-08 01:35:35,746 - __main__ - INFO -   size_std: 0.245
+2024-12-08 01:35:35,746 - __main__ - INFO -   type_std: 0.000
+2024-12-08 01:35:35,746 - __main__ - INFO -   spread_std: 0.078
+2024-12-08 01:35:35,746 - __main__ - INFO - 
+Normal Levels:
+2024-12-08 01:35:35,746 - __main__ - INFO -   avg_object_size: 0.349
+2024-12-08 01:35:35,746 - __main__ - INFO -   avg_unique_types: 30.000
+2024-12-08 01:35:35,746 - __main__ - INFO -   avg_spatial_spread: 0.363
+2024-12-08 01:35:35,746 - __main__ - INFO -   size_std: 0.143
+2024-12-08 01:35:35,746 - __main__ - INFO -   type_std: 0.000
+2024-12-08 01:35:35,746 - __main__ - INFO -   spread_std: 0.056
+2024-12-08 01:35:35,746 - __main__ - INFO - 
+Hard Levels:
+2024-12-08 01:35:35,746 - __main__ - INFO -   avg_object_size: 0.732
+2024-12-08 01:35:35,746 - __main__ - INFO -   avg_unique_types: 30.000
+2024-12-08 01:35:35,746 - __main__ - INFO -   avg_spatial_spread: 0.471
+2024-12-08 01:35:35,746 - __main__ - INFO -   size_std: 0.294
+2024-12-08 01:35:35,746 - __main__ - INFO -   type_std: 0.000
+2024-12-08 01:35:35,746 - __main__ - INFO -   spread_std: 0.055
+2024-12-08 01:35:35,746 - __main__ - INFO - 
+Samples saved to: samples/samples_20241208_013535.json

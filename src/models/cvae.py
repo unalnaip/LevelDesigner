@@ -1,270 +1,283 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import numpy as np
+from .spatial_encoder import ObjectEncoder, PhysicsGNN, SpatialAttention
 
-class SimplePhysicsValidator:
-    """Simple physics validation based on object properties"""
-    def __init__(self):
-        # Basic stability rules based on shape combinations
-        self.stability_matrix = {
-            # shape_above vs shape_below
-            (0, 0): 0.9,  # Similar shapes stack well
-            (1, 1): 0.8,
-            (2, 2): 0.9,  # Flat shapes are stable
-            (3, 3): 0.7,  # Round shapes less stable
-            (4, 4): 0.6,
-            (5, 5): 0.7,
-            (6, 6): 0.5   # Complex shapes least stable
-        }
-        
-        # Default stability for non-matching shapes
-        self.default_stability = 0.4
-    
-    def can_stack(self, upper_obj, lower_obj):
-        """Check if objects can be stacked"""
-        # Basic size rule: can't stack bigger on smaller
-        if upper_obj['size'] > lower_obj['size']:
-            return False, 0.0
-            
-        # Get stability score
-        shape_pair = (upper_obj['shape'], lower_obj['shape'])
-        stability = self.stability_matrix.get(shape_pair, self.default_stability)
-        
-        # Size difference bonus
-        size_diff = lower_obj['size'] - upper_obj['size']
-        stability += min(0.2, size_diff * 0.1)  # Small bonus for better size ratios
-        
-        return True, min(1.0, stability)
-
-class LayerVAE(nn.Module):
-    """VAE for generating a single layer of objects"""
-    def __init__(self, input_dim, condition_dim, latent_dim=32):
+class FlexibleConditionEncoder(nn.Module):
+    """
+    Flexible condition encoder that can handle varying condition dimensions
+    and is easily extensible for new condition types
+    """
+    def __init__(self, condition_dim, embedding_dim=128):
         super().__init__()
+        self.embedding_dim = embedding_dim
         
-        # Dimensions
-        self.input_dim = input_dim
-        self.condition_dim = condition_dim
-        self.latent_dim = latent_dim
-        
-        # Encoder
-        self.encoder = nn.Sequential(
-            nn.Linear(input_dim + condition_dim, 256),
+        self.layers = nn.Sequential(
+            nn.Linear(condition_dim, embedding_dim),
             nn.ReLU(),
-            nn.BatchNorm1d(256),
-            nn.Linear(256, 128),
-            nn.ReLU(),
-            nn.BatchNorm1d(128)
+            nn.LayerNorm(embedding_dim),
+            nn.Linear(embedding_dim, embedding_dim),
+            nn.LayerNorm(embedding_dim)
         )
         
-        # Latent space
-        self.fc_mu = nn.Linear(128, latent_dim)
-        self.fc_var = nn.Linear(128, latent_dim)
+    def forward(self, c):
+        return self.layers(c)
+
+class AttentionEncoder(nn.Module):
+    """
+    Attention-based encoder for capturing spatial relationships and object interactions
+    """
+    def __init__(self, input_dim, condition_dim, latent_dim=32, hidden_dim=128, num_heads=4, dropout=0.1):
+        super().__init__()
+        self.input_dim = input_dim
+        self.hidden_dim = hidden_dim
         
-        # Decoder
-        self.decoder = nn.Sequential(
-            nn.Linear(latent_dim + condition_dim, 256),
+        # Object embedding
+        self.obj_embedding = nn.Sequential(
+            nn.Linear(input_dim, hidden_dim),
             nn.ReLU(),
-            nn.BatchNorm1d(256),
-            nn.Linear(256, input_dim),
+            nn.LayerNorm(hidden_dim)
+        )
+        
+        # Condition embedding
+        self.condition_encoder = FlexibleConditionEncoder(condition_dim, hidden_dim)
+        
+        # Multi-head attention for modeling interactions
+        self.attention = SpatialAttention(hidden_dim, num_heads=num_heads)
+        
+        # Output layers
+        self.fc_mu = nn.Linear(hidden_dim, latent_dim)
+        self.fc_logvar = nn.Linear(hidden_dim, latent_dim)
+        
+        self.dropout = nn.Dropout(dropout)
+        
+    def forward(self, x, c):
+        # Embed input and condition
+        x_embed = self.obj_embedding(x)
+        c_embed = self.condition_encoder(c)
+        
+        # Apply attention
+        x_attended = self.attention(x_embed.unsqueeze(0)).squeeze(0)
+        
+        # Combine with condition
+        combined = x_attended + c_embed
+        
+        # Output parameters
+        mu = self.fc_mu(combined)
+        logvar = self.fc_logvar(combined)
+        
+        return mu, logvar
+
+class SpatialDecoder(nn.Module):
+    """
+    Decoder with spatial awareness and physics constraints
+    """
+    def __init__(self, latent_dim, condition_dim, output_dim, hidden_dim=128, num_heads=4, dropout=0.1):
+        super().__init__()
+        self.hidden_dim = hidden_dim
+        
+        # Condition embedding
+        self.condition_encoder = FlexibleConditionEncoder(condition_dim, hidden_dim)
+        
+        # Initial projection
+        self.initial_projection = nn.Sequential(
+            nn.Linear(latent_dim + hidden_dim, hidden_dim),
+            nn.ReLU(),
+            nn.LayerNorm(hidden_dim)
+        )
+        
+        # Spatial attention for decoding
+        self.attention = SpatialAttention(hidden_dim, num_heads=num_heads)
+        
+        # Separate decoders for properties and positions
+        self.property_decoder = nn.Sequential(
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.ReLU(),
+            nn.LayerNorm(hidden_dim),
+            nn.Linear(hidden_dim, output_dim),
             nn.Sigmoid()
         )
-    
+        
+        self.position_decoder = nn.Sequential(
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.ReLU(),
+            nn.LayerNorm(hidden_dim),
+            nn.Linear(hidden_dim, output_dim // 3 * 2),  # x,y coordinates for each object
+            nn.Tanh()
+        )
+        
+        # Physics-aware refinement
+        self.physics_gnn = PhysicsGNN(node_dim=5)  # 3 properties + 2 coordinates
+        
+        self.dropout = nn.Dropout(dropout)
+        
+    def forward(self, z, c):
+        # Get batch size from z
+        batch_size = z.size(0) if len(z.shape) > 1 else 1
+        
+        # Reshape inputs if needed
+        if len(z.shape) == 1:
+            z = z.unsqueeze(0)
+        if len(c.shape) == 1:
+            c = c.unsqueeze(0)
+            
+        # Repeat condition if needed
+        if c.size(0) == 1 and batch_size > 1:
+            c = c.repeat(batch_size, 1)
+        elif c.size(0) != batch_size:
+            raise ValueError(f"Condition batch size ({c.size(0)}) does not match latent batch size ({batch_size})")
+        
+        # Embed condition
+        c_embed = self.condition_encoder(c)
+        
+        # Combine latent and condition
+        combined = torch.cat([z, c_embed], dim=1)
+        hidden = self.initial_projection(combined)
+        
+        # Apply spatial attention
+        hidden = self.attention(hidden.unsqueeze(0)).squeeze(0)
+        
+        # Decode properties and positions
+        properties = self.property_decoder(hidden)
+        positions = self.position_decoder(hidden)
+        
+        # Reshape for physics processing
+        num_objects = properties.size(1) // 3
+        properties_reshaped = properties.view(batch_size, num_objects, 3)
+        positions_reshaped = positions.view(batch_size, num_objects, 2)
+        
+        # Combine features for physics processing
+        combined_features = torch.cat([properties_reshaped, positions_reshaped], dim=-1)
+        
+        # Apply physics refinement
+        refined_features = self.physics_gnn(combined_features)
+        
+        # Split refined features
+        refined_properties = refined_features[..., :3].reshape(batch_size, -1)
+        refined_positions = refined_features[..., 3:].reshape(batch_size, -1)
+        
+        return refined_properties, refined_positions
+
+class EnhancedCVAE(nn.Module):
+    """
+    Enhanced Conditional VAE with spatial awareness, β-VAE properties,
+    and flexible conditioning for puzzle game level generation
+    """
+    def __init__(
+        self,
+        input_dim,
+        condition_dim,
+        latent_dim=32,
+        hidden_dims=[256, 128],
+        attention_heads=4,
+        dropout=0.1,
+        beta_start=0.0,
+        beta_end=1.5,
+        beta_steps=1000
+    ):
+        super().__init__()
+        self.input_dim = input_dim
+        self.latent_dim = latent_dim
+        self.beta_start = beta_start
+        self.beta_end = beta_end
+        self.beta_steps = beta_steps
+        self.current_step = 0
+        
+        # Encoder
+        self.encoder = AttentionEncoder(
+            input_dim=input_dim,
+            condition_dim=condition_dim,
+            latent_dim=latent_dim,
+            hidden_dim=hidden_dims[0],
+            num_heads=attention_heads,
+            dropout=dropout
+        )
+        
+        # Decoder
+        self.decoder = SpatialDecoder(
+            latent_dim=latent_dim,
+            condition_dim=condition_dim,
+            output_dim=input_dim,
+            hidden_dim=hidden_dims[0],
+            num_heads=attention_heads,
+            dropout=dropout
+        )
+        
     def encode(self, x, c):
-        combined = torch.cat([x, c], dim=1)
-        hidden = self.encoder(combined)
-        return self.fc_mu(hidden), self.fc_var(hidden)
+        return self.encoder(x, c)
     
     def decode(self, z, c):
-        combined = torch.cat([z, c], dim=1)
-        return self.decoder(combined)
+        return self.decoder(z, c)
     
-    def reparameterize(self, mu, log_var):
-        std = torch.exp(0.5 * log_var)
-        eps = torch.randn_like(std)
-        return mu + eps * std
-    
-    def forward(self, x, c):
-        mu, log_var = self.encode(x, c)
-        z = self.reparameterize(mu, log_var)
-        return self.decode(z, c), mu, log_var
-
-class ChainedVAE(nn.Module):
-    """
-    Chained VAE implementation for layer-by-layer level generation
-    with physics validation and designer intervention support
-    """
-    def __init__(self, input_dim, condition_dim, num_layers=3):
-        super().__init__()
-        
-        self.input_dim = input_dim
-        self.condition_dim = condition_dim
-        self.num_layers = num_layers
-        
-        # Create VAEs for each layer
-        self.layer_vaes = nn.ModuleList([
-            LayerVAE(input_dim, condition_dim + (input_dim if i > 0 else 0))
-            for i in range(num_layers)
-        ])
-        
-        # Physics validator
-        self.physics = SimplePhysicsValidator()
-        
-        # Layer-specific condition encoders
-        self.layer_conditions = nn.ModuleList([
-            nn.Sequential(
-                nn.Linear(condition_dim, 32),
-                nn.ReLU(),
-                nn.BatchNorm1d(32),
-                nn.Linear(32, condition_dim)
-            ) for _ in range(num_layers)
-        ])
-    
-    def generate_layer(self, condition, previous_layer=None, layer_idx=0, manual_input=None):
-        """
-        Generate a single layer with optional manual input
-        
-        Args:
-            condition: Base condition (difficulty, etc.)
-            previous_layer: Output from previous layer if any
-            layer_idx: Which layer we're generating
-            manual_input: Designer-provided input to influence generation
-        """
-        # Encode layer-specific condition
-        layer_condition = self.layer_conditions[layer_idx](condition)
-        
-        # Combine with previous layer if exists
-        if previous_layer is not None:
-            layer_condition = torch.cat([layer_condition, previous_layer], dim=1)
-        
-        # Use manual input if provided
-        if manual_input is not None:
-            # Blend manual input with generated
-            vae = self.layer_vaes[layer_idx]
-            with torch.no_grad():
-                z = torch.randn(1, vae.latent_dim).to(condition.device)
-                generated = vae.decode(z, layer_condition)
-                # Mix manual and generated (70-30 ratio)
-                output = 0.7 * manual_input + 0.3 * generated
+    def reparameterize(self, mu, logvar):
+        if self.training:
+            std = torch.exp(0.5 * logvar)
+            eps = torch.randn_like(std)
+            return mu + eps * std
         else:
-            # Generate from scratch
-            vae = self.layer_vaes[layer_idx]
-            with torch.no_grad():
-                z = torch.randn(1, vae.latent_dim).to(condition.device)
-                output = vae.decode(z, layer_condition)
-        
-        return output
+            return mu
     
-    def validate_physics(self, current_layer, previous_layer=None):
-        """Validate physics constraints between layers"""
-        if previous_layer is None:
-            return True, 1.0  # Base layer always valid
+    def forward(self, x, c, spatial_features=None):
+        # Encode
+        mu, logvar = self.encode(x, c)
+        
+        # Sample latent
+        z = self.reparameterize(mu, logvar)
+        
+        # Decode
+        properties, positions = self.decode(z, c)
+        
+        # Compute losses
+        recon_loss = F.mse_loss(properties, x)
+        if spatial_features is not None:
+            recon_loss += F.mse_loss(positions, spatial_features)
             
-        # Extract object properties from layers
-        current_objects = self.decode_layer_objects(current_layer)
-        previous_objects = self.decode_layer_objects(previous_layer)
+        kl_loss = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp())
         
-        # Check stacking validity
-        valid_count = 0
-        total_stability = 0.0
+        # Get current beta value
+        beta = self.get_beta()
         
-        for curr_obj in current_objects:
-            obj_valid = False
-            max_stability = 0.0
-            
-            for prev_obj in previous_objects:
-                can_stack, stability = self.physics.can_stack(curr_obj, prev_obj)
-                if can_stack:
-                    obj_valid = True
-                    max_stability = max(max_stability, stability)
-            
-            if obj_valid:
-                valid_count += 1
-                total_stability += max_stability
-        
-        # Layer is valid if most objects can be stacked
-        validity_ratio = valid_count / len(current_objects)
-        avg_stability = total_stability / len(current_objects) if current_objects else 0
-        
-        return validity_ratio > 0.7, avg_stability
+        # Return losses separately for monitoring
+        return {
+            'properties': properties,
+            'positions': positions,
+            'recon_loss': recon_loss,
+            'kl_loss': kl_loss,
+            'beta': beta
+        }
     
-    def decode_layer_objects(self, layer_data):
-        """Convert layer tensor to list of object properties"""
-        # This is a simplified version - in practice would need proper decoding
-        objects = []
-        # Assume layer_data contains [type, size, shape] for each object
-        for i in range(0, layer_data.size(1), 3):
-            obj = {
-                'type': layer_data[0, i].item(),
-                'size': layer_data[0, i+1].item(),
-                'shape': layer_data[0, i+2].item()
-            }
-            objects.append(obj)
-        return objects
+    def generate(self, c, num_samples=1):
+        """Generate new levels given conditions"""
+        with torch.no_grad():
+            # Sample from prior
+            z = torch.randn(num_samples, self.latent_dim).to(c.device)
+            
+            # Decode
+            properties, positions = self.decode(z, c)
+            
+            return properties, positions
     
-    def generate_level(self, condition, manual_inputs=None):
-        """
-        Generate complete level layer by layer
-        
-        Args:
-            condition: Base generation condition
-            manual_inputs: List of manual inputs for each layer (optional)
-        """
-        layers = []
-        previous_layer = None
-        
-        for i in range(self.num_layers):
-            # Get manual input for this layer if provided
-            manual_input = manual_inputs[i] if manual_inputs is not None else None
+    def get_beta(self):
+        """Get current β value based on annealing schedule"""
+        if not self.training:
+            return self.beta_end
             
-            # Generate layer
-            current_layer = self.generate_layer(
-                condition, previous_layer, i, manual_input
-            )
-            
-            # Validate physics if not first layer
-            if i > 0:
-                valid, stability = self.validate_physics(current_layer, previous_layer)
-                if not valid:
-                    # Regenerate with adjusted condition to improve stability
-                    adjusted_condition = condition * (1.0 + (1.0 - stability))
-                    current_layer = self.generate_layer(
-                        adjusted_condition, previous_layer, i, manual_input
-                    )
-            
-            layers.append(current_layer)
-            previous_layer = current_layer
-        
-        return layers
+        self.current_step = min(self.current_step + 1, self.beta_steps)
+        return self.beta_start + (self.beta_end - self.beta_start) * (self.current_step / self.beta_steps)
     
-    def forward(self, x, condition):
-        """Forward pass for training"""
-        # Split input into layers
-        layer_size = x.size(1) // self.num_layers
-        layers = torch.split(x, layer_size, dim=1)
+    def get_attention_weights(self):
+        """Get attention weights from the encoder and decoder"""
+        attention_weights = {
+            'encoder': None,
+            'decoder': None
+        }
         
-        # Process each layer
-        outputs = []
-        previous_layer = None
-        total_loss = 0
-        
-        for i, layer in enumerate(layers):
-            vae = self.layer_vaes[i]
+        # Get encoder attention weights
+        if hasattr(self.encoder, 'attention'):
+            attention_weights['encoder'] = self.encoder.attention.get_attention_weights()
             
-            # Prepare condition
-            layer_condition = self.layer_conditions[i](condition)
-            if previous_layer is not None:
-                layer_condition = torch.cat([layer_condition, previous_layer], dim=1)
+        # Get decoder attention weights
+        if hasattr(self.decoder, 'attention'):
+            attention_weights['decoder'] = self.decoder.attention.get_attention_weights()
             
-            # VAE forward pass
-            output, mu, log_var = vae(layer, layer_condition)
-            
-            # Accumulate loss
-            recon_loss = F.mse_loss(output, layer)
-            kl_loss = -0.5 * torch.sum(1 + log_var - mu.pow(2) - log_var.exp())
-            total_loss += recon_loss + 0.1 * kl_loss
-            
-            outputs.append(output)
-            previous_layer = output
-        
-        return torch.cat(outputs, dim=1), total_loss
+        return attention_weights

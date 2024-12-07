@@ -1,0 +1,5 @@
+2024-12-08 01:23:46,097 - __main__ - INFO - Starting architecture test
+2024-12-08 01:23:46,108 - __main__ - INFO - Using device: mps
+2024-12-08 01:23:46,109 - __main__ - INFO - Dataset dimensions - Input: 90, Condition: 3
+2024-12-08 01:23:46,436 - __main__ - INFO - Starting test training loop
+2024-12-08 01:23:50,930 - __main__ - ERROR - Error during test: 'epoch'

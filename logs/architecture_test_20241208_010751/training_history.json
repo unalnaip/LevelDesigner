@@ -1,0 +1,19 @@
+{
+  "loss": [
+    4.066350936889648
+  ],
+  "reconstruction_loss": [
+    4.066350936889648
+  ],
+  "kl_loss": [
+    146.09194946289062
+  ],
+  "kl_weight": [
+    0.01
+  ],
+  "beta": [
+    1.0
+  ],
+  "spatial_metrics": [],
+  "latent_stats": []
+}
