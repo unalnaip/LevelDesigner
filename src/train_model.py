@@ -135,7 +135,7 @@ class LevelDataset(Dataset):
             torch.FloatTensor(self.conditions[idx])
         )
 
-def train_model(data_path, output_path, num_epochs=100, batch_size=64):
+def train_model(data_path, output_path, num_epochs=100, batch_size=128):
     # Log system information
     device = log_system_info()
     
@@ -145,22 +145,48 @@ def train_model(data_path, output_path, num_epochs=100, batch_size=64):
     # Initialize dataset and dataloader
     logger.info("Initializing dataset and dataloader...")
     dataset = LevelDataset(data_path)
+    
+    # Optimize for M3 Max
+    num_workers = min(16, os.cpu_count())  # Use more cores for data loading
     dataloader = DataLoader(
         dataset,
         batch_size=batch_size,
         shuffle=True,
-        num_workers=8,  # Optimize for M3 Max
-        pin_memory=True
+        num_workers=num_workers,
+        pin_memory=True,
+        prefetch_factor=2,  # Prefetch batches
+        persistent_workers=True  # Keep workers alive between epochs
     )
     
-    # Initialize model
+    # Initialize model with float16 for faster computation
     logger.info("Initializing model...")
     input_dim = 30
     condition_dim = 3
     model = ChainedVAE(input_dim, condition_dim).to(device)
     
-    # Initialize optimizer
-    optimizer = optim.Adam(model.parameters(), lr=0.001)
+    # Use float16 for faster computation on MPS
+    if device.type == 'mps':
+        model = model.to(torch.float16)
+    
+    # Initialize optimizer with larger learning rate and momentum
+    optimizer = optim.AdamW(
+        model.parameters(),
+        lr=0.002,
+        betas=(0.9, 0.999),
+        eps=1e-8,
+        weight_decay=0.01
+    )
+    
+    # Learning rate scheduler for faster convergence
+    scheduler = optim.lr_scheduler.OneCycleLR(
+        optimizer,
+        max_lr=0.002,
+        epochs=num_epochs,
+        steps_per_epoch=len(dataloader),
+        pct_start=0.3,  # Warm up for 30% of training
+        div_factor=25,  # Initial lr = max_lr/25
+        final_div_factor=1000  # Final lr = max_lr/1000
+    )
     
     # Create checkpoint directory
     checkpoint_dir = os.path.join("models", "checkpoints")
@@ -186,36 +212,46 @@ def train_model(data_path, output_path, num_epochs=100, batch_size=64):
                               desc=f"Epoch {epoch+1}/{num_epochs}")
             
             for batch_idx, (batch_data, batch_conditions) in progress_bar:
-                batch_data = batch_data.to(device)
-                batch_conditions = batch_conditions.to(device)
+                # Move data to device and convert to float16 if using MPS
+                if device.type == 'mps':
+                    batch_data = batch_data.to(device, dtype=torch.float16)
+                    batch_conditions = batch_conditions.to(device, dtype=torch.float16)
+                else:
+                    batch_data = batch_data.to(device)
+                    batch_conditions = batch_conditions.to(device)
                 
                 # Forward pass
                 output, loss = model(batch_data, batch_conditions)
                 
                 # Backward pass
-                optimizer.zero_grad()
+                optimizer.zero_grad(set_to_none=True)  # Faster than zero_grad()
                 loss.backward()
+                
+                # Gradient clipping for stability
+                torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+                
                 optimizer.step()
+                scheduler.step()
                 
                 total_loss += loss.item()
                 num_batches += 1
                 
                 # Update progress bar
+                current_lr = scheduler.get_last_lr()[0]
                 progress_bar.set_postfix({
                     'loss': f"{loss.item():.4f}",
-                    'avg_loss': f"{total_loss/num_batches:.4f}"
+                    'avg_loss': f"{total_loss/num_batches:.4f}",
+                    'lr': f"{current_lr:.6f}"
                 })
                 
-                # Log batch metrics
-                if batch_idx % 10 == 0:
-                    current_lr = optimizer.param_groups[0]['lr']
+                # Log batch metrics (less frequently)
+                if batch_idx % 20 == 0:
                     monitor.log_batch(epoch, batch_idx, loss.item(), current_lr, len(dataloader))
             
             # Calculate epoch metrics
             avg_loss = total_loss / num_batches
             epoch_time = time.time() - epoch_start_time
             memory_used = psutil.Process().memory_info().rss / (1024**3)
-            current_lr = optimizer.param_groups[0]['lr']
             
             # Log epoch metrics
             monitor.log_epoch(epoch, avg_loss, current_lr, epoch_time, memory_used)
@@ -225,29 +261,46 @@ def train_model(data_path, output_path, num_epochs=100, batch_size=64):
             logger.info(f"Average Loss: {avg_loss:.4f}")
             logger.info(f"Epoch Time: {epoch_time:.2f}s")
             logger.info(f"Memory Usage: {memory_used:.2f} GB")
+            logger.info(f"Learning Rate: {current_lr:.6f}")
             
-            # Save checkpoint if best model
+            # Save checkpoint if best model (less frequently)
             if avg_loss < best_loss:
                 best_loss = avg_loss
                 checkpoint_path = os.path.join(checkpoint_dir, f"best_model_epoch_{epoch+1}.pt")
+                # Convert back to float32 for saving
+                if device.type == 'mps':
+                    model = model.to(torch.float32)
                 torch.save({
                     'epoch': epoch,
                     'model_state_dict': model.state_dict(),
                     'optimizer_state_dict': optimizer.state_dict(),
+                    'scheduler_state_dict': scheduler.state_dict(),
                     'loss': best_loss
                 }, checkpoint_path)
+                if device.type == 'mps':
+                    model = model.to(torch.float16)
                 logger.info(f"Saved best model checkpoint to {checkpoint_path}")
             
-            # Regular checkpoint every 10 epochs
-            if (epoch + 1) % 10 == 0:
+            # Regular checkpoint every 20 epochs
+            if (epoch + 1) % 20 == 0:
                 checkpoint_path = os.path.join(checkpoint_dir, f"checkpoint_epoch_{epoch+1}.pt")
+                if device.type == 'mps':
+                    model = model.to(torch.float32)
                 torch.save({
                     'epoch': epoch,
                     'model_state_dict': model.state_dict(),
                     'optimizer_state_dict': optimizer.state_dict(),
+                    'scheduler_state_dict': scheduler.state_dict(),
                     'loss': avg_loss
                 }, checkpoint_path)
+                if device.type == 'mps':
+                    model = model.to(torch.float16)
                 logger.info(f"Saved checkpoint to {checkpoint_path}")
+            
+            # Early stopping
+            if avg_loss < 0.001:  # Very good convergence
+                logger.info("Reached excellent loss value, stopping early")
+                break
     
     except KeyboardInterrupt:
         logger.info("Training interrupted by user")
@@ -256,6 +309,8 @@ def train_model(data_path, output_path, num_epochs=100, batch_size=64):
         raise
     finally:
         # Save final model and clean up
+        if device.type == 'mps':
+            model = model.to(torch.float32)
         torch.save(model.state_dict(), output_path)
         monitor.close()
         
@@ -274,6 +329,7 @@ def log_system_info():
     logger.info(f"Python version: {platform.python_version()}")
     logger.info(f"PyTorch version: {torch.__version__}")
     logger.info(f"CPU: {platform.processor()}")
+    logger.info(f"CPU Cores: {os.cpu_count()}")
     logger.info(f"RAM: {psutil.virtual_memory().total / (1024**3):.2f} GB")
     logger.info(f"Available RAM: {psutil.virtual_memory().available / (1024**3):.2f} GB")
     

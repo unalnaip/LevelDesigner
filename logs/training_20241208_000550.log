@@ -64,3 +64,23 @@
 2024-12-08 00:12:04,315 - __main__ - INFO - Memory Usage: 0.56 GB
 2024-12-08 00:12:04,400 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_8.pt
 2024-12-08 00:12:05,406 - __main__ - INFO - System metrics: {'cpu_percent': 8.9, 'memory_percent': 53.0, 'memory_used_gb': 24.528060913085938, 'memory_available_gb': 22.5712890625}
+2024-12-08 00:12:51,143 - __main__ - INFO - Epoch 9/100
+2024-12-08 00:12:51,144 - __main__ - INFO - Average Loss: 50.3613
+2024-12-08 00:12:51,144 - __main__ - INFO - Epoch Time: 46.74s
+2024-12-08 00:12:51,144 - __main__ - INFO - Memory Usage: 0.56 GB
+2024-12-08 00:12:51,217 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_9.pt
+2024-12-08 00:12:52,221 - __main__ - INFO - System metrics: {'cpu_percent': 12.3, 'memory_percent': 52.1, 'memory_used_gb': 24.093719482421875, 'memory_available_gb': 23.002899169921875}
+2024-12-08 00:13:38,457 - utils.training_monitor - INFO - Training plots saved to logs/plots/training_plots_epoch_10_20241208_001338.png
+2024-12-08 00:13:38,457 - __main__ - INFO - Epoch 10/100
+2024-12-08 00:13:38,457 - __main__ - INFO - Average Loss: 49.6990
+2024-12-08 00:13:38,457 - __main__ - INFO - Epoch Time: 46.96s
+2024-12-08 00:13:38,457 - __main__ - INFO - Memory Usage: 0.56 GB
+2024-12-08 00:13:38,528 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_10.pt
+2024-12-08 00:13:38,577 - __main__ - INFO - Saved checkpoint to models/checkpoints/checkpoint_epoch_10.pt
+2024-12-08 00:13:39,579 - __main__ - INFO - System metrics: {'cpu_percent': 6.6, 'memory_percent': 51.9, 'memory_used_gb': 24.002639770507812, 'memory_available_gb': 23.093170166015625}
+2024-12-08 00:14:25,338 - __main__ - INFO - Epoch 11/100
+2024-12-08 00:14:25,338 - __main__ - INFO - Average Loss: 49.2954
+2024-12-08 00:14:25,338 - __main__ - INFO - Epoch Time: 46.76s
+2024-12-08 00:14:25,338 - __main__ - INFO - Memory Usage: 0.61 GB
+2024-12-08 00:14:25,427 - __main__ - INFO - Saved best model checkpoint to models/checkpoints/best_model_epoch_11.pt
+2024-12-08 00:14:26,428 - __main__ - INFO - System metrics: {'cpu_percent': 9.3, 'memory_percent': 52.6, 'memory_used_gb': 24.364974975585938, 'memory_available_gb': 22.737838745117188}
