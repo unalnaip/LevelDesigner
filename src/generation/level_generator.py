@@ -1,163 +1,199 @@
-import json
 import torch
 import numpy as np
-from pathlib import Path
+from typing import Dict, List, Optional
+import json
 from datetime import datetime
+from pathlib import Path
 
-# Thematic object groups
-THEMES = {
-    'basic_school': {
-        'objects': ['pencil', 'ruler', 'rubbereraser', 'crayon', 'markerpen'],
-        'min_amount': 2,
-        'max_amount': 3
-    },
-    'fruits_veggies': {
-        'objects': ['apple', 'banana', 'orange', 'grape', 'strawberry', 'pear'],
-        'min_amount': 2,
-        'max_amount': 4
-    },
-    'sports': {
-        'objects': ['soccerball', 'basketball', 'tennisball', 'volleyball', 'baseballbat'],
-        'min_amount': 3,
-        'max_amount': 4
-    },
-    'advanced_school': {
-        'objects': ['calculator', 'mathcompass', 'earthglobe', 'notebook', 'textbook'],
-        'min_amount': 3,
-        'max_amount': 5
-    }
-}
+from ..utils.difficulty_scaling import DifficultyScaler
+from ..config.model_config import GenerationConfig, ValidationConfig
 
-def load_item_data():
-    """Load and parse the item data from Unity"""
-    with open('/Users/naipunal/Documents/GitHub/RestPlay.MatchAges.Unity/Assets/_RestPlay/Addressables/GameData/ItemData.json', 'r') as f:
-        items = json.load(f)
-    
-    # Create lookup of all variations
-    variations = {}
-    for item in items:
-        for var in item['variation']:
-            variations[var['name']] = {
-                'category': item['category'],
-                'size': item['size'],
-                'shape': item['shape']
-            }
-    
-    return variations
-
-def select_theme_objects(theme_name, num_objects, variations):
-    """Select objects from a theme with their variations"""
-    theme = THEMES[theme_name]
-    selected_objects = []
-    
-    # Get all possible variations for the theme's objects
-    theme_variations = []
-    for obj in theme['objects']:
-        # Get all variations that start with this object name
-        obj_variations = [name for name in variations.keys() if name.startswith(obj + '_')]
-        theme_variations.extend(obj_variations)
-    
-    # Randomly select variations
-    selected_variations = np.random.choice(theme_variations, num_objects, replace=False)
-    
-    for var_name in selected_variations:
-        amount = np.random.randint(theme['min_amount'], theme['max_amount'] + 1)
-        selected_objects.append({
-            't': var_name,
-            'a': amount,
-            'r': np.random.random() > 0.3  # 70% chance of being a collectible
-        })
-    
-    return selected_objects
-
-def generate_playtest_batch(num_levels=2000):
-    """Generate a large batch of levels for playtesting"""
-    print(f"\nGenerating {num_levels} levels for playtesting...")
-    
-    # Load item data
-    variations = load_item_data()
-    
-    # Calculate levels per difficulty
-    levels_per_difficulty = num_levels // 3
-    extra_levels = num_levels % 3
-    
-    difficulty_counts = {
-        'Normal': levels_per_difficulty + (1 if extra_levels > 0 else 0),
-        'Hard': levels_per_difficulty + (1 if extra_levels > 1 else 0),
-        'Super Hard': levels_per_difficulty
-    }
-    
-    # Time limits per difficulty
-    time_limits = {
-        'Normal': (120, 130),
-        'Hard': (130, 140),
-        'Super Hard': (140, 150)
-    }
-    
-    # Objects per difficulty
-    objects_per_difficulty = {
-        'Normal': (3, 4),
-        'Hard': (4, 5),
-        'Super Hard': (5, 6)
-    }
-    
-    # Generate levels
-    levels = []
-    level_id = 1
-    
-    for difficulty, count in difficulty_counts.items():
-        print(f"\nGenerating {count} {difficulty} levels...")
+class LevelGenerator:
+    def __init__(self, model, config_path: str = "config/generation_config.json"):
+        self.model = model
+        self.config = GenerationConfig.load(config_path)
+        self.validator = ValidationConfig()
+        self.difficulty_scaler = DifficultyScaler()
         
-        for _ in range(count):
-            # Select theme
-            theme = np.random.choice(list(THEMES.keys()))
+    def generate_batch(self, start_level: int, count: int, 
+                      output_path: Optional[str] = None) -> List[Dict]:
+        """Generate a batch of levels with progressive difficulty"""
+        levels = []
+        
+        for level_num in range(start_level, start_level + count):
+            level = self.generate_single_level(level_num)
+            if level is not None:
+                levels.append(level)
+        
+        if output_path:
+            self._save_levels(levels, output_path)
+        
+        return levels
+    
+    def generate_single_level(self, level_num: int) -> Optional[Dict]:
+        """Generate a single level with appropriate difficulty"""
+        # Get difficulty parameters for this level
+        tier = self.difficulty_scaler.get_tier(level_num)
+        params = self.difficulty_scaler.calculate_goal_distribution(level_num)
+        
+        # Generate level layout
+        z = torch.randn(1, self.config.latent_dim)
+        with torch.no_grad():
+            layout = self.model.decode(z)
+        
+        # Convert layout to level data
+        level_data = self._layout_to_level(layout, params, level_num)
+        
+        # Calculate time limit
+        time_limit = self.difficulty_scaler.calculate_time_limit(
+            params["goal_count"], 
+            params["num_types"],
+            params["blocker_count"], 
+            tier
+        )
+        
+        # Add metadata
+        level_data["time_limit"] = time_limit
+        level_data["level_number"] = level_num
+        level_data["difficulty"] = self.difficulty_scaler.get_difficulty_label(
+            params["goal_count"],
+            params["blocker_count"],
+            time_limit,
+            tier
+        )
+        
+        # Validate level
+        if not self.validator.validate_level(level_data):
+            return None
             
-            # Generate time limit
-            time_min, time_max = time_limits[difficulty]
-            time_limit = np.random.randint(time_min, time_max + 1)
+        return level_data
+    
+    def _layout_to_level(self, layout: torch.Tensor, 
+                        params: Dict, level_num: int) -> Dict:
+        """Convert model output to level format"""
+        # Extract layout parameters
+        positions = layout[0, :params["goal_count"], :2].numpy()
+        
+        # Select goal types based on difficulty
+        available_types = self.config.goal_types[:params["num_types"]]
+        type_weights = [self.config.type_weights[t] for t in available_types]
+        type_weights = np.array(type_weights) / sum(type_weights)
+        
+        # Assign goal types
+        goal_types = np.random.choice(
+            available_types,
+            size=params["goal_count"],
+            p=type_weights
+        )
+        
+        # Create level data
+        objects = []
+        for pos, obj_type in zip(positions, goal_types):
+            objects.append({
+                "type": obj_type,
+                "position": pos.tolist(),
+                "properties": {
+                    "t": False,  # Can be toggled
+                    "a": False,  # Is active
+                    "r": False   # Is required
+                }
+            })
+        
+        # Add blockers
+        if params["blocker_count"] > 0:
+            blocker_positions = self._generate_blocker_positions(
+                positions, 
+                params["blocker_count"]
+            )
+            blocker_types = np.random.choice(
+                self.config.blocker_types,
+                size=params["blocker_count"]
+            )
             
-            # Generate number of objects
-            min_obj, max_obj = objects_per_difficulty[difficulty]
-            num_objects = np.random.randint(min_obj, max_obj + 1)
+            for pos, block_type in zip(blocker_positions, blocker_types):
+                objects.append({
+                    "type": block_type,
+                    "position": pos.tolist(),
+                    "properties": {
+                        "t": True,   # Blockers are typically toggleable
+                        "a": True,   # Start active
+                        "r": False   # Not required
+                    }
+                })
+        
+        return {
+            "objects": objects,
+            "metadata": {
+                "generation_time": datetime.now().isoformat()
+            }
+        }
+    
+    def _generate_blocker_positions(self, 
+                                  goal_positions: np.ndarray,
+                                  num_blockers: int) -> np.ndarray:
+        """Generate valid positions for blockers"""
+        positions = []
+        grid_size = 10  # Assuming 10x10 grid
+        
+        for _ in range(num_blockers):
+            valid = False
+            attempts = 0
             
-            # Generate object list
-            object_list = select_theme_objects(theme, num_objects, variations)
-            
-            # Create level
-            level = {
-                'i': level_id,
-                'd': time_limit,
-                't': 1 if difficulty == 'Normal' else (2 if difficulty == 'Hard' else 3),
-                'l': object_list
+            while not valid and attempts < 100:
+                pos = np.random.rand(2) * grid_size
+                
+                # Check minimum distance from goals
+                distances = np.linalg.norm(
+                    goal_positions - pos.reshape(1, 2),
+                    axis=1
+                )
+                
+                if np.min(distances) > self.validator.min_goal_spacing:
+                    valid = True
+                    positions.append(pos)
+                
+                attempts += 1
+        
+        return np.array(positions)
+    
+    def _save_levels(self, levels: List[Dict], output_path: str):
+        """Save generated levels to file"""
+        output_dir = Path(output_path).parent
+        output_dir.mkdir(parents=True, exist_ok=True)
+        
+        with open(output_path, 'w') as f:
+            json.dump({
+                "levels": levels,
+                "metadata": {
+                    "generator_version": "2.0",
+                    "generation_time": datetime.now().isoformat(),
+                    "config": self.config.__dict__
+                }
+            }, f, indent=2)
+    
+    def format_for_unity(self, levels: List[Dict]) -> List[Dict]:
+        """Convert level format to Unity-compatible format"""
+        unity_levels = []
+        
+        for level in levels:
+            unity_level = {
+                "i": level["level_number"],
+                "d": level["time_limit"],
+                "t": 1 if level["difficulty"] == "none" else (
+                    2 if level["difficulty"] == "hard" else 3
+                ),
+                "l": []
             }
             
-            levels.append(level)
-            level_id += 1
+            # Convert objects to Unity format
+            for obj in level["objects"]:
+                unity_obj = {
+                    "t": obj["type"],
+                    "p": obj["position"],
+                    "properties": obj["properties"]
+                }
+                unity_level["l"].append(unity_obj)
             
-            if level_id % 100 == 0:
-                print(f"Progress: {level_id}/{num_levels} levels")
-    
-    # Save to JSON file
-    output_path = Path("data/generated/playtest_levels.json")
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    
-    with open(output_path, 'w') as f:
-        json.dump(levels, f, indent=2)
-    
-    print(f"\nGenerated {len(levels)} levels total")
-    print(f"Levels saved to {output_path}")
-    
-    return output_path
-
-if __name__ == '__main__':
-    import argparse
-    
-    parser = argparse.ArgumentParser(description='Generate game levels')
-    parser.add_argument('--playtest', action='store_true', help='Generate a batch of levels for playtesting')
-    parser.add_argument('--num_levels', type=int, default=2000, help='Number of levels to generate for playtesting')
-    args = parser.parse_args()
-    
-    if args.playtest:
-        generate_playtest_batch(args.num_levels)
-    else:
-        print("Please use --playtest flag to generate levels") 
+            unity_levels.append(unity_level)
+        
+        return unity_levels 

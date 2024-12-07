@@ -1,0 +1,30 @@
+2024-12-08 02:16:14,603 - __main__ - INFO - Loading item data...
+2024-12-08 02:16:14,604 - __main__ - INFO - Loaded 802 total variations across 5 categories
+2024-12-08 02:16:14,604 - __main__ - INFO - Loading model from checkpoint...
+2024-12-08 02:16:14,719 - __main__ - INFO - Creating level conditions...
+2024-12-08 02:16:14,729 - __main__ - INFO - Generating levels...
+2024-12-08 02:16:21,393 - __main__ - INFO - 
+Generation complete! Levels saved to: generated_levels/levels_20241208_021621.json
+2024-12-08 02:16:21,393 - __main__ - INFO - Total levels generated: 2000
+2024-12-08 02:16:21,506 - __main__ - INFO - 
+Category distribution in generated levels:
+2024-12-08 02:16:21,506 - __main__ - INFO - Category 2: 2534 objects (25.4%)
+2024-12-08 02:16:21,506 - __main__ - INFO - Category 5: 2534 objects (25.4%)
+2024-12-08 02:16:21,506 - __main__ - INFO - Category 7: 2543 objects (25.5%)
+2024-12-08 02:16:21,506 - __main__ - INFO - Category 15: 2365 objects (23.7%)
+2024-12-08 02:16:21,506 - __main__ - INFO - 
+Shape distribution in generated levels:
+2024-12-08 02:16:21,506 - __main__ - INFO - Shape 0: 165 objects (1.7%)
+2024-12-08 02:16:21,507 - __main__ - INFO - Shape 1: 1179 objects (11.8%)
+2024-12-08 02:16:21,507 - __main__ - INFO - Shape 2: 3869 objects (38.8%)
+2024-12-08 02:16:21,507 - __main__ - INFO - Shape 3: 1594 objects (16.0%)
+2024-12-08 02:16:21,507 - __main__ - INFO - Shape 4: 1350 objects (13.5%)
+2024-12-08 02:16:21,507 - __main__ - INFO - Shape 5: 1495 objects (15.0%)
+2024-12-08 02:16:21,507 - __main__ - INFO - Shape 6: 324 objects (3.2%)
+2024-12-08 02:16:21,507 - __main__ - INFO - 
+Size distribution in generated levels:
+2024-12-08 02:16:21,507 - __main__ - INFO - Size 0: 487 objects (4.9%)
+2024-12-08 02:16:21,507 - __main__ - INFO - Size 1: 2113 objects (21.2%)
+2024-12-08 02:16:21,507 - __main__ - INFO - Size 2: 4926 objects (49.4%)
+2024-12-08 02:16:21,507 - __main__ - INFO - Size 3: 1925 objects (19.3%)
+2024-12-08 02:16:21,507 - __main__ - INFO - Size 4: 525 objects (5.3%)
